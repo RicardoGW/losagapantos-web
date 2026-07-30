@@ -8,6 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: #F5F5F5;
             margin: 0;
             padding: 0;
         }
@@ -95,6 +96,7 @@
     font-family: Arial, sans-serif;
 ">
 
+
     <h1>Villa Los Agapantos</h1>
 
     <nav>
@@ -161,137 +163,139 @@
     </section>
 
     <section id="avisos">
-        <h2>Recomendaciones</h2>
+    <h2>Recomendaciones</h2>
 
-        <h3>🚛 Camión de la basura</h3>
-        <p>Se recuerda a todos los vecinos estar atentos al horario del camión de la basura...</p>
+    <h3>🚛 Camión de la basura</h3>
+    <p>Se recuerda a todos los vecinos estar atentos al horario del camión de la basura. Evitar dejar vehículos mal estacionados que impidan su paso o que puedan provocar daños a los autos de otros residentes.</p>
 
-        <h3>🚸 Velocidad y tránsito dentro de la villa</h3>
-        <p>La Villa Los Agapantos es un recinto público...</p>
+    <h3>🚸 Velocidad y tránsito dentro de la villa</h3>
+    <p>La Villa Los Agapantos es un recinto público y se rige por la Ley de Tránsito. Respetar los límites de velocidad, especialmente en la entrada y salida donde frecuentemente hay niños jugando.</p>
 
-        <h3>🚗 Vehículos que bloquean la entrada y salida de vecinos</h3>
-        <p>Se pide evitar detenerse o bloquear la entrada...</p>
+    <h3>🚗 Vehículos que bloquean la entrada y salida de vecinos</h3>
+    <p>Se pide evitar detenerse o bloquear la entrada y salida de vehículos de otros vecinos. Cuando un auto queda estorbando el acceso, se generan molestias, retrasos y situaciones de riesgo.</p>
 
-        <h3>🚗 Vehículos estacionados frente a casas de otros vecinos</h3>
-        <p>Si bien la vía es pública...</p>
+    <h3>🚗 Vehículos estacionados frente a casas de otros vecinos</h3>
+    <p>Si bien la vía es pública, no cuesta nada avisar por cortesía cuando se deja un vehículo frente a la casa de otro vecino. Un pequeño gesto evita malos entendidos y mejora la convivencia.</p>
 
-        <h3>🚭 Sustancias y humo en espacios comunes</h3>
-        <p>No está permitido fumar sustancias sicotrópicas...</p>
+    <h3>🚭 Sustancias y humo en espacios comunes</h3>
+    <p>No está permitido fumar sustancias sicotrópicas en la plaza ni en áreas comunes. Si se consume en el hogar, hacerlo en un lugar cerrado para evitar molestias a otros residentes.</p>
 
-        <h3>🍔 Basura y alimentos en la plaza</h3>
-        <p>Si consumen alimentos en la plaza...</p>
+    <h3>🍔 Basura y alimentos en la plaza</h3>
+    <p>Si consumen alimentos en la plaza y el basurero está lleno, no dejar los desechos en el suelo. Llevarlos a casa evita que los perros rompan las bolsas y generen malos olores.</p>
 
-        <h3>🎉 Eventos, cumpleaños y música</h3>
-        <p>Si van a realizar un cumpleaños...</p>
+    <h3>🎉 Eventos, cumpleaños y música</h3>
+    <p>Si van a realizar un cumpleaños o actividad con música a alto volumen, avisar previamente a los vecinos cercanos. Una simple comunicación evita molestias y reclamos.</p>
 
-        <h3>🏍️ Motos y deliverys</h3>
-        <p>Cuando ingresen motos de delivery...</p>
+    <h3>🏍️ Motos y deliverys</h3>
+    <p>Cuando ingresen motos de delivery, el vecino debe estar atento a la entrada y salida del repartidor. Una buena coordinación evita confusiones y mantiene la convivencia tranquila.</p>
 
-        <h3>👀 Personas desconocidas o merodeando la villa</h3>
-        <p>Si se observa a alguna persona extraña...</p>
+    <h3>👀 Personas desconocidas o merodeando la villa</h3>
+    <p>Si se observa a alguna persona extraña merodeando la villa, avisar de inmediato al grupo de WhatsApp comunitario para que todos estén atentos y se prevengan situaciones de riesgo.</p>
 
-        <h3>👥 Convivencia y comunidad</h3>
-        <p>La villa funciona gracias al respeto mutuo...</p>
-    </section>
+    <h3>👥 Convivencia y comunidad</h3>
+    <p>La villa funciona gracias al respeto mutuo y la preocupación por los espacios compartidos. Mantener accesos despejados, cuidar áreas verdes y comunicarse entre vecinos fortalece la armonía de la comunidad.</p>
 
-    <!-- Botón flotante -->
-    <div id="btnSugerencias" style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
+</section>
+<!-- Botón flotante -->
+<div id="btnSugerencias" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4A6FA5;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+">
+    💬 Sugerencias
+</div>
+
+<!-- Ventana flotante -->
+<div id="ventanaSugerencias" style="
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid #D9D9D9;
+    z-index: 9990;
+">
+    <h3 style="margin-top:0;">Aportes de vecinos</h3>
+    <p>Escribe tu sugerencia para mejorar la villa:</p>
+
+    <textarea id="textoSugerencia" style="
+        width: 100%;
+        height: 80px;
+        border-radius: 8px;
+        border: 1px solid #CCC;
+        padding: 10px;
+        resize: none;
+    "></textarea>
+
+    <button onclick="enviarSugerencia()" style="
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
         background: #4A6FA5;
         color: white;
-        padding: 15px 20px;
-        border-radius: 50px;
+        border: none;
+        border-radius: 8px;
         cursor: pointer;
         font-weight: bold;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-        z-index: 9999;
-    ">
-        💬 Sugerencias
+    ">Enviar</button>
+
+    <p id="mensajeEnviado" style="color: green; display:none; margin-top:10px;">
+        ✔ Sugerencia enviada (simulación)
+    </p>
+</div>
+
+<script>
+    // Mostrar / ocultar ventana
+    document.getElementById("btnSugerencias").onclick = function() {
+        let ventana = document.getElementById("ventanaSugerencias");
+        ventana.style.display = ventana.style.display === "none" ? "block" : "none";
+    };
+
+    // Simulación de envío
+    function enviarSugerencia() {
+        document.getElementById("mensajeEnviado").style.display = "block";
+        document.getElementById("textoSugerencia").value = "";
+        setTimeout(() => {
+            document.getElementById("mensajeEnviado").style.display = "none";
+        }, 2000);
+    }
+</script>
+
+
+<!-- MENÚ SUPERIOR -->
+<header style="
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 9998;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+">
+    <div style="font-size: 20px; font-weight: bold; color: #4A6FA5;">
+        Villa Los Agapantos
     </div>
 
-    <!-- Ventana flotante -->
-    <div id="ventanaSugerencias" style="
-        display: none;
-        position: fixed;
-        bottom: 80px;
-        right: 20px;
-        width: 300px;
-        background: white;
-        border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-        border: 1px solid #D9D9D9;
-        z-index: 9990;
-    ">
-        <h3 style="margin-top:0;">Aportes de vecinos</h3>
-        <p>Escribe tu sugerencia para mejorar la villa:</p>
+    <nav>
+        <a href="#areas" style="margin-right: 15px; text-decoration:none; color:#333; font-weight:500;">Áreas verdes</a>
+        <a href="#juegos" style="margin-right: 15px; text-decoration:none; color:#333; font-weight:500;">Juegos</a>
+        <a href="#seguridad" style="margin-right: 15px; text-decoration:none; color:#333; font-weight:500;">Seguridad</a>
+        <a href="#contacto" style="text-decoration:none; color:#333; font-weight:500;">Contacto</a>
+    </nav>
+</header>
 
-        <textarea id="textoSugerencia" style="
-            width: 100%;
-            height: 80px;
-            border-radius: 8px;
-            border: 1px solid #CCC;
-            padding: 10px;
-            resize: none;
-        "></textarea>
-
-        <button onclick="enviarSugerencia()" style="
-            margin-top: 10px;
-            width: 100%;
-            padding: 10px;
-            background: #4A6FA5;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-        ">Enviar</button>
-
-        <p id="mensajeEnviado" style="color: green; display:none; margin-top:10px;">
-            ✔ Sugerencia enviada (simulación)
-        </p>
-    </div>
-
-    <script>
-        document.getElementById("btnSugerencias").onclick = function() {
-            let ventana = document.getElementById("ventanaSugerencias");
-            ventana.style.display = ventana.style.display === "none" ? "block" : "none";
-        };
-
-        function enviarSugerencia() {
-            document.getElementById("mensajeEnviado").style.display = "block";
-            document.getElementById("textoSugerencia").value = "";
-            setTimeout(() => {
-                document.getElementById("mensajeEnviado").style.display = "none";
-            }, 2000);
-        }
-    </script>
-
-    <!-- MENÚ SUPERIOR -->
-    <header style="
-        position: sticky;
-        top: 0;
-        background: white;
-        padding: 15px 20px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        z-index: 9998;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    ">
-        <div style="font-size: 20px; font-weight: bold; color: #4A6FA5;">
-            Villa Los Agapantos
-        </div>
-
-        <nav>
-            <a href="#areas" style="margin-right: 15px; text-decoration:none; color:#333; font-weight:500;">Áreas verdes</a>
-            <a href="#juegos" style="margin-right: 15px; text-decoration:none; color:#333; font-weight:500;">Juegos</a>
-            <a href="#seguridad" style="margin-right: 15px; text-decoration:none; color:#333; font-weight:500;">Seguridad</a>
-            <a href="#contacto" style="text-decoration:none; color:#333; font-weight:500;">Contacto</a>
-        </nav>
-    </header>
-
-</body>
 </html>
