@@ -9,7 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Fondo con overlay animado */
+
+        /* ============================
+           FONDO + OVERLAY ANIMADO
+        ============================ */
         body {
             font-family: 'Poppins', sans-serif;
             background: url('Fondo.jpg');
@@ -17,7 +20,7 @@
             background-position: center;
             background-attachment: fixed;
             margin: 0;
-            padding: 0 0 180px 0; /* espacio para que nada tape texto */
+            padding-bottom: 180px; /* evita que el botón tape texto */
             animation: fadeIn 1s ease-in-out;
         }
 
@@ -43,7 +46,10 @@
             to { opacity: 0.45; }
         }
 
-        /* Título principal */
+
+        /* ============================
+           TÍTULO PRINCIPAL
+        ============================ */
         h1 {
             text-align: center;
             background: rgba(74,111,165,0.85);
@@ -59,35 +65,10 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Menú superior animado */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.75);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            z-index: 9998;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            animation: fadeIn 1s ease;
-        }
 
-        header nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        header nav a:hover {
-            color: #4A6FA5;
-            transform: translateY(-3px);
-        }
-
-        /* Menú secundario */
+        /* ============================
+           MENÚ SECUNDARIO
+        ============================ */
         nav {
             background: rgba(217,217,217,0.8);
             padding: 10px;
@@ -117,7 +98,10 @@
             color: #4A6FA5;
         }
 
-        /* Secciones */
+
+        /* ============================
+           SECCIONES
+        ============================ */
         section {
             width: 90%;
             max-width: 900px;
@@ -126,7 +110,10 @@
             animation: fadeIn 1.2s ease;
         }
 
-        /* Tarjetas animadas */
+
+        /* ============================
+           TARJETAS ANIMADAS
+        ============================ */
         .caja {
             background: rgba(255,255,255,0.9);
             padding: 20px;
@@ -142,7 +129,10 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
 
-        /* Imagen principal */
+
+        /* ============================
+           IMAGEN PRINCIPAL
+        ============================ */
         .foto-centro img {
             width: 80%;
             max-width: 600px;
@@ -156,7 +146,10 @@
             transform: scale(1.03);
         }
 
-        /* Galería con efecto 3D */
+
+        /* ============================
+           GALERÍA BASE (efecto 3D va en otra parte)
+        ============================ */
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -174,75 +167,12 @@
             transition: 0.4s;
         }
 
-        .foto-card:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
-        }
-
         .foto-card img {
             width: 100%;
             max-width: 300px;
             border-radius: 12px;
         }
 
-        /* Botón flotante animado */
-        #btnSugerencias {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #4A6FA5;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-            z-index: 9999;
-            transition: 0.3s;
-            animation: pulse 2s infinite;
-        }
-
-        #btnSugerencias:hover {
-            transform: scale(1.12);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.07); }
-            100% { transform: scale(1); }
-        }
-
-        /* Ventana flotante animada */
-        #ventanaSugerencias {
-            display: none;
-            position: fixed;
-            bottom: 110px;
-            right: 25px;
-            width: 300px;
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-            border: 1px solid #D9D9D9;
-            z-index: 9990;
-            animation: slideUp 0.4s ease;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Footer moderno */
-        footer {
-            background: rgba(0,0,0,0.7);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            backdrop-filter: blur(6px);
-            animation: fadeIn 1.5s ease;
-        }
     </style>
 </head>
 <body>
@@ -310,65 +240,106 @@
 
         </div>
     </section>
-
     <section id="avisos">
-        <h2>Recomendaciones</h2>
+        <h2>Avisos y Recomendaciones</h2>
 
         <div class="caja">
             <h3>🚛 Camión de la basura</h3>
-            <p>Se recuerda a todos los vecinos estar atentos al horario del camión de la basura.</p>
+            <p>
+                Se recuerda a todos los vecinos estar atentos al horario del camión de la basura.  
+                Es importante sacar los contenedores con anticipación para evitar retrasos y mantener la limpieza de la villa.
+            </p>
         </div>
 
         <div class="caja">
             <h3>🚸 Velocidad y tránsito dentro de la villa</h3>
-            <p>La Villa Los Agapantos es un recinto público y se rige por la Ley de Tránsito.</p>
+            <p>
+                La Villa Los Agapantos es un recinto público y se rige por la Ley de Tránsito.  
+                Se solicita a todos los conductores respetar los límites de velocidad y estar atentos a los niños que juegan en las áreas comunes.
+            </p>
         </div>
 
         <div class="caja">
             <h3>🚗 Vehículos que bloquean la entrada y salida de vecinos</h3>
-            <p>Evitar bloquear accesos.</p>
+            <p>
+                Evitar estacionar vehículos en lugares que bloqueen accesos o salidas de otros residentes.  
+                Esto genera molestias y puede impedir el paso de emergencias.
+            </p>
         </div>
 
         <div class="caja">
             <h3>🚗 Vehículos estacionados frente a casas de otros vecinos</h3>
-            <p>Un gesto de aviso evita malos entendidos.</p>
+            <p>
+                Se recomienda avisar previamente si se estacionará frente a la casa de otro vecino.  
+                Un gesto simple evita malos entendidos y mantiene la buena convivencia.
+            </p>
         </div>
 
         <div class="caja">
             <h3>🚭 Sustancias y humo en espacios comunes</h3>
-            <p>No fumar sustancias en áreas comunes.</p>
+            <p>
+                No se debe fumar sustancias en áreas comunes, especialmente cerca de niños o adultos mayores.  
+                Mantengamos los espacios limpios y seguros para todos.
+            </p>
         </div>
 
         <div class="caja">
             <h3>🍔 Basura y alimentos en la plaza</h3>
-            <p>No dejar basura en el suelo.</p>
+            <p>
+                No dejar basura en el suelo ni restos de comida en la plaza.  
+                Esto atrae animales y afecta la limpieza del entorno.
+            </p>
         </div>
 
         <div class="caja">
             <h3>🎉 Eventos, cumpleaños y música</h3>
-            <p>Avisar previamente a los vecinos.</p>
+            <p>
+                Si se realizará un evento, cumpleaños o reunión con música, se recomienda avisar previamente a los vecinos.  
+                La comunicación evita molestias y ayuda a mantener la armonía.
+            </p>
         </div>
 
         <div class="caja">
             <h3>🏍️ Motos y deliverys</h3>
-            <p>Coordinar entrada y salida.</p>
+            <p>
+                Coordinar la entrada y salida de motos y deliverys para evitar ruidos innecesarios y mantener el orden en los accesos.
+            </p>
         </div>
 
         <div class="caja">
             <h3>👀 Personas desconocidas</h3>
-            <p>Reportar al grupo comunitario.</p>
-        </div>
-
-        <div class="caja">
-            <h3>👥 Convivencia y comunidad</h3>
-            <p>Respetar espacios compartidos.</p>
-        </div>
-    </section>
     <!-- Botón flotante -->
-    <div id="btnSugerencias">💬 Sugerencias</div>
+    <div id="btnSugerencias" style="
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #4A6FA5;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+        z-index: 9999;
+        transition: 0.3s;
+        animation: pulse 2s infinite;
+    ">💬 Sugerencias</div>
 
     <!-- Ventana flotante -->
-    <div id="ventanaSugerencias">
+    <div id="ventanaSugerencias" style="
+        display: none;
+        position: fixed;
+        bottom: 110px;
+        right: 25px;
+        width: 300px;
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+        border: 1px solid #D9D9D9;
+        z-index: 9990;
+        animation: slideUp 0.4s ease;
+    ">
         <h3 style="margin-top:0;">Aportes de vecinos</h3>
         <p>Escribe tu sugerencia para mejorar la villa:</p>
 
@@ -415,7 +386,15 @@
         }
     </script>
 
-    <footer>
+    <footer style="
+        background: rgba(0,0,0,0.7);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        backdrop-filter: blur(6px);
+        animation: fadeIn 1.5s ease;
+    ">
         Villa Los Agapantos — Colina, Chile
     </footer>
 
