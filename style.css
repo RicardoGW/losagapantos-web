@@ -1511,18 +1511,23 @@ color:white;
         margin-top: 15px;
     }
 
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+   nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+    margin: 10px 0 0;
+    list-style: none;
+}
     }
 
-    nav a {
-        display: block;
-        padding: 8px 0;
-        font-size: 18px;
-    }
-
+     nav a {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 15px;
+}
+    
     section {
         padding: 20px 15px;
     }
