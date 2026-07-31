@@ -1,301 +1,1100 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villa Los Agapantos</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #F5F5F5;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        h1 {
-            text-align: center;
-            background: #4A6FA5;
-            color: white;
-            padding: 20px;
-            margin: 0;
-        }
+<title>Villa Los Agapantos | Comunidad de Vecinos</title>
 
-        nav {
-            background: #D9D9D9;
-            padding: 10px;
-            text-align: center;
-        }
+<meta name="description"
+content="Sitio oficial de la Villa Los Agapantos. Información comunitaria, avisos, galería, recomendaciones y actividades para todos los vecinos.">
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
+<link rel="stylesheet" href="style.css">
 
-        nav ul li {
-            display: inline-block;
-            margin: 0 15px;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        section {
-            width: 90%;
-            max-width: 900px;
-            margin: auto;
-            margin-top: 40px;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-        .caja {
-            background: #FFFFFF;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #D9D9D9;
-            margin-bottom: 20px;
-        }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-        .foto-centro img {
-            width: 80%;
-            max-width: 600px;
-            border-radius: 12px;
-            border: 1px solid #D9D9D9;
-        }
-
-        .galeria-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .foto-card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #D9D9D9;
-            text-align: center;
-        }
-
-        .foto-card img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-        }
-    </style>
 </head>
 
-<body style="
-    background: url('Fondo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-">
+<body>
 
+<!-- =======================================================
+     BARRA SUPERIOR
+======================================================= -->
 
-    <h1>Villa Los Agapantos</h1>
+<div class="topbar">
 
-    <nav>
-        <ul>
-            <li><a href="#nuestra-villa">Nuestra Villa</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#avisos">Avisos</a></li>
-        </ul>
-    </nav>
+<div class="top-item">
+<i class="fa-solid fa-calendar-days"></i>
+<span id="fechaActual"></span>
+</div>
 
-    <section id="nuestra-villa">
-        <h2>Nuestra Villa</h2>
+<div class="top-item">
+<i class="fa-solid fa-clock"></i>
+<span id="horaActual"></span>
+</div>
 
-        <div class="foto-centro">
-            <img src="Los Agapantos.jpeg" alt="Letrero Villa Los Agapantos">
-        </div>
+<div class="top-item">
+<i class="fa-solid fa-temperature-half"></i>
+<span id="temperatura">
+Cargando...
+</span>
+</div>
 
-        <p class="caja">
-            La Villa Los Agapantos es un conjunto residencial ubicado en Colina, caracterizado por su ambiente tranquilo,
-            áreas verdes y una comunidad organizada que busca mantener la buena convivencia entre vecinos.
-        </p>
+<div class="top-item">
+<i class="fa-solid fa-cloud-sun"></i>
+<span id="estadoClima">
+Clima
+</span>
+</div>
 
-        <p class="caja">
-            El letrero tallado en madera representa nuestra identidad: un espacio cálido, tradicional y con sentido de
-            pertenencia.
-        </p>
-    </section>
+<div class="top-item">
+<i class="fa-solid fa-money-bill-trend-up"></i>
 
-    <section id="galeria">
-        <h2>Galería de la Villa</h2>
+<span>
 
-        <p class="caja">
-            Aquí puedes ver algunos de los lugares más representativos de la Villa Los Agapantos.
-        </p>
+UF:
+<strong id="uf">
+Cargando
+</strong>
 
-        <div class="galeria-grid">
+</span>
 
-            <div class="foto-card">
-                <img src="Los Agapantos.jpeg" alt="Letrero principal de la Villa">
-                <p>Letrero de bienvenida tallado en madera.</p>
-            </div>
+</div>
 
-            <div class="foto-card">
-                <img src="Porton entrada.jpeg" alt="Portón de entrada de la Villa">
-                <p>Portón de entrada de la Villa Los Agapantos.</p>
-            </div>
+<div class="top-item">
 
-            <div class="foto-card">
-                <img src="Porton Salida.jpeg" alt="Portón de salida de la Villa">
-                <p>Portón de salida de la Villa Los Agapantos.</p>
-            </div>
+<i class="fa-solid fa-coins"></i>
 
-            <div class="foto-card">
-                <img src="sector juegos 2.jpeg" alt="Sector de juegos de la Villa">
-                <p>Sector de juegos nocturno.</p>
-            </div>
+<span>
 
-            <div class="foto-card">
-                <img src="sector juegos.jpeg" alt="Sector de juegos de la Villa">
-                <p>Sector de juegos nocturno.</p>
-            </div>
+UTM:
+<strong id="utm">
+Cargando
+</strong>
 
-        </div>
-    </section>
+</span>
 
-    <section id="avisos">
-    <h2>Recomendaciones</h2>
+</div>
 
-    <h3>🚛 Camión de la basura</h3>
-    <p>Se recuerda a todos los vecinos estar atentos al horario del camión de la basura. Evitar dejar vehículos mal estacionados que impidan su paso o que puedan provocar daños a los autos de otros residentes.</p>
+</div>
 
-    <h3>🚸 Velocidad y tránsito dentro de la villa</h3>
-    <p>La Villa Los Agapantos es un recinto público y se rige por la Ley de Tránsito. Respetar los límites de velocidad, especialmente en la entrada y salida donde frecuentemente hay niños jugando.</p>
+<!-- =======================================================
+      MENÚ
+======================================================= -->
 
-    <h3>🚗 Vehículos que bloquean la entrada y salida de vecinos</h3>
-    <p>Se pide evitar detenerse o bloquear la entrada y salida de vehículos de otros vecinos. Cuando un auto queda estorbando el acceso, se generan molestias, retrasos y situaciones de riesgo.</p>
+<header class="header">
 
-    <h3>🚗 Vehículos estacionados frente a casas de otros vecinos</h3>
-    <p>Si bien la vía es pública, no cuesta nada avisar por cortesía cuando se deja un vehículo frente a la casa de otro vecino. Un pequeño gesto evita malos entendidos y mejora la convivencia.</p>
+<div class="logo">
 
-    <h3>🚭 Sustancias y humo en espacios comunes</h3>
-    <p>No está permitido fumar sustancias sicotrópicas en la plaza ni en áreas comunes. Si se consume en el hogar, hacerlo en un lugar cerrado para evitar molestias a otros residentes.</p>
+<img src="img/Los Agapantos.jpeg" alt="Villa Los Agapantos">
 
-    <h3>🍔 Basura y alimentos en la plaza</h3>
-    <p>Si consumen alimentos en la plaza y el basurero está lleno, no dejar los desechos en el suelo. Llevarlos a casa evita que los perros rompan las bolsas y generen malos olores.</p>
+<div>
 
-    <h3>🎉 Eventos, cumpleaños y música</h3>
-    <p>Si van a realizar un cumpleaños o actividad con música a alto volumen, avisar previamente a los vecinos cercanos. Una simple comunicación evita molestias y reclamos.</p>
+<h1>Villa Los Agapantos</h1>
 
-    <h3>🏍️ Motos y deliverys</h3>
-    <p>Cuando ingresen motos de delivery, el vecino debe estar atento a la entrada y salida del repartidor. Una buena coordinación evita confusiones y mantiene la convivencia tranquila.</p>
+<p>
+Comunidad • Seguridad • Convivencia
+</p>
 
-    <h3>👀 Personas desconocidas o merodeando la villa</h3>
-    <p>Si se observa a alguna persona extraña merodeando la villa, avisar de inmediato al grupo de WhatsApp comunitario para que todos estén atentos y se prevengan situaciones de riesgo.</p>
+</div>
 
-    <h3>👥 Convivencia y comunidad</h3>
-    <p>La villa funciona gracias al respeto mutuo y la preocupación por los espacios compartidos. Mantener accesos despejados, cuidar áreas verdes y comunicarse entre vecinos fortalece la armonía de la comunidad.</p>
+</div>
+
+<nav>
+
+<ul>
+
+<li>
+<a href="#inicio">
+Inicio
+</a>
+</li>
+
+<li>
+<a href="#nuestra-villa">
+Nuestra Villa
+</a>
+</li>
+
+<li>
+<a href="#galeria">
+Galería
+</a>
+</li>
+
+<li>
+<a href="#calendario">
+Calendario
+</a>
+</li>
+
+<li>
+<a href="#avisos">
+Recomendaciones
+</a>
+</li>
+
+<li>
+<a href="#contacto">
+Contacto
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- =======================================================
+      HERO
+======================================================= -->
+
+<section
+id="inicio"
+class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h2>
+
+Bienvenidos a
+
+<span>
+
+Villa Los Agapantos
+
+</span>
+
+</h2>
+
+<p>
+
+Un espacio pensado para fortalecer la convivencia,
+mantener informados a todos los vecinos y cuidar
+nuestra comunidad.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#nuestra-villa" class="btn">
+
+Conocer la Villa
+
+</a>
+
+<a href="#avisos" class="btn-outline">
+
+Recomendaciones
+
+</a>
+
+</div>
+
+</div>
 
 </section>
-<!-- Botón flotante -->
-<div id="btnSugerencias" style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #4A6FA5;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-    z-index: 9999;
-">
-    💬 Sugerencias
+
+<!-- =======================================================
+      INFORMACIÓN RÁPIDA
+======================================================= -->
+
+<section class="info-panel">
+
+<div class="info-card">
+
+<i class="fa-solid fa-house"></i>
+
+<h3>
+Nuestra Villa
+</h3>
+
+<p>
+
+Comunidad organizada
+
+</p>
+
 </div>
 
-<!-- Ventana flotante -->
-<div id="ventanaSugerencias" style="
-    display: none;
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 300px;
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-    border: 1px solid #D9D9D9;
-    z-index: 9990;
-">
-    <h3 style="margin-top:0;">Aportes de vecinos</h3>
-    <p>Escribe tu sugerencia para mejorar la villa:</p>
+<div class="info-card">
 
-    <textarea id="textoSugerencia" style="
-        width: 100%;
-        height: 80px;
-        border-radius: 8px;
-        border: 1px solid #CCC;
-        padding: 10px;
-        resize: none;
-    "></textarea>
+<i class="fa-solid fa-tree"></i>
 
-    <button onclick="enviarSugerencia()" style="
-        margin-top: 10px;
-        width: 100%;
-        padding: 10px;
-        background: #4A6FA5;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-    ">Enviar</button>
+<h3>
 
-    <p id="mensajeEnviado" style="color: green; display:none; margin-top:10px;">
-        ✔ Sugerencia enviada (simulación)
-    </p>
+Áreas verdes
+
+</h3>
+
+<p>
+
+Espacios para compartir
+
+</p>
+
 </div>
 
-<script>
-    // Mostrar / ocultar ventana
-    document.getElementById("btnSugerencias").onclick = function() {
-        let ventana = document.getElementById("ventanaSugerencias");
-        ventana.style.display = ventana.style.display === "none" ? "block" : "none";
-    };
+<div class="info-card">
 
-    // Simulación de envío
-    function enviarSugerencia() {
-        document.getElementById("mensajeEnviado").style.display = "block";
-        document.getElementById("textoSugerencia").value = "";
-        setTimeout(() => {
-            document.getElementById("mensajeEnviado").style.display = "none";
-        }, 2000);
-    }
-</script>
+<i class="fa-solid fa-shield-halved"></i>
 
+<h3>
 
-<!-- MENÚ SUPERIOR -->
-<header style="
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 15px 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    z-index: 9998;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-">
-    <div style="font-size: 20px; font-weight: bold; color: #4A6FA5;">
-        Villa Los Agapantos
-    </div>
+Seguridad
 
-    <nav>
-        <a href="#areas" style="margin-right: 15px; text-decoration:none; color:#333; font-weight:500;">Áreas verdes</a>
-        <a href="#juegos" style="margin-right: 15px; text-decoration:none; color:#333; font-weight:500;">Juegos</a>
-        <a href="#seguridad" style="margin-right: 15px; text-decoration:none; color:#333; font-weight:500;">Seguridad</a>
-        <a href="#contacto" style="text-decoration:none; color:#333; font-weight:500;">Contacto</a>
-    </nav>
-</header>
+</h3>
+
+<p>
+
+Vecinos comprometidos
+
+</p>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>
+
+Comunidad
+
+</h3>
+
+<p>
+
+Respeto y buena convivencia
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =======================================================
+      NUESTRA VILLA
+======================================================= -->
+
+<section
+id="nuestra-villa"
+class="contenedor">
+
+<h2 class="titulo-seccion">
+
+Nuestra Villa
+
+</h2>
+
+<div class="villa-grid">
+
+<div class="villa-imagen">
+
+<img
+src="img/Los Agapantos.jpeg"
+alt="Villa Los Agapantos">
+
+</div>
+
+<div class="villa-texto">
+<h3>Un lugar para vivir en comunidad</h3>
+
+<p>
+La Villa Los Agapantos es un conjunto residencial ubicado en Colina,
+caracterizado por su ambiente tranquilo, áreas verdes y una comunidad
+organizada que busca mantener una buena convivencia entre todos los vecinos.
+</p>
+
+<p>
+Nuestro tradicional letrero tallado en madera representa la identidad de
+la villa, reflejando el compromiso de sus residentes con el respeto,
+la seguridad y el cuidado de los espacios comunes.
+</p>
+
+<p>
+Este sitio web nace con el propósito de mantener informada a toda la
+comunidad, compartir avisos importantes y fortalecer la participación
+de los vecinos.
+</p>
+
+<div class="villa-botones">
+
+<a href="#galeria" class="btn">
+Ver Galería
+</a>
+
+<a href="#avisos" class="btn-outline">
+Ir a Recomendaciones
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================
+GALERÍA
+=================================================== -->
+
+<section
+id="galeria"
+class="contenedor">
+
+<h2 class="titulo-seccion">
+
+Galería de la Villa
+
+</h2>
+
+<p class="subtitulo">
+
+Algunos de los lugares más representativos de nuestra comunidad.
+
+</p>
+
+<div class="galeria">
+
+<div class="card-foto">
+
+<img src="img/Los Agapantos.jpeg"
+alt="Letrero Villa Los Agapantos">
+
+<div class="overlay">
+
+<h3>Letrero Principal</h3>
+
+<p>
+Bienvenida a la Villa.
+</p>
+
+</div>
+
+</div>
+
+<div class="card-foto">
+
+<img src="img/Porton entrada.jpeg"
+alt="Portón Entrada">
+
+<div class="overlay">
+
+<h3>Portón de Entrada</h3>
+
+<p>
+
+Acceso principal.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card-foto">
+
+<img src="img/Porton Salida.jpeg"
+alt="Portón Salida">
+
+<div class="overlay">
+
+<h3>Portón de Salida</h3>
+
+<p>
+
+Salida de la Villa.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card-foto">
+
+<img src="img/sector juegos.jpeg"
+alt="Sector Juegos">
+
+<div class="overlay">
+
+<h3>
+
+Plaza
+
+</h3>
+
+<p>
+
+Espacio para compartir.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card-foto">
+
+<img src="img/sector juegos 2.jpeg"
+alt="Sector Juegos">
+
+<div class="overlay">
+
+<h3>
+
+Sector de Juegos
+
+</h3>
+
+<p>
+
+Vista nocturna.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================
+CALENDARIO
+=================================================== -->
+
+<section
+id="calendario"
+class="calendario">
+
+<div class="contenedor">
+
+<h2 class="titulo-seccion">
+
+Calendario Comunitario
+
+</h2>
+
+<p class="subtitulo">
+
+Actividades importantes para todos los vecinos.
+
+</p>
+
+<div class="eventos-grid">
+
+<div class="evento">
+
+<div class="evento-icono">
+
+🚛
+
+</div>
+
+<h3>
+
+Camión de Basura
+
+</h3>
+
+<p>
+
+Martes<br>
+Jueves<br>
+Sábado
+
+</p>
+
+</div>
+
+<div class="evento">
+
+<div class="evento-icono">
+
+👥
+
+</div>
+
+<h3>
+
+Reuniones
+
+</h3>
+
+<p>
+
+Información próximamente.
+
+</p>
+
+</div>
+
+<div class="evento">
+
+<div class="evento-icono">
+
+🌳
+
+</div>
+
+<h3>
+
+Operativos
+
+</h3>
+
+<p>
+
+Limpieza y mantención.
+
+</p>
+
+</div>
+
+<div class="evento">
+
+<div class="evento-icono">
+
+🎉
+
+</div>
+
+<h3>
+
+Actividades
+
+</h3>
+
+<p>
+
+Celebraciones comunitarias.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================
+RECOMENDACIONES
+=================================================== -->
+
+<section
+id="avisos"
+class="contenedor">
+
+<h2 class="titulo-seccion">
+
+Recomendaciones
+
+</h2>
+
+<p class="subtitulo">
+
+Por una mejor convivencia entre todos los vecinos.
+
+</p>
+
+<div class="avisos-grid">
+<!-- ======================= TARJETA 1 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+🚛
+</div>
+
+<h3>Camión de la basura</h3>
+
+<p>
+Se recuerda a todos los vecinos estar atentos al horario del camión de la basura.
+Evitar dejar vehículos mal estacionados que impidan su paso o que puedan provocar
+daños a los autos de otros residentes.
+</p>
+
+</div>
+
+<!-- ======================= TARJETA 2 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+🚸
+</div>
+
+<h3>Velocidad y tránsito dentro de la villa</h3>
+
+<p>
+La Villa Los Agapantos es un recinto público y se rige por la Ley de Tránsito.
+Respetar los límites de velocidad, especialmente en la entrada y salida donde
+frecuentemente hay niños jugando.
+</p>
+
+</div>
+
+<!-- ======================= TARJETA 3 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+🚗
+</div>
+
+<h3>Vehículos que bloquean entradas y salidas</h3>
+
+<p>
+Se pide evitar detenerse o bloquear la entrada y salida de vehículos de otros
+vecinos. Cuando un auto queda estorbando el acceso, se generan molestias,
+retrasos y situaciones de riesgo.
+</p>
+
+</div>
+
+<!-- ======================= TARJETA 4 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+🅿️
+</div>
+
+<h3>Vehículos estacionados frente a otras viviendas</h3>
+
+<p>
+Si bien la vía es pública, no cuesta nada avisar por cortesía cuando se deja un
+vehículo frente a la casa de otro vecino. Un pequeño gesto evita malos
+entendidos y mejora la convivencia.
+</p>
+
+</div>
+
+<!-- ======================= TARJETA 5 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+🚭
+</div>
+
+<h3>Sustancias y humo en espacios comunes</h3>
+
+<p>
+No está permitido fumar sustancias sicotrópicas en la plaza ni en áreas comunes.
+Si se consume en el hogar, hacerlo en un lugar cerrado para evitar molestias a
+otros residentes.
+</p>
+
+</div>
+
+<!-- ======================= TARJETA 6 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+🍔
+</div>
+
+<h3>Basura y alimentos en la plaza</h3>
+
+<p>
+Si consumen alimentos en la plaza y el basurero está lleno, no dejar los desechos
+en el suelo. Llevarlos a casa evita que los perros rompan las bolsas y generen
+malos olores.
+</p>
+
+</div>
+
+<!-- ======================= TARJETA 7 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+🎉
+</div>
+
+<h3>Eventos, cumpleaños y música</h3>
+
+<p>
+Si van a realizar un cumpleaños o actividad con música a alto volumen, avisar
+previamente a los vecinos cercanos. Una simple comunicación evita molestias y
+reclamos.
+</p>
+
+</div>
+
+<!-- ======================= TARJETA 8 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+🏍️
+</div>
+
+<h3>Motos y delivery</h3>
+
+<p>
+Cuando ingresen motos de delivery, el vecino debe estar atento a la entrada y
+salida del repartidor. Una buena coordinación evita confusiones y mantiene la
+convivencia tranquila.
+</p>
+
+</div>
+
+<!-- ======================= TARJETA 9 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+👀
+</div>
+
+<h3>Personas desconocidas o merodeando la villa</h3>
+
+<p>
+Si se observa a alguna persona extraña merodeando la villa, avisar de inmediato
+al grupo de WhatsApp comunitario para que todos estén atentos y se prevengan
+situaciones de riesgo.
+</p>
+
+</div>
+
+<!-- ======================= TARJETA 10 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+🤝
+</div>
+
+<h3>Convivencia y comunidad</h3>
+
+<p>
+La villa funciona gracias al respeto mutuo y la preocupación por los espacios
+compartidos. Mantener accesos despejados, cuidar áreas verdes y comunicarse
+entre vecinos fortalece la armonía de la comunidad.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================================================
+SUGERENCIAS
+=================================================== -->
+
+<section id="contacto" class="contenedor">
+
+<h2 class="titulo-seccion">
+
+Aportes de los Vecinos
+
+</h2>
+
+<p class="subtitulo">
+
+Tu opinión es importante para seguir mejorando nuestra comunidad.
+
+</p>
+
+<div class="sugerencias-box">
+
+<div class="sugerencias-info">
+
+<h3>
+
+💬 Envíanos tu sugerencia
+
+</h3>
+
+<p>
+
+Si tienes alguna idea para mejorar la Villa Los Agapantos,
+puedes escribirnos utilizando el siguiente formulario.
+
+Toda sugerencia será revisada por la administración antes
+de ser publicada.
+
+</p>
+
+<ul>
+
+<li>✔ Mejoras en áreas verdes.</li>
+
+<li>✔ Seguridad.</li>
+
+<li>✔ Iluminación.</li>
+
+<li>✔ Aseo.</li>
+
+<li>✔ Actividades comunitarias.</li>
+
+<li>✔ Cualquier otra idea.</li>
+
+</ul>
+
+</div>
+
+<div class="sugerencias-form">
+
+<form id="formSugerencias">
+
+<input
+type="text"
+placeholder="Nombre (opcional)">
+
+<input
+type="email"
+placeholder="Correo electrónico (opcional)">
+
+<textarea
+
+placeholder="Escribe aquí tu sugerencia..."
+
+rows="8"
+
+></textarea>
+
+<button
+type="submit"
+class="btn">
+
+Enviar sugerencia
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================
+INFORMACIÓN ÚTIL
+=================================================== -->
+
+<section class="informacion-util">
+
+<div class="contenedor">
+
+<h2 class="titulo-seccion">
+
+Información útil
+
+</h2>
+
+<div class="info-grid">
+
+<div class="info-util">
+
+<i class="fa-solid fa-phone-volume"></i>
+
+<h3>
+
+Emergencias
+
+</h3>
+
+<p>
+
+133 Carabineros<br>
+
+132 Bomberos<br>
+
+131 SAMU
+
+</p>
+
+</div>
+
+<div class="info-util">
+
+<i class="fa-solid fa-building"></i>
+
+<h3>
+
+Municipalidad
+
+</h3>
+
+<p>
+
+Ilustre Municipalidad de Colina
+
+</p>
+
+</div>
+
+<div class="info-util">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>
+
+Electricidad
+
+</h3>
+
+<p>
+
+Enel Distribución
+
+</p>
+
+</div>
+
+<div class="info-util">
+
+<i class="fa-solid fa-droplet"></i>
+
+<h3>
+
+Agua
+
+</h3>
+
+<p>
+
+Aguas Andinas
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================
+FOOTER
+=================================================== -->
+
+<footer>
+
+<div class="footer-contenido">
+
+<div>
+
+<h3>
+
+Villa Los Agapantos
+
+</h3>
+
+<p>
+
+Comunidad organizada para una mejor convivencia.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+Enlaces
+
+</h4>
+
+<ul>
+
+<li>
+<a href="#inicio">
+Inicio
+</a>
+</li>
+
+<li>
+<a href="#galeria">
+Galería
+</a>
+</li>
+
+<li>
+<a href="#calendario">
+Calendario
+</a>
+</li>
+
+<li>
+<a href="#avisos">
+Recomendaciones
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Contacto
+
+</h4>
+
+<p>
+
+WhatsApp Comunitario
+
+</p>
+
+<p>
+
+Colina - Región Metropolitana
+
+</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 Villa Los Agapantos
+
+<br>
+
+Desarrollado para la comunidad.
+
+</div>
+
+</footer>
+
+<button id="btnArriba">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<script src="script.js"></script>
+
+</body>
 
 </html>
