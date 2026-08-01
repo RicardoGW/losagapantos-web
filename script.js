@@ -21,8 +21,10 @@ year:'numeric'
 document.getElementById("fechaActual").textContent=
 fecha.toLocaleDateString('es-CL',opcionesFecha);
 
-document.getElementById("horaActual").textContent=
-fecha.toLocaleTimeString('es-CL');
+document.getElementById("horaActual").textContent =
+fecha.toLocaleTimeString('es-CL', {
+    hour12: false
+});
 
 }
 
