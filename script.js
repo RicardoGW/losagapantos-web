@@ -308,3 +308,8 @@ if (menuBtn && nav) {
         nav.classList.toggle("activo");
     });
 }
+document.querySelectorAll("#menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("activo");
+    });
+});
