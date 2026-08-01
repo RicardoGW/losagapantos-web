@@ -1497,9 +1497,8 @@ nav{
 }
 
 nav.activo{
-    display:block;
-}
-
+    display:block !important;
+  } 
 nav ul{
     display:flex;
     flex-direction:column;
