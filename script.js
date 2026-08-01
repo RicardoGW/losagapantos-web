@@ -301,7 +301,7 @@ PREPARADO PARA CALENDARIO
 FIN DEL SCRIPT
 =========================================*/
 const menuBtn = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
+const nav = document.getElementById("menu");
 
 if (menuBtn && nav) {
     menuBtn.addEventListener("click", () => {
