@@ -728,6 +728,25 @@ translateY(0);
 
 }
 /*====================================================
+INFORME CLIMATOLÓGICO
+====================================================*/
+
+#clima{
+    background:#eef7ff;
+}
+
+#clima .info-util{
+    transition:.3s;
+}
+
+#clima .info-util:hover{
+    transform:translateY(-8px);
+}
+
+#clima .btn{
+    margin-top:20px;
+}
+/*====================================================
 CALENDARIO
 ====================================================*/
 
