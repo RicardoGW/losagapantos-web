@@ -300,3 +300,11 @@ PREPARADO PARA CALENDARIO
 /*=========================================
 FIN DEL SCRIPT
 =========================================*/
+const menuBtn = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+if (menuBtn && nav) {
+    menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("activo");
+    });
+}
