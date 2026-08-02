@@ -23,6 +23,8 @@ fecha.toLocaleDateString('es-CL',opcionesFecha);
 
 document.getElementById("horaActual").textContent =
 fecha.toLocaleTimeString('es-CL', {
+    hour: '2-digit',
+    minute: '2-digit',
     hour12: false
 });
 
