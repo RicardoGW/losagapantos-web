@@ -1230,7 +1230,7 @@ text-align:center;
 
 background-attachment:scroll;
 
-padding:20px;
+padding:10px 15px;
 
 }
 
@@ -1266,7 +1266,7 @@ padding:15px;
 
 .header{
 
-padding:20px;
+padding:8px 15px;
 
 }
 
@@ -1328,9 +1328,21 @@ font-size:2rem;
 
 .logo img{
 
-width:55px;
+width:48px;
 
-height:55px;
+height:48px;
+
+}
+
+.logo h1{
+
+font-size:1.1rem;
+
+}
+
+.logo p{
+
+font-size:.75rem;
 
 }
 
