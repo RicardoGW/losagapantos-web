@@ -297,6 +297,19 @@ async function cargarClima() {
         );
 
         const datos = await respuesta.json();
+        const codigo = datos.current.weather_code;
+
+let estado = "Clima";
+
+if (codigo === 0) estado = "Despejado";
+else if (codigo === 1) estado = "Mayormente despejado";
+else if (codigo === 2) estado = "Parcialmente nublado";
+else if (codigo === 3) estado = "Nublado";
+else if (codigo >= 51 && codigo <= 67) estado = "Lluvia";
+else if (codigo >= 71 && codigo <= 77) estado = "Nieve";
+else if (codigo >= 80 && codigo <= 99) estado = "Chubascos";
+
+document.getElementById("estadoClima").textContent = estado;
 
         document.getElementById("temperatura").textContent =
             `${Math.round(datos.current.temperature_2m)}°C`;
