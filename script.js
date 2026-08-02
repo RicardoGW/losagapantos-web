@@ -288,6 +288,29 @@ PREPARADO PARA API CLIMA
 =========================================*/
 
 // Aquí conectaremos Open-Meteo
+async function cargarClima() {
+
+    try {
+
+        const respuesta = await fetch(
+            "https://api.open-meteo.com/v1/forecast?latitude=-33.2047&longitude=-70.6781&current=temperature_2m,weather_code"
+        );
+
+        const datos = await respuesta.json();
+
+        document.getElementById("temperatura").textContent =
+            `${Math.round(datos.current.temperature_2m)}°C`;
+
+    } catch (error) {
+
+        document.getElementById("temperatura").textContent =
+            "No disponible";
+
+    }
+
+}
+
+cargarClima();
 
 /*=========================================
 PREPARADO PARA API UF
