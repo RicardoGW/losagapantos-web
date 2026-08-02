@@ -444,8 +444,13 @@ line-height:1.1;
 
 display:block;
 
-color:#4CAF50;
+background:linear-gradient(90deg,#2d7dd2,#4CAF50);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+color:transparent;
 
+}
 }
 
 .hero p{
