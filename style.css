@@ -237,9 +237,37 @@ font-size:.92rem;
 
 display:flex;
 
-gap:8px;
-
 align-items:center;
+
+gap:10px;
+
+padding:6px 12px;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(10px);
+
+font-weight:600;
+
+transition:.3s;
+
+}
+.top-item i{
+
+color:#4CAF50;
+
+font-size:1rem;
+
+}
+#horaActual{
+
+font-size:1rem;
+
+font-weight:700;
+
+letter-spacing:.5px;
 
 }
 
