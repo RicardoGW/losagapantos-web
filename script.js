@@ -328,6 +328,27 @@ cargarClima();
 /*=========================================
 PREPARADO PARA API UF
 =========================================*/
+async function cargarUF() {
+
+    try {
+
+        const respuesta = await fetch("https://mindicador.cl/api");
+
+        const datos = await respuesta.json();
+
+        document.getElementById("uf").textContent =
+            datos.uf.valor.toLocaleString("es-CL");
+
+    } catch (error) {
+
+        document.getElementById("uf").textContent =
+            "No disponible";
+
+    }
+
+}
+
+cargarUF();
 
 // Aquí conectaremos Banco Central o mindicador.cl
 
