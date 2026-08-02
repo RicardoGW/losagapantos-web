@@ -1521,6 +1521,9 @@ background:var(--verde);
 color:white;
 
 }
+.menu-toggle{
+    display:none;
+}
 /* ===========================
    CELULARES
 =========================== */
