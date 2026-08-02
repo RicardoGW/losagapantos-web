@@ -293,7 +293,7 @@ justify-content:space-between;
 
 align-items:center;
 
-padding:18px 7%;
+padding:10px 7%;
 
 box-shadow:0 3px 20px rgba(0,0,0,.08);
 
@@ -311,9 +311,9 @@ gap:15px;
 
 .logo img{
 
-width:90px;
+width:70px;
 
-height:90px;
+height:70px;
 
 border-radius:50%;
 
@@ -323,7 +323,7 @@ object-fit:cover;
 
 .logo h1{
 
-font-size:1.35rem;
+font-size:1.25rem;
 
 color:var(--azul);
 
