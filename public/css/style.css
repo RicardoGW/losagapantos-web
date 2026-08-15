@@ -1122,7 +1122,7 @@ transform:translateY(-10px);
     width: 100%;
     max-width: 900px;
     padding: 0 16px;
-    margin-top: -65px;
+    margin-top: -25px;
 }
 
 .hero h2 {
@@ -1302,8 +1302,8 @@ transform:translateY(-10px);
     }
 
     .icono-aviso img {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     display: block;
     margin: 0;
