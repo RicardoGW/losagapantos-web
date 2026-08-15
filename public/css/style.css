@@ -209,6 +209,22 @@ box-shadow:var(--sombra);
 transform:translateY(-5px);
 
 }
+.contador-visitas {
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,.12);
+    border: 1px solid rgba(255,255,255,.7);
+    transition: .35s;
+}
+
+.contador-visitas:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,.16);
+}
+
 
 /*======================
 TOPBAR
@@ -778,13 +794,36 @@ transition:1s;
 
 }
 
+
 .fade.visible{
 
+
 opacity:1;
+
 
 transform:
 translateY(0);
 
+
+}
+
+
+@keyframes contadorBrillo {
+
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+
+}
+
+
+.titulo-telefonos {
+    text-align: center;
+    margin: 0 auto 15px;
 }
 /*====================================================
 INFORME CLIMATOLÓGICO
@@ -855,22 +894,17 @@ transform:translateY(-10px);
 
 }
 
-.evento-icono{
-
-font-size:55px;
-
-margin-bottom:20px;
-
+.evento-icono {
+    font-size: 55px;
+    margin-bottom: 20px;
+    transform: translateY(-10px);
 }
 
-.evento h3{
-
-margin-bottom:15px;
-
-color:var(--azul);
-
-font-size:1.4rem;
-
+.evento h3 {
+    margin-top: -8px;
+    margin-bottom: 15px;
+    color: var(--azul);
+    font-size: 1.4rem;
 }
 
 /* ====================================================
@@ -895,1243 +929,635 @@ font-size:1.4rem;
 }
 
 
+.menu-toggle {
+    display: none;
+}
 
-
-
-/* ====================================================
-   CELULAR
+* ====================================================
+   DISEÑO RESPONSIVO - MÓVIL
    ==================================================== */
 
-@media (max-width:768px){
+.menu-toggle {
+    display: none;
+}
 
-    .avisos-grid{
-        grid-template-columns:1fr;
-        gap:20px;
+@media screen and (max-width: 768px) {
+
+    /* ---------- BARRA SUPERIOR ---------- */
+
+    .topbar {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 5px;
+        padding: 6px;
+        font-size: .70rem;
+        box-sizing: border-box;
     }
 
-    .avisos-grid .aviso-card{
-        grid-column:1;
+    .top-item {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 6px 3px;
+        border-radius: 8px;
+        white-space: normal;
+        overflow: visible;
+        text-align: center;
+        line-height: 1.15;
     }
 
+    .top-item i {
+        font-size: .75rem;
+        flex: 0 0 auto;
+    }
+
+    #horaActual {
+        font-size: .75rem;
+        white-space: nowrap;
+    }
+
+
+    /* ---------- ENCABEZADO ---------- */
+
+    .header {
+        position: sticky;
+        top: 0;
+        min-height: 72px;
+        height: 72px;
+        padding: 4px 58px 4px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        background: rgba(255,255,255,.94);
+        z-index: 9999;
+    }
+
+    .logo {
+        width: 100%;
+        max-width: calc(100% - 55px);
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: transparent;
+    }
+
+    .titulo-web {
+        width: auto;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .titulo-villa {
+    width: 285px;
+    height: 72px;
+    object-fit: cover;
+    object-position: center 48%;
+    display: block;
+    margin: 0;
 }
 
-.aviso-card{
-    background:white;
-    border-left:6px solid var(--verde);
-    padding:06px 28px 24px;
-    border-radius:18px;
-    box-shadow:0 15px 30px rgba(0,0,0,.08);
-    transition:.35s;
-    position:relative;
-    overflow:hidden;
+
+    /* ---------- BOTÓN HAMBURGUESA ---------- */
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: 0;
+        font-size: 30px;
+        line-height: 1;
+        color: #183153;
+        cursor: pointer;
+        z-index: 10001;
+    }
+
+
+   /* ---------- MENÚ MÓVIL ---------- */
+
+.header #menu {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    padding: 8px;
+    background: rgba(255,255,255,.98);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+    z-index: 10000;
 }
 
-.aviso-card .icono-aviso{
-    margin-bottom:10px;
+.header #menu.activo {
+    display: block !important;
 }
 
-.aviso-card .icono-aviso img{
-    width:95px;
-    height:55px;
-    object-fit:contain;
-    object-position:left center;
+    .header #menu.active {
+        display: block;
+    }
+
+    .header #menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header #menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .header #menu li::after {
+        display: none;
+    }
+
+    .header #menu a {
+        display: block;
+        width: 100%;
+        padding: 10px 8px;
+        border-radius: 9px;
+    }
+
+    .header #menu a:hover {
+        background: #f0f5f2;
+        transform: none;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+.hero {
+    min-height: 42vh;
+    height: auto;
+    background-attachment: scroll;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px 20px;
+    box-sizing: border-box;
 }
 
-.aviso-card .icono-aviso img{
-    width:95px;
-    height:75px;
-    object-fit:contain;
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 16px;
+    margin-top: -65px;
 }
 
-.aviso-card h3{
-    margin:0 0 5px 0;
-    color:var(--azul);
-    font-size:1.15rem;
-    line-height:1.25;
+.hero h2 {
+    font-size: 2.15rem;
+    line-height: 1.15;
+    margin-bottom: 18px;
 }
 
-.aviso-card p{
-    margin:0 0 6px 0;
-    padding:0;
-    text-align:justify;
-    line-height:1.15;
-    font-size:14px;
+.hero p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 28px;
 }
 
-.aviso-card p:last-child{
-    margin-bottom:0;
-}
-.aviso-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 25px 45px rgba(0,0,0,.15);
-
-}
-
-.icono-aviso{
-
-font-size:45px;
-
-margin-bottom:15px;
-
-}
-
-.aviso-card h3{
-
-margin-bottom:15px;
-
-color:var(--azul);
-
-font-size:1.3rem;
-
-}
-
-.aviso-card p{
-
-text-align:justify;
-
-line-height:1.25;
-
-}
-
-/*====================================================
-SUGERENCIAS
-====================================================*/
-
-.sugerencias-box{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:50px;
-
-align-items:center;
-
-margin-top:50px;
-
-}
-
-.sugerencias-info ul{
-
-margin-top:25px;
-
-padding-left:20px;
-
-}
-
-.sugerencias-info li{
-
-margin-bottom:12px;
-
-}
-
-.sugerencias-form{
-
-background:white;
-
-padding:35px;
-
-border-radius:20px;
-
-box-shadow:0 20px 40px rgba(0,0,0,.08);
-
-}
-
-.sugerencias-form input,
-.sugerencias-form textarea{
-
-width:100%;
-
-padding:16px;
-
-margin-bottom:18px;
-
-border:1px solid #d8d8d8;
-
-border-radius:12px;
-
-font-family:Poppins,sans-serif;
-
-font-size:1rem;
-
-}
-
-.sugerencias-form textarea{
-
-resize:vertical;
-
-min-height:180px;
-
-}
-
-.sugerencias-form input:focus,
-.sugerencias-form textarea:focus{
-
-outline:none;
-
-border-color:var(--verde);
-
-box-shadow:0 0 12px rgba(76,175,80,.25);
-
-}
-
-/*====================================================
-INFORMACIÓN ÚTIL
-====================================================*/
-
-.informacion-util{
-
-background:#f6f8fb;
-
-padding:90px 0;
-
-}
-
-.info-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(230px,1fr));
-
-gap:30px;
-
-margin-top:50px;
-
-}
-
-.info-util{
-
-background:white;
-
-padding:35px;
-
-text-align:center;
-
-border-radius:18px;
-
-transition:.35s;
-
-box-shadow:0 15px 30px rgba(0,0,0,.08);
-
-}
-
-.info-util:hover{
-
-transform:translateY(-8px);
-
-}
-
-.info-util i{
-
-font-size:48px;
-
-margin-bottom:20px;
-
-color:var(--verde);
-
-}
-
-.info-util h3{
-
-margin-bottom:15px;
-
-color:var(--azul);
-
-}
-
-/*====================================================
-FOOTER
-====================================================*/
-
-footer{
-
-background:#183153;
-
-color:white;
-
-padding:70px 0 30px;
-
-}
-
-.footer-contenido{
-
-width:min(1200px,92%);
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:
-2fr 1fr 1fr;
-
-gap:50px;
-
-}
-
-.footer-contenido h3,
-.footer-contenido h4{
-
-margin-bottom:18px;
-
-}
-
-.footer-contenido ul{
-
-list-style:none;
-
-}
-
-.footer-contenido li{
-
-margin-bottom:12px;
-
-}
-
-.footer-contenido a{
-
-transition:.3s;
-
-}
-
-.footer-contenido a:hover{
-
-color:#8EE3A4;
-
-}
-
-.copyright{
-
-margin-top:50px;
-
-text-align:center;
-
-opacity:.8;
-
-font-size:.9rem;
-
-}
-
-/*====================================================
-BOTÓN SUBIR
-====================================================*/
-
-#btnArriba{
-
-position:fixed;
-
-right:30px;
-
-bottom:30px;
-
-width:60px;
-
-height:60px;
-
-border:none;
-
-border-radius:50%;
-
-background:linear-gradient(
-135deg,
-var(--azul),
-var(--verde));
-
-color:white;
-
-font-size:22px;
-
-cursor:pointer;
-
-display:none;
-
-box-shadow:0 20px 35px rgba(0,0,0,.25);
-
-transition:.3s;
-
-z-index:999;
-
-}
-
-#btnArriba:hover{
-
-transform:translateY(-5px);
-
-}
-/*====================================================
-RESPONSIVE
-====================================================*/
-
-@media(max-width:1100px){
-
-.header{
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-.header ul{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
-.villa-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.sugerencias-box{
-
-grid-template-columns:1fr;
-
-}
-
-.footer-contenido{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.hero{
-
-background-attachment:scroll;
-
-padding:10px 15px;
-
-}
-
-.hero h2{
-
-font-size:2.6rem;
-
-}
-
-.hero p{
-
-font-size:1rem;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
-
-align-items:center;
-
-}
-
-.topbar{
-
-gap:15px;
-
-font-size:.85rem;
-
-padding:15px;
-
-}
-
-.header{
-
-padding:8px 15px;
-position:relative;
-
-}
-
-.header nav{
-
-width:100%;
-
-}
-
-.header ul{
-
-flex-direction:column;
-
-gap:15px;
-
-}
-
-.info-panel{
-
-grid-template-columns:1fr;
-
-margin-top:-40px;
-
-}
-
-.galeria{
-
-grid-template-columns:1fr;
-
-}
-
-.avisos-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.eventos-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.info-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.titulo-seccion{
-
-font-size:2rem;
-
-}
-
-}
-
-@media(max-width:480px){
-
-.logo img{
-
-width:48px;
-
-height:48px;
-
-}
-
-.logo h1{
-
-font-size:1.1rem;
-
-}
-
-.logo p{
-
-font-size:.75rem;
-
-}
-.hero h2{
-
-font-size:2.1rem;
-
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .btn,
-
-.btn-outline{
-
-width:100%;
-
-text-align:center;
-
-}
-
-}
-
-/*====================================================
-EFECTOS
-====================================================*/
-
-.card-foto,
-.aviso-card,
-.info-card,
-.evento,
-.info-util{
-
-opacity:0;
-
-transform:translateY(40px);
-
-transition:all .8s ease;
-
-}
-
-.card-foto.visible,
-.aviso-card.visible,
-.info-card.visible,
-.evento.visible,
-.info-util.visible{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-/*====================================================
-LIGHTBOX
-====================================================*/
-
-.lightbox{
-
-position:fixed;
-
-inset:0;
-
-background:rgba(0,0,0,.92);
-
-display:none;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:99999;
-
-}
-
-.lightbox img{
-
-max-width:90%;
-
-max-height:90%;
-
-border-radius:15px;
-
-box-shadow:0 20px 50px rgba(0,0,0,.5);
-
-animation:zoom .35s;
-
-cursor:pointer;
-
-}
-
-@keyframes zoom{
-
-from{
-
-transform:scale(.7);
-
-opacity:0;
-
-}
-
-to{
-
-transform:scale(1);
-
-opacity:1;
-
-}
-
-}
-
-/*====================================================
-BARRA DE SCROLL
-====================================================*/
-
-#progress{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:0;
-
-height:5px;
-
-background:linear-gradient(
-90deg,
-var(--verde),
-var(--azul)
-);
-
-z-index:99999;
-
-}
-
-/*====================================================
-MODO OSCURO
-====================================================*/
-
-.dark{
-
-background:#121212;
-
-color:#f2f2f2;
-
-}
-
-.dark .header{
-
-background:rgba(25,25,25,.92);
-
-}
-
-.dark .info-card,
-.dark .evento,
-.dark .aviso-card,
-.dark .info-util,
-.dark .sugerencias-form{
-
-background:#1f1f1f;
-
-color:#eee;
-
-}
-
-.dark footer{
-
-background:#0d1117;
-
-}
-
-.dark .titulo-seccion{
-
-color:white;
-
-}
-
-.dark .subtitulo{
-
-color:#bbb;
-
-}
-
-/*====================================================
-SELECCIÓN DE TEXTO
-====================================================*/
-
-::selection{
-
-background:var(--verde);
-
-color:white;
-
-}
-.menu-toggle{
-    display:none;
-}
-/* ===========================
-   CELULARES
-=========================== */
-
-@media screen and (max-width:768px){
-
-.menu-toggle{
-   
-display:block;
-position:absolute;
-top:15px;
-right:15px;
-background:none;
-border:none;
-font-size:32px;
-color:#183153;
-cursor:pointer;
-margin:0;
-z-index:1000;
-
-}
-
-nav{
-    display:none;
-    width:100%;
-}
-
-nav.activo{
-    display:block !important;
-  } 
-nav ul{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    list-style:none;
-    padding:0;
-    margin:15px 0 0;
-}
-
-nav a{
-    display:block;
-    padding:12px;
-    text-align:center;
-}
-
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 4%;
-    position:relative;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.logo img{
-    width:55px;
-    height:55px;
-}
-
-.logo h1{
-    font-size:24px;
-}
-
-.logo p{
-    font-size:14px;
-}
-
-section{
-    padding:20px 15px;
-}
-
-}
-
- /*====================================================
-CONTADOR DE VISITAS
-====================================================*/
-/*====================================================
-  TARJETAS RADIO Y CONTADOR - COMPACTAS
-====================================================*/
-
-/* Reducir espacio entre las tarjetas */
-
-section.contenedor:has(.contador-visitas){
-
-    padding-top:10px !important;
-    padding-bottom:10px !important;
-
+.btn-outline {
+    padding: 12px 20px;
+    font-size: .9rem;
 }
 
 
-/* Tarjetas */
+    /* ---------- PANEL DE INFORMACIÓN ---------- */
 
-.contador-visitas{
-
-    width:200px !important;
-    max-width:200px !important;
-    min-width:200px !important;
-
-    margin:4px auto !important;
-
-    padding:3px 8px !important;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    box-sizing:border-box;
-
-    background:linear-gradient(
-        145deg,
-        #ffffff,
-        #f4faf7
-    );
-
-    border:2px solid var(--verde);
-
-    border-radius:14px;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,.10),
-        inset 0 0 8px rgba(76,175,80,.06);
-
-    text-align:center;
-
-    position:relative;
-
-    overflow:hidden;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-
+    .info-panel {
+    width: 92%;
+    margin: 15px auto 45px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
 }
 
-
-/* Línea luminosa */
-
-.contador-visitas::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:-100%;
-
-    width:100%;
-    height:2px;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        var(--verde),
-        var(--azul),
-        transparent
-    );
-
-    animation:contadorBrillo 3s linear infinite;
-
-}
-
-
-/* Efecto */
-
-.contador-visitas:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 10px 20px rgba(0,0,0,.14),
-        0 0 12px rgba(76,175,80,.15);
-
-}
-
-
-/* Icono */
-
-.contador-visitas .contador-icono{
-
-    font-size:22px !important;
-
-    line-height:1 !important;
-
-    margin:0 0 3px !important;
-
-}
-
-
-/* Título */
-
-.contador-visitas h3{
-
-    font-size:15px !important;
-
-    line-height:1.15 !important;
-
-    font-weight:800;
-
-    letter-spacing:.3px;
-
-    color:var(--azul);
-
-    margin:2px 0 4px !important;
-
-}
-
-
-/* Número */
-
-.contador-visitas #contadorVisitas{
-
-    font-size:34px !important;
-
-    line-height:1 !important;
-
-    font-weight:800;
-
-    color:var(--verde) !important;
-
-    margin:3px 0 !important;
-
-    text-shadow:
-        0 0 7px rgba(76,175,80,.18);
-
-}
-
-
-/* Texto */
-
-.contador-visitas .contador-texto{
-
-    font-size:8px !important;
-
-    line-height:1 !important;
-
-    font-weight:600;
-
-    letter-spacing:.5px;
-
-    margin:2px 0 4px !important;
-
-}
-
-
-/* Descripción */
-
-.contador-visitas p{
-
-    font-size:9px !important;
-
-    line-height:1.2 !important;
-
-    margin:2px 0 !important;
-
-}
-
-
-/* Botón Radio */
-
-.contador-visitas .btn{
-
-    margin-top:5px;
-
-    padding:7px 14px;
-
-    font-size:11px;
-
-}
-
-
-/* Animación */
-
-@keyframes contadorBrillo{
-
-    0%{
-        left:-100%;
+    .info-card {
+        padding: 20px 12px;
     }
 
-    100%{
-        left:100%;
+    .info-card i {
+        font-size: 2rem;
+        margin-bottom: 10px;
     }
 
+    .info-card h3 {
+        font-size: 1rem;
+    }
+
+    .info-card p {
+        font-size: .82rem;
+    }
+
+
+    /* ---------- CONTENEDORES Y TÍTULOS ---------- */
+
+    .contenedor {
+    width: 92%;
+    padding: 25px 0;
 }
-/* ====================================================
-   AJUSTE GENERAL DE ESPACIOS DE LA PÁGINA
-   ==================================================== */
-
-/* Espacio general de las secciones */
-
-.contenedor{
-
-    padding-top:40px !important;
-    padding-bottom:40px !important;
-
+    .info-panel + .contenedor {
+    padding-top: 15px;
 }
-
-
-/* Espacio debajo de los subtítulos */
-
-.subtitulo{
-
-    margin-bottom:30px !important;
-
+#galeria {
+    padding-top: 0;
 }
-
-
-/* Información útil */
-
-.informacion-util{
-
-    padding-top:45px !important;
-    padding-bottom:45px !important;
-
+#galeria {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
-
-
-/* Calendario */
-
-.calendario{
-
-    padding-top:50px !important;
-    padding-bottom:50px !important;
-
+#clima {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#nuestra-villa {
+    padding-bottom: 15px;
 }
 
+    .titulo-seccion {
+    max-width: 100%;
+    padding: 10px 18px;
+    font-size: 1.15rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+    }
 
-/* Radio y contador */
+    .subtitulo {
+        font-size: .95rem;
+        line-height: 1.5;
+        margin-bottom: 05px;
+    }
 
-section.contenedor:has(.contador-visitas){
 
-    padding-top:20px !important;
-    padding-bottom:20px !important;
+    /* ---------- NUESTRA VILLA ---------- */
 
+    .villa-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .villa-texto h3 {
+        font-size: 1.55rem;
+        margin-bottom: 18px;
+    }
+
+    .villa-texto p {
+        font-size: .95rem;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+
+    /* ---------- GALERÍA ---------- */
+
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card-foto img {
+        height: 250px;
+    }
+
+
+    /* ---------- CALENDARIO ---------- */
+
+    #clima.contenedor {
+    padding-bottom: 10px !important;
+}
+
+.calendario {
+    padding: 10px 0 30px !important;
+    margin: 0 !important;
+}
+
+.calendario .contenedor {
+    padding-top: 10px !important;
+    padding-bottom: 20px !important;
+}
+
+    .eventos-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 15px;
+}
+
+    .evento {
+        padding: 25px 18px;
+    }
+
+
+    /* ---------- RECOMENDACIONES ---------- */
+
+    .avisos-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        column-count: auto !important;
+        columns: auto !important;
+        column-gap: 0 !important;
+    }
+
+    .avisos-grid .aviso-card {
+        display: block !important;
+        width: 100% !important;
+        flex: 0 0 auto !important;
+        margin: 0 0 16px 0 !important;
+        break-inside: auto !important;
+    }
+
+    .avisos-grid .aviso-card p {
+        text-align: justify;
+        line-height: 1.6;
+    }
+
+    .icono-aviso img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    display: block;
+    margin: 0;
 }
 
 
-/* Evitar espacio exagerado entre radio y contador */
+    
+    /* ---------- INFORMACIÓN ÚTIL - MÓVIL ---------- */
 
-section.contenedor:has(.contador-visitas) .subtitulo{
-
-    margin-bottom:20px !important;
-
-}
-/* AJUSTE DE ESPACIOS */
-
-.contenedor {
-    padding: 25px 0 !important;
+.info-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 25px !important;
 }
 
-.subtitulo {
-    margin-bottom: 20px !important;
+.info-util {
+    display: block !important;
+    width: 100% !important;
+    padding: 22px 18px !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,.10) !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
 }
+
+.info-util i {
+    display: block !important;
+    margin-bottom: 10px !important;
+    font-size: 30px !important;
+    color: var(--azul) !important;
+}
+
+.info-util h3 {
+    margin: 0 0 8px 0 !important;
+    color: var(--azul) !important;
+    font-size: 1.15rem !important;
+}
+
+.info-util p {
+    margin: 0 !important;
+    font-size: .95rem !important;
+    line-height: 1.5 !important;
+}
+
+
+
+    /* ---------- RADIOS Y CONTADOR ---------- */
 
 .contador-visitas {
-    margin: 5px auto !important;
-}
-    EFECTO BIENVENIDOS - ELEGANTE
-   ==================================================== */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-.titulo-bienvenida{
-    display:inline-block;
-    position:relative;
+    width: 92%;
+    max-width: 340px;
 
-    animation:bienvenidaEntrada 1.6s ease-out both;
-}
+    margin: 12px auto !important;
+    padding: 18px 15px;
 
+    box-sizing: border-box;
 
-/* Entrada visible */
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(15px);
 
-@keyframes bienvenidaEntrada{
+    border-radius: 20px;
 
-    0%{
-        opacity:0;
-        transform:scale(.55) translateY(45px);
-        filter:blur(12px);
-    }
+    box-shadow: 0 10px 30px rgba(0,0,0,.10);
 
-    40%{
-        opacity:1;
-        transform:scale(1.15) translateY(-8px);
-        filter:blur(0);
-    }
-
-    65%{
-        transform:scale(.94) translateY(3px);
-    }
-
-    82%{
-        transform:scale(1.06) translateY(-2px);
-    }
-
-    100%{
-        opacity:1;
-        transform:scale(1) translateY(0);
-        filter:blur(0);
-    }
+    text-align: center;
 }
 
+.contador-visitas .contador-icono {
+    margin-bottom: 8px;
+}
 
-/* Destello que cruza el título */
+.contador-visitas .contador-icono i {
+    font-size: 30px;
+}
 
-.titulo-bienvenida::after{
+.contador-visitas h3 {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    line-height: 1.25;
+}
 
-    content:"";
+.contador-visitas p {
+    font-size: .85rem;
+    line-height: 1.45;
+}
 
-    position:absolute;
+.contador-visitas .btn {
+    margin-top: 8px;
+    padding: 10px 18px;
+    font-size: .8rem;
+}
 
-    top:-30%;
-    left:-100%;
-
-    width:35%;
-    height:160%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.95),
-        transparent
-    );
-
-    transform:skewX(-20deg);
-
-    animation:bienvenidaDestello 1.3s ease-out 1.6s forwards;
-
-    pointer-events:none;
+.contenedor:has(.contador-visitas) {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+/* NÚMERO DEL CONTADOR DE VISITAS */
+#contadorVisitas {
+    color: #29935b !important;
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    display: block;
+    margin: 5px 0 8px !important;
 }
 
 
-@keyframes bienvenidaDestello{
+    /* ---------- FOOTER MÓVIL ---------- */
 
-    0%{
-        left:-100%;
+    footer {
+        padding: 35px 20px 25px;
+        text-align: center;
     }
 
-    100%{
-        left:160%;
+    .footer-contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
     }
+
+    .footer-contenido > div {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .footer-contenido h3,
+    .footer-contenido h4 {
+        margin-bottom: 10px;
+    }
+
+    .footer-contenido p {
+        margin-bottom: 8px;
+    }
+
+    .footer-contenido ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-contenido li {
+        margin-bottom: 6px;
+    }
+
+    .copyright {
+        text-align: center;
+        padding: 20px 15px;
+        line-height: 1.5;
+    }
+    .no-estacionar {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 21px !important;
 }
 /* ====================================================
-   EFECTO BIENVENIDOS
+   AJUSTE FINAL - ESPACIO ENTRE INFORME Y CALENDARIO
    ==================================================== */
 
-.titulo-bienvenida{
-    display:inline-block !important;
-    position:relative !important;
+@media screen and (max-width: 768px) {
 
-    /* Aparición */
-    animation:
-        bienvenidaEntrada 1.4s cubic-bezier(.22,1,.36,1) both,
-        bienvenidaBrillo 2.8s ease-in-out 1.4s both !important;
-}
-
-
-/* Entrada con zoom */
-
-@keyframes bienvenidaEntrada{
-
-    0%{
-        opacity:0;
-        transform:scale(.55) translateY(35px);
-        filter:blur(10px);
+    #clima .contenedor {
+        padding-bottom: 30px !important;
     }
 
-    60%{
-        opacity:1;
-        transform:scale(1.08) translateY(-4px);
-        filter:blur(0);
-    }
-
-    100%{
-        opacity:1;
-        transform:scale(1) translateY(0);
-        filter:blur(0);
+    .calendario {
+        padding-top: 30px !important;
     }
 
 }
+@media screen and (max-width: 768px) {
 
-
-/* Brillo verde suave */
-
-@keyframes bienvenidaBrillo{
-
-    0%{
-        text-shadow:
-            0 0 0 transparent;
-    }
-
-    35%{
-        text-shadow:
-            0 0 12px rgba(76,175,80,.75),
-            0 0 25px rgba(76,175,80,.35);
-    }
-
-    70%{
-        text-shadow:
-            0 0 6px rgba(76,175,80,.4);
-    }
-
-    100%{
-        text-shadow:
-            0 0 0 transparent;
+    .evento-icono {
+        position: relative;
+        top: -12px;
+        margin-bottom: 8px !important;
     }
 
 }
+@media screen and (max-width: 768px) {
 
-.temperatura-actual {
-    color: #4caf50;
-    font-weight: 800;
+    .evento h3,
+    .evento p {
+        position: relative;
+        top: -17px !important;
+    }
+
+}
+@media screen and (max-width: 768px) {
+
+    .contenedor:has(.avisos-grid) {
+        padding-top: 15px !important;
+    }
+
+}
+@media screen and (max-width: 768px) {
+
+    .avisos-grid .aviso-card {
+        transform: translateY(-22px);
+    }
+
+}
+/* =========================================
+   AJUSTE MÓVIL - APORTES DE LOS VECINOS
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    #contacto {
+        margin-top: -45px !important;
+        padding-top: 0 !important;
+        padding-bottom: 35px !important;
+    }
+
+    #contacto .titulo-seccion {
+        margin-top: 0 !important;
+    }
+
+}
+/* ---------- AJUSTE ENTRE NUESTRA VILLA Y APORTES ---------- */
+
+@media screen and (max-width: 768px) {
+
+    #nuestra-villa {
+        padding-bottom: 15px !important;
+    }
+
+    #contacto {
+        padding-top: 15px !important;
+    }
+
+}
+/* ====================================================
+   AJUSTE FINAL - ESPACIO ENTRE NUESTRA VILLA Y APORTES
+   ==================================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* Quita el espacio inferior de Nuestra Villa */
+    section:has(.villa-grid) .contenedor {
+        padding-bottom: 5px !important;
+    }
+
+    /* Quita el espacio superior antes de Aportes de los Vecinos */
+    .contenedor:has(#formSugerencias) {
+        padding-top: 5px !important;
+    }
+
 }
