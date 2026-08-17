@@ -1,30 +1,45 @@
 export default {
-  async fetch(request, env) {
-    const url = new URL(request.url);
+    async fetch(request, env) {
 
-    // Devuelve el contador
-    if (url.pathname === "/contador") {
-      const visitas = await env.COUNTER_KV.get("visitas") || "0";
+        const url = new URL(request.url);
 
-      return new Response(
-        JSON.stringify({ visitas }),
-        {
-          headers: {
-            "Content-Type": "application/json"
-          }
+        // ==========================================
+        // CONTADOR DE VISITAS
+        // ==========================================
+
+        if (url.pathname === "/contador") {
+
+            // Obtener visitas actuales
+            let visitas = await env.COUNTER_KV.get("visitas");
+
+            // Sumar una visita
+            visitas = Number(visitas || 0) + 1;
+
+            // Guardar nuevo total
+            await env.COUNTER_KV.put(
+                "visitas",
+                visitas.toString()
+            );
+
+            // Devolver el total
+            return new Response(
+                JSON.stringify({
+                    visitas: visitas
+                }),
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Access-Control-Allow-Origin": "*",
+                        "Cache-Control": "no-store"
+                    }
+                }
+            );
         }
-      );
+
+        // ==========================================
+        // RESTO DEL SITIO
+        // ==========================================
+
+        return env.ASSETS.fetch(request);
     }
-
-    // Suma una visita solo al entrar al inicio
-    if (url.pathname === "/" || url.pathname === "/index.html") {
-      let visitas = await env.COUNTER_KV.get("visitas");
-      visitas = Number(visitas || 0) + 1;
-
-      await env.COUNTER_KV.put("visitas", visitas.toString());
-    }
-
-    // Entrega la página normalmente
-    return env.ASSETS.fetch(request);
-  }
 };

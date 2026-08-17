@@ -445,13 +445,21 @@ async function cargarContador() {
 
     try {
 
-        const respuesta = await fetch("http://127.0.0.1:8787/contador");
+        const respuesta = await fetch("https://losagapantos-contador.ricardogarcesw.workers.dev/contador");
 
         const datos = await respuesta.json();
 
         const contador = document.getElementById("contadorVisitas");
 
-contador.textContent = datos.visitas;
+const numero = String(datos.visitas).padStart(6, "0");
+
+contador.innerHTML = "";
+
+for (const digito of numero) {
+    const span = document.createElement("span");
+    span.textContent = digito;
+    contador.appendChild(span);
+}
 
     } catch (error) {
 

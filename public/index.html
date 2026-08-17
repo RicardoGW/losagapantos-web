@@ -101,6 +101,10 @@ Cargando
      alt="Villa Los Agapantos"
      class="titulo-villa">
 
+<div class="subtitulo-logo">
+    COMUNIDAD • SEGURIDAD • CONVIVENCIA
+</div>
+
         </div>
 
     </div>
@@ -467,41 +471,94 @@ Vista nocturna.
 
 <section id="clima" class="informacion-util">
 
+<style>
+@media screen and (min-width: 769px) {
+
+    #clima .info-grid {
+        display: block !important;
+        margin-top: 28px !important;
+    }
+
+    #clima .info-util {
+        background: #ffffff !important;
+        border: 1px solid rgba(36,59,100,0.10) !important;
+        border-top: 5px solid #2f9675 !important;
+        border-radius: 22px !important;
+        padding: 28px 35px 30px !important;
+        box-shadow: 0 10px 25px rgba(36,59,100,0.10) !important;
+        text-align: center !important;
+    }
+
+    #clima .info-util h3 {
+        color: #243b64 !important;
+        margin: 0 0 14px !important;
+        font-size: 1.3rem !important;
+    }
+
+    #clima .info-util p {
+    color: #4d5b68 !important;
+    line-height: 1.55 !important;
+    margin: 0 auto 22px !important;
+    max-width: 850px !important;
+}
+
+    #clima .info-util .btn {
+        display: inline-block !important;
+        background: linear-gradient(135deg, #2f6aa8, #2f9675) !important;
+        color: #ffffff !important;
+        padding: 10px 22px !important;
+        border-radius: 22px !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        box-shadow: 0 5px 12px rgba(36,59,100,0.16) !important;
+    }
+
+    #clima .boton-informe {
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+}
+</style>
+
 <div class="contenedor">
 
-<h2 class="titulo-seccion">
-🌦️ Informe Climatológico
-</h2>
+    <h2 class="titulo-seccion">
+        🌦️ Informe Climatológico
+    </h2>
 
-<p class="subtitulo">
-Información meteorológica oficial para la comuna de Colina y la Región Metropolitana.
-</p>
+    <p class="subtitulo">
+        Información meteorológica oficial para la comuna de Colina y la Región Metropolitana.
+    </p>
 
-<div class="info-grid">
+    <div class="info-grid">
 
-    <div class="info-util">
+        <div class="info-util">
 
-        <h3>🌧️ Precipitación</h3>
+            <h3>
+                🌧️ Precipitación
+            </h3>
 
-        <p>
-            Consulta el informe oficial de precipitaciones
-            y registros meteorológicos de la Región Metropolitana.
-        </p>
+            <p>
+                Consulta el informe oficial de precipitaciones
+                y registros meteorológicos de la Región Metropolitana.
+            </p>
+
+            <p class="boton-informe">
+
+                <a class="btn"
+                   target="_blank"
+                   href="https://climatologia.meteochile.gob.cl/application/diariob/visorEmaPrecipitacion/330020">
+
+                    📄 Ver Informe Oficial
+
+                </a>
+
+            </p>
+
+        </div>
 
     </div>
-
-</div>
-<p style="text-align:center;margin-top:35px;">
-
-<a class="btn"
-target="_blank"
-href="https://climatologia.meteochile.gob.cl/application/diariob/visorEmaPrecipitacion/330020">
-
-📄 Ver Informe Oficial
-
-</a>
-
-</p>
 
 </div>
 
@@ -712,12 +769,12 @@ frecuentemente hay niños jugando.
         display:inline-flex;
         align-items:center;
         justify-content:center;
-        width:32px;
-        height:32px;
+        width:50px;
+        height:50px;
         border:3px solid #d71920;
         border-radius:50%;
         color:#111;
-        font-size:20px;
+        font-size:32px;
         font-weight:800;
         font-family:Arial,sans-serif;
         position:relative;
@@ -725,13 +782,13 @@ frecuentemente hay niños jugando.
     ">
         E
         <span style="
-            position:absolute;
-            width:35px;
-            height:4px;
-            background:#d71920;
-            transform:rotate(-45deg);
-            border-radius:3px;
-        "></span>
+    position:absolute;
+    width:48px;
+    height:4px;
+    background:#d71920;
+    transform:rotate(-45deg);
+    border-radius:3px;
+"></span>
     </span>
 </div>
 <h3>Vehículos estacionados frente a otras viviendas</h3>
@@ -891,102 +948,189 @@ Tu opinión es importante para seguir mejorando nuestra comunidad.
 
 </p>
 
+<style>
+@media screen and (min-width: 769px) {
+
+    .sugerencias-box {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px !important;
+    align-items: start !important;
+}
+
+    .sugerencias-info {
+        background: #ffffff !important;
+        border: 1px solid rgba(36,59,100,0.10) !important;
+        border-top: 5px solid #2f6aa8 !important;
+        border-radius: 22px !important;
+        padding: 28px 32px !important;
+        box-shadow: 0 10px 25px rgba(36,59,100,0.10) !important;
+    }
+
+    .sugerencias-info h3 {
+        color: #243b64 !important;
+        margin-bottom: 14px !important;
+    }
+
+    .sugerencias-info ul {
+        list-style: none !important;
+        padding-left: 0 !important;
+        margin-top: 18px !important;
+    }
+
+    .sugerencias-info li {
+        margin-bottom: 9px !important;
+    }
+
+    .sugerencias-form {
+        display: flex !important;
+        width: 100% !important;
+    }
+
+    .sugerencias-proximamente {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(31,127,104,0.15) !important;
+        border-top: 5px solid #2f9675 !important;
+        border-radius: 22px !important;
+        padding: 28px 32px !important;
+        box-shadow: 0 10px 25px rgba(36,59,100,0.10) !important;
+        text-align: center !important;
+    }
+
+    .icono-proximamente {
+        font-size: 38px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .sugerencias-proximamente h3 {
+        color: #243b64 !important;
+        font-size: 1.35rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .sugerencias-proximamente p {
+        color: #4d5b68 !important;
+        line-height: 1.55 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .proximamente-badge {
+        display: inline-block !important;
+        background: linear-gradient(135deg, #2f6aa8, #2f9675) !important;
+        color: white !important;
+        padding: 9px 18px !important;
+        border-radius: 20px !important;
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+        box-shadow: 0 5px 12px rgba(36,59,100,0.16) !important;
+    }
+
+}
+</style>
+
+
 <div class="sugerencias-box">
 
-<div class="sugerencias-info">
-
-<h3>
-
-💬 Envíanos tu sugerencia
-
-</h3>
-
-<p>
-
-Si tienes alguna idea para mejorar la Villa Los Agapantos, próximamente podrás enviarnos tus sugerencias directamente desde este espacio.
-
-</p>
-
-<ul>
-
-<li>✔ Mejoras en áreas verdes.</li>
-
-<li>✔ Seguridad.</li>
-
-<li>✔ Iluminación.</li>
-
-<li>✔ Aseo.</li>
-
-<li>✔ Actividades comunitarias.</li>
-
-<li>✔ Cualquier otra idea.</li>
-
-</ul>
-
-</div>
-
-<div class="sugerencias-form">
-
-    <div class="sugerencias-proximamente">
-
-        <div class="icono-proximamente">
-            💬
-        </div>
+    <div class="sugerencias-info">
 
         <h3>
-            Próximamente
+            💡 ¿Qué podemos mejorar?
         </h3>
 
         <p>
-            Estamos preparando este espacio para que los vecinos
-            puedan enviar sus ideas y sugerencias directamente
-            a la administración de la Villa.
+            Queremos conocer las ideas de nuestros vecinos para seguir
+            construyendo una Villa Los Agapantos más segura, limpia,
+            agradable y acogedora para todos.
         </p>
 
-        <span class="proximamente-badge">
-            🚧 Próximamente disponible
-        </span>
+        <ul>
+            <li>✔ Áreas verdes y espacios comunes.</li>
+            <li>✔ Seguridad y prevención.</li>
+            <li>✔ Iluminación.</li>
+            <li>✔ Aseo y mantención.</li>
+            <li>✔ Actividades comunitarias.</li>
+            <li>✔ Otras ideas para nuestra comunidad.</li>
+        </ul>
+
+    </div>
+
+
+    <div class="sugerencias-form">
+
+        <div class="sugerencias-proximamente">
+
+            <div class="icono-proximamente">
+                💬
+            </div>
+
+            <h3>
+                Tu opinión cuenta
+            </h3>
+
+            <p>
+                Estamos preparando este espacio para que puedas
+                enviar tus ideas y sugerencias directamente a la
+                administración de la Villa.
+            </p>
+
+            <span class="proximamente-badge">
+                🚧 Próximamente disponible
+            </span>
+
+        </div>
 
     </div>
 
 </div>
-
-</div>
-
 </section>
 
 <!-- ===================================================
 INFORMACIÓN ÚTIL
 =================================================== -->
-<h3 class="titulo-telefonos">📞 Teléfonos de interés</h3>
-<div class="info-util">
 
-    <i class="fa-solid fa-bolt"></i>
+<div class="telefonos-card">
 
-    <h3>
-        Electricidad
+    <h3 class="titulo-telefonos">
+        📞 Teléfonos de interés
     </h3>
 
-    <p>
-        Enel Colina<br>
-        Fono: 600 690 2200<br>
-        Emergencias: 800 800 692
-    </p>
+    <div class="telefonos-contenido">
 
-</div>
+        <div class="info-util">
 
-<div class="info-util">
+            <i class="fa-solid fa-bolt"></i>
 
-    <i class="fa-solid fa-droplet"></i>
+            <h3>
+                Electricidad
+            </h3>
 
-    <h3>
-        Agua
-    </h3>
+            <p>
+                Enel Colina<br>
+                Fono: 600 690 2200<br>
+                Emergencias: 800 800 692
+            </p>
 
-    <p>
-        Aguas Metropolitana<br>
-        Fono: 600 300 2600
-    </p>
+        </div>
+
+
+        <div class="info-util">
+
+            <i class="fa-solid fa-droplet"></i>
+
+            <h3>
+                Agua
+            </h3>
+
+            <p>
+                Aguas Metropolitana<br>
+                Fono: 600 300 2600
+            </p>
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -1038,8 +1182,7 @@ INFORMACIÓN ÚTIL
 
     <p>
     <strong>Radio local de Colina</strong><br>
-    Música típica de nuestra zona, noticias, información local y contenidos de interés para los vecinos.
-    Una radio de nuestra comuna, para mantenernos informados y acompañar nuestro día a día.
+    Música, noticias e información de nuestra comuna.
 </p>
 
 
@@ -1066,7 +1209,14 @@ INFORMACIÓN ÚTIL
 
     <h3>Visitantes del sitio</h3>
 
-    <div id="contadorVisitas">0</div>
+    <div id="contadorVisitas" class="numero-visitas">
+    <span>0</span>
+    <span>0</span>
+    <span>0</span>
+    <span>0</span>
+    <span>0</span>
+    <span>0</span>
+</div>
 
     <div class="contador-texto">
         Visitas registradas
@@ -1195,3 +1345,4 @@ Desarrollado para la comunidad.
 </body>
 
 </html>
+
