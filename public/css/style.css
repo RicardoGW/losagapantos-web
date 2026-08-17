@@ -1186,9 +1186,8 @@ transform:translateY(-10px);
     width: 100%;
     max-width: 900px;
     padding: 0 16px;
-    margin-top: -25px;
+    margin-top: 0;
 }
-
 .hero h2 {
     font-size: 2.15rem;
     line-height: 1.15;
@@ -2700,28 +2699,35 @@ transform:translateY(-10px);
 
         font-size: 0 !important;
     }
-
-
-   #contadorVisitas.numero-visitas span {
+    #contadorVisitas.numero-visitas span {
 
     display: flex !important;
+
     justify-content: center !important;
+
     align-items: center !important;
 
     width: 38px !important;
+
     height: 46px !important;
 
     border-radius: 8px !important;
-    box-sizing: border-box !important;
 
     color: white !important;
+
     -webkit-text-fill-color: white !important;
-background-clip: border-box !important;
--webkit-background-clip: border-box !important;
-    font-family: Arial, sans-serif !important;
+
+    background-clip: border-box !important;
+
+    -webkit-background-clip: border-box !important;
+
     font-size: 1.55rem !important;
+
     font-weight: 800 !important;
+
     line-height: 1 !important;
+
+    box-sizing: border-box !important;
 
     border: 1px solid rgba(255,255,255,.65) !important;
 
@@ -2730,8 +2736,11 @@ background-clip: border-box !important;
         0 4px 9px rgba(0,0,0,.12) !important;
 
     text-shadow: none !important;
+
     filter: none !important;
+
     opacity: 1 !important;
+
     transform: none !important;
 }
 
@@ -2761,6 +2770,9 @@ background-clip: border-box !important;
 #contadorVisitas.numero-visitas span:nth-child(6) {
     background: #4CAF50 !important;
 }
+
+
+   
 
 
     /* VISITAS REGISTRADAS */
