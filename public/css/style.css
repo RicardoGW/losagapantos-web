@@ -2702,78 +2702,65 @@ transform:translateY(-10px);
     }
 
 
-    #contadorVisitas.numero-visitas span {
+   #contadorVisitas.numero-visitas span {
 
-        display: flex !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 
-        justify-content: center !important;
+    width: 38px !important;
+    height: 46px !important;
 
-        align-items: center !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
 
-        width: 38px !important;
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+background-clip: border-box !important;
+-webkit-background-clip: border-box !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 1.55rem !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
 
-        height: 46px !important;
+    border: 1px solid rgba(255,255,255,.65) !important;
 
-        border-radius: 8px !important;
+    box-shadow:
+        inset 0 0 8px rgba(255,255,255,.25),
+        0 4px 9px rgba(0,0,0,.12) !important;
 
-        color: white !important;
-
-        font-size: 1.55rem !important;
-
-        font-weight: 800 !important;
-
-        line-height: 1 !important;
-
-        box-sizing: border-box !important;
-
-        border: 1px solid rgba(255,255,255,.65) !important;
-
-        box-shadow:
-            inset 0 0 8px rgba(255,255,255,.25),
-            0 4px 9px rgba(0,0,0,.12) !important;
-
-        text-shadow:
-            0 1px 3px rgba(0,0,0,.25);
-    }
-
-
-    /* COLORES */
-
-    #contadorVisitas.numero-visitas span:nth-child(1) {
-        background: #2563eb !important;
-    }
-
-    #contadorVisitas.numero-visitas span:nth-child(2) {
-        background: #168cff !important;
-    }
-
-    #contadorVisitas.numero-visitas span:nth-child(3) {
-        background: #1597c5 !important;
-    }
-
-    #contadorVisitas.numero-visitas span:nth-child(4) {
-        background: #159f8a !important;
-    }
-
-    #contadorVisitas.numero-visitas span:nth-child(5) {
-        background: #2E8B57 !important;
-    }
-
-    #contadorVisitas.numero-visitas span:nth-child(6) {
-        background: #4CAF50 !important;
-    }
+    text-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
 
 
-    /* EFECTO SUAVE DENTRO DE LOS CUADROS */
+/* COLORES */
 
-    #contadorVisitas.numero-visitas span:hover {
+#contadorVisitas.numero-visitas span:nth-child(1) {
+    background: #2563eb !important;
+}
 
-        transform: translateY(-2px);
+#contadorVisitas.numero-visitas span:nth-child(2) {
+    background: #168cff !important;
+}
 
-        box-shadow:
-            inset 0 0 12px rgba(255,255,255,.35),
-            0 5px 12px rgba(0,0,0,.16) !important;
-    }
+#contadorVisitas.numero-visitas span:nth-child(3) {
+    background: #1597c5 !important;
+}
+
+#contadorVisitas.numero-visitas span:nth-child(4) {
+    background: #159f8a !important;
+}
+
+#contadorVisitas.numero-visitas span:nth-child(5) {
+    background: #2E8B57 !important;
+}
+
+#contadorVisitas.numero-visitas span:nth-child(6) {
+    background: #4CAF50 !important;
+}
 
 
     /* VISITAS REGISTRADAS */
