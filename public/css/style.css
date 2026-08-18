@@ -3100,3 +3100,266 @@ transform:translateY(-10px);
     .subtitulo-logo {
         display: none !important;
     }
+/* =========================================
+   NOTICIAS DE NUESTRA ZONA
+   ========================================= */
+
+async function cargarNoticias() {
+
+    const lista = document.getElementById("noticiasLista");
+
+    if (!lista) return;
+
+    try {
+
+        const respuesta = await fetch(
+            "https://www.colina.cl/wp-json/wp/v2/posts?per_page=6&_embed"
+        );
+
+        if (!respuesta.ok) {
+            throw new Error("No se pudieron obtener las noticias");
+        }
+
+        const noticias = await respuesta.json();
+
+        lista.innerHTML = "";
+
+        noticias.forEach(noticia => {
+
+            const titulo = noticia.title.rendered;
+            const enlace = noticia.link;
+
+            const fecha = new Date(noticia.date).toLocaleDateString(
+                "es-CL",
+                {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric"
+                }
+            );
+
+            let imagen = "";
+
+            if (
+                noticia._embedded &&
+                noticia._embedded["wp:featuredmedia"] &&
+                noticia._embedded["wp:featuredmedia"][0]
+            ) {
+                imagen =
+                    noticia._embedded["wp:featuredmedia"][0].source_url;
+            }
+
+            const tarjeta = document.createElement("article");
+
+            tarjeta.className = "noticia-card";
+
+            /* ==============================
+               TAMAÑO DE LA TARJETA
+               ============================== */
+
+            if (window.innerWidth <= 768) {
+
+                tarjeta.style.width = "88%";
+                tarjeta.style.minWidth = "88%";
+                tarjeta.style.maxWidth = "88%";
+                tarjeta.style.height = "305px";
+
+            } else {
+
+                tarjeta.style.width = "300px";
+                tarjeta.style.minWidth = "300px";
+                tarjeta.style.maxWidth = "300px";
+                tarjeta.style.height = "320px";
+            }
+
+            tarjeta.style.flexShrink = "0";
+            tarjeta.style.overflow = "hidden";
+            tarjeta.style.boxSizing = "border-box";
+
+            tarjeta.innerHTML = `
+                <a
+                    href="${enlace}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="noticia-enlace"
+                >
+
+                    <div class="noticia-imagen">
+
+                        ${
+                            imagen
+                            ? `<img
+                                src="${imagen}"
+                                alt="${titulo}"
+                                class="noticia-foto"
+                                loading="lazy"
+                              >`
+                            : `<div class="noticia-placeholder">📰</div>`
+                        }
+
+                    </div>
+
+                    <div class="noticia-contenido">
+
+                        <span class="noticia-fuente">
+                            MUNICIPALIDAD DE COLINA
+                        </span>
+
+                        <h3>${titulo}</h3>
+
+                        <p class="noticia-fecha">
+                            ${fecha}
+                        </p>
+
+                    </div>
+
+                </a>
+            `;
+
+            /* ==============================
+               TAMAÑO DE LA IMAGEN
+               ============================== */
+
+            const contenedorImagen =
+                tarjeta.querySelector(".noticia-imagen");
+
+            const foto =
+                tarjeta.querySelector(".noticia-foto");
+
+            if (window.innerWidth <= 768) {
+
+                contenedorImagen.style.height = "120px";
+                contenedorImagen.style.minHeight = "120px";
+                contenedorImagen.style.maxHeight = "120px";
+                contenedorImagen.style.overflow = "hidden";
+
+                if (foto) {
+
+                    foto.style.width = "100%";
+                    foto.style.height = "120px";
+                    foto.style.minHeight = "120px";
+                    foto.style.maxHeight = "120px";
+                    foto.style.objectFit = "cover";
+                    foto.style.display = "block";
+                }
+
+            } else {
+
+                contenedorImagen.style.height = "125px";
+                contenedorImagen.style.minHeight = "125px";
+                contenedorImagen.style.maxHeight = "125px";
+                contenedorImagen.style.overflow = "hidden";
+
+                if (foto) {
+
+                    foto.style.width = "100%";
+                    foto.style.height = "125px";
+                    foto.style.minHeight = "125px";
+                    foto.style.maxHeight = "125px";
+                    foto.style.objectFit = "cover";
+                    foto.style.display = "block";
+                }
+            }
+
+            lista.appendChild(tarjeta);
+
+        });
+
+    } catch (error) {
+
+        console.error("Error al cargar noticias:", error);
+
+        lista.innerHTML = `
+            <article class="noticia-card">
+
+                <div class="noticia-imagen">
+                    <div class="noticia-placeholder">
+                        📰
+                    </div>
+                </div>
+
+                <div class="noticia-contenido">
+
+                    <span class="noticia-fuente">
+                        NOTICIAS LOCALES
+                    </span>
+
+                    <h3>
+                        Noticias temporalmente no disponibles
+                    </h3>
+
+                    <p class="noticia-fecha">
+                        Intenta nuevamente más tarde.
+                    </p>
+
+                </div>
+
+            </article>
+        `;
+    }
+}
+
+
+/* =========================================
+   CARGAR NOTICIAS
+   ========================================= */
+
+cargarNoticias();
+
+
+/* Actualizar cada 30 minutos */
+
+setInterval(cargarNoticias, 30 * 60 * 1000);
+
+
+/* =========================================
+   FLECHAS DE NOTICIAS
+   ========================================= */
+
+const botonAnteriorNoticias =
+    document.querySelector(".noticias-anterior");
+
+const botonSiguienteNoticias =
+    document.querySelector(".noticias-siguiente");
+
+
+function moverNoticias(direccion) {
+
+    const lista =
+        document.getElementById("noticiasLista");
+
+    if (!lista) return;
+
+    const tarjeta =
+        lista.querySelector(".noticia-card");
+
+    if (!tarjeta) return;
+
+    const ancho =
+        tarjeta.getBoundingClientRect().width;
+
+    const espacio = 18;
+
+    lista.scrollBy({
+        left: direccion * (ancho + espacio),
+        behavior: "smooth"
+    });
+}
+
+
+if (botonAnteriorNoticias) {
+
+    botonAnteriorNoticias.addEventListener("click", () => {
+        moverNoticias(-1);
+    });
+
+}
+
+
+if (botonSiguienteNoticias) {
+
+    botonSiguienteNoticias.addEventListener("click", () => {
+        moverNoticias(1);
+    });
+
+}

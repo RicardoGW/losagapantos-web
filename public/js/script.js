@@ -548,3 +548,742 @@ setInterval(() => {
     }
 
 }, 1000);
+/* =========================================
+   NOTICIAS DE NUESTRA ZONA
+   ========================================= */
+
+async function cargarNoticias() {
+
+    const lista = document.getElementById("noticiasLista");
+
+    if (!lista) return;
+
+    const contenedor = lista.closest(".noticias-contenedor");
+
+    if (!contenedor) return;
+
+    try {
+
+        const respuesta = await fetch(
+            "https://www.colina.cl/wp-json/wp/v2/posts?per_page=6&_embed"
+        );
+
+        if (!respuesta.ok) {
+            throw new Error("No se pudieron obtener las noticias");
+        }
+
+        const noticias = await respuesta.json();
+
+        lista.innerHTML = "";
+
+        /* =========================================
+           CONFIGURACIÓN DEL CARRUSEL
+           ========================================= */
+
+        lista.style.setProperty(
+            "display",
+            "flex",
+            "important"
+        );
+
+        lista.style.setProperty(
+            "flex-direction",
+            "row",
+            "important"
+        );
+
+        lista.style.setProperty(
+            "flex-wrap",
+            "nowrap",
+            "important"
+        );
+
+        lista.style.setProperty(
+            "align-items",
+            "stretch",
+            "important"
+        );
+
+        lista.style.setProperty(
+            "overflow-x",
+            "auto",
+            "important"
+        );
+
+        lista.style.setProperty(
+            "overflow-y",
+            "hidden",
+            "important"
+        );
+
+        lista.style.setProperty(
+            "scroll-behavior",
+            "smooth",
+            "important"
+        );
+
+        lista.style.setProperty(
+            "scrollbar-width",
+            "none",
+            "important"
+        );
+
+        lista.style.setProperty(
+            "gap",
+            "18px",
+            "important"
+        );
+
+        lista.style.setProperty(
+            "box-sizing",
+            "border-box",
+            "important"
+        );
+
+
+        /* =========================================
+           CREAR LAS NOTICIAS
+           ========================================= */
+
+        noticias.forEach(noticia => {
+
+            const titulo = noticia.title.rendered;
+            const enlace = noticia.link;
+
+            const fecha =
+                new Date(noticia.date).toLocaleDateString(
+                    "es-CL",
+                    {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric"
+                    }
+                );
+
+
+            let imagen = "";
+
+            if (
+                noticia._embedded &&
+                noticia._embedded["wp:featuredmedia"] &&
+                noticia._embedded["wp:featuredmedia"][0]
+            ) {
+
+                imagen =
+                    noticia._embedded["wp:featuredmedia"][0].source_url;
+            }
+
+
+            const tarjeta =
+                document.createElement("article");
+
+            tarjeta.className =
+                "noticia-card";
+
+
+            tarjeta.innerHTML = `
+                <a
+                    href="${enlace}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="
+                        display:block;
+                        width:100%;
+                        height:100%;
+                        text-decoration:none;
+                        color:inherit;
+                    "
+                >
+
+                    <div class="noticia-imagen">
+
+                        ${
+                            imagen
+                            ? `
+                                <img
+                                    src="${imagen}"
+                                    alt="${titulo}"
+                                >
+                              `
+                            : `
+                                <div class="noticia-placeholder">
+                                    📰
+                                </div>
+                              `
+                        }
+
+                    </div>
+
+                    <div class="noticia-contenido">
+
+                        <span class="noticia-fuente">
+                            MUNICIPALIDAD DE COLINA
+                        </span>
+
+                        <h3>
+                            ${titulo}
+                        </h3>
+
+                        <p class="noticia-fecha">
+                            ${fecha}
+                        </p>
+
+                    </div>
+
+                </a>
+            `;
+
+
+            /* =========================================
+               TAMAÑO PC / MÓVIL
+               ========================================= */
+
+            if (window.innerWidth <= 768) {
+
+                tarjeta.style.setProperty(
+                    "flex",
+                    "0 0 88%",
+                    "important"
+                );
+
+                tarjeta.style.setProperty(
+                    "width",
+                    "88%",
+                    "important"
+                );
+
+                tarjeta.style.setProperty(
+                    "min-width",
+                    "88%",
+                    "important"
+                );
+
+                tarjeta.style.setProperty(
+                    "max-width",
+                    "88%",
+                    "important"
+                );
+
+                tarjeta.style.setProperty(
+                    "height",
+                    "305px",
+                    "important"
+                );
+
+            } else {
+
+                tarjeta.style.setProperty(
+                    "flex",
+                    "0 0 300px",
+                    "important"
+                );
+
+                tarjeta.style.setProperty(
+                    "width",
+                    "300px",
+                    "important"
+                );
+
+                tarjeta.style.setProperty(
+                    "min-width",
+                    "300px",
+                    "important"
+                );
+
+                tarjeta.style.setProperty(
+                    "max-width",
+                    "300px",
+                    "important"
+                );
+
+                tarjeta.style.setProperty(
+                    "height",
+                    "320px",
+                    "important"
+                );
+            }
+
+
+            tarjeta.style.setProperty(
+                "flex-shrink",
+                "0",
+                "important"
+            );
+
+            tarjeta.style.setProperty(
+                "flex-grow",
+                "0",
+                "important"
+            );
+
+            tarjeta.style.setProperty(
+                "overflow",
+                "hidden",
+                "important"
+            );
+
+
+            /* =========================================
+               IMAGEN
+               ========================================= */
+
+            const imagenContenedor =
+                tarjeta.querySelector(
+                    ".noticia-imagen"
+                );
+
+            const imagenElemento =
+                tarjeta.querySelector(
+                    ".noticia-imagen img"
+                );
+
+
+            const altoImagen =
+                window.innerWidth <= 768
+                ? "120px"
+                : "125px";
+
+
+            imagenContenedor.style.setProperty(
+                "width",
+                "100%",
+                "important"
+            );
+
+            imagenContenedor.style.setProperty(
+                "height",
+                altoImagen,
+                "important"
+            );
+
+            imagenContenedor.style.setProperty(
+                "min-height",
+                altoImagen,
+                "important"
+            );
+
+            imagenContenedor.style.setProperty(
+                "max-height",
+                altoImagen,
+                "important"
+            );
+
+            imagenContenedor.style.setProperty(
+                "overflow",
+                "hidden",
+                "important"
+            );
+
+
+            if (imagenElemento) {
+
+                imagenElemento.style.setProperty(
+                    "display",
+                    "block",
+                    "important"
+                );
+
+                imagenElemento.style.setProperty(
+                    "width",
+                    "100%",
+                    "important"
+                );
+
+                imagenElemento.style.setProperty(
+                    "height",
+                    altoImagen,
+                    "important"
+                );
+
+                imagenElemento.style.setProperty(
+                    "min-height",
+                    altoImagen,
+                    "important"
+                );
+
+                imagenElemento.style.setProperty(
+                    "max-height",
+                    altoImagen,
+                    "important"
+                );
+
+                imagenElemento.style.setProperty(
+                    "object-fit",
+                    "cover",
+                    "important"
+                );
+
+                imagenElemento.style.setProperty(
+                    "object-position",
+                    "center",
+                    "important"
+                );
+            }
+
+
+            lista.appendChild(tarjeta);
+
+        });
+
+
+        /* =========================================
+           PREPARAR CONTENEDOR
+           ========================================= */
+
+        contenedor.style.setProperty(
+            "position",
+            "relative",
+            "important"
+        );
+
+
+        contenedor.style.setProperty(
+            "width",
+            "100%",
+            "important"
+        );
+
+
+        /* =========================================
+           BUSCAR FLECHAS
+           ========================================= */
+
+        let botonAnterior =
+            contenedor.querySelector(
+                ".noticias-anterior"
+            );
+
+        let botonSiguiente =
+            contenedor.querySelector(
+                ".noticias-siguiente"
+            );
+
+
+        /* =========================================
+           CREAR FLECHA IZQUIERDA SI NO EXISTE
+           ========================================= */
+
+        if (!botonAnterior) {
+
+            botonAnterior =
+                document.createElement("button");
+
+            botonAnterior.className =
+                "noticias-flecha noticias-anterior";
+
+            botonAnterior.type =
+                "button";
+
+            botonAnterior.innerHTML =
+                "‹";
+
+            contenedor.insertBefore(
+                botonAnterior,
+                lista
+            );
+        }
+
+
+        /* =========================================
+           CREAR FLECHA DERECHA SI NO EXISTE
+           ========================================= */
+
+        if (!botonSiguiente) {
+
+            botonSiguiente =
+                document.createElement("button");
+
+            botonSiguiente.className =
+                "noticias-flecha noticias-siguiente";
+
+            botonSiguiente.type =
+                "button";
+
+            botonSiguiente.innerHTML =
+                "›";
+
+            contenedor.appendChild(
+                botonSiguiente
+            );
+        }
+
+
+        /* =========================================
+           POSICIÓN DE LAS FLECHAS
+           ========================================= */
+
+        const tamanoFlecha =
+            window.innerWidth <= 768
+            ? "34px"
+            : "40px";
+
+
+        const mitadFlecha =
+            window.innerWidth <= 768
+            ? "-17px"
+            : "-20px";
+
+
+        [botonAnterior, botonSiguiente].forEach(
+            boton => {
+
+                boton.style.setProperty(
+                    "position",
+                    "absolute",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "top",
+                    "50%",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "transform",
+                    "translateY(-50%)",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "width",
+                    tamanoFlecha,
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "height",
+                    tamanoFlecha,
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "min-width",
+                    tamanoFlecha,
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "padding",
+                    "0",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "border",
+                    "none",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "border-radius",
+                    "50%",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "background",
+                    "linear-gradient(135deg, var(--azul), var(--verde))",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "color",
+                    "#ffffff",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "font-size",
+                    window.innerWidth <= 768
+                    ? "23px"
+                    : "27px",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "line-height",
+                    "1",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "display",
+                    "flex",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "align-items",
+                    "center",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "justify-content",
+                    "center",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "cursor",
+                    "pointer",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "z-index",
+                    "100",
+                    "important"
+                );
+
+                boton.style.setProperty(
+                    "box-shadow",
+                    "0 5px 15px rgba(0,0,0,.20)",
+                    "important"
+                );
+            }
+        );
+
+
+        /* =========================================
+           FLECHA IZQUIERDA
+           ========================================= */
+
+        botonAnterior.style.setProperty(
+            "left",
+            mitadFlecha,
+            "important"
+        );
+
+
+        /* =========================================
+           FLECHA DERECHA
+           ========================================= */
+
+        botonSiguiente.style.setProperty(
+            "right",
+            mitadFlecha,
+            "important"
+        );
+
+
+        /* =========================================
+           AVANZAR UNA NOTICIA
+           ========================================= */
+
+        function moverNoticias(direccion) {
+
+            const tarjeta =
+                lista.querySelector(
+                    ".noticia-card"
+                );
+
+            if (!tarjeta) return;
+
+
+            const anchoTarjeta =
+                tarjeta.getBoundingClientRect().width;
+
+
+            const estilos =
+                getComputedStyle(lista);
+
+
+            const separacion =
+                parseFloat(estilos.gap) || 18;
+
+
+            lista.scrollBy({
+                left:
+                    direccion *
+                    (anchoTarjeta + separacion),
+                behavior: "smooth"
+            });
+        }
+
+
+        /* =========================================
+           BOTÓN ANTERIOR
+           ========================================= */
+
+        botonAnterior.onclick = function () {
+
+            moverNoticias(-1);
+
+        };
+
+
+        /* =========================================
+           BOTÓN SIGUIENTE
+           ========================================= */
+
+        botonSiguiente.onclick = function () {
+
+            moverNoticias(1);
+
+        };
+
+
+        /* =========================================
+           POSICIÓN INICIAL
+           ========================================= */
+
+        lista.scrollLeft = 0;
+
+
+    } catch (error) {
+
+        console.error(
+            "Error al cargar noticias:",
+            error
+        );
+
+        lista.innerHTML = `
+            <article class="noticia-card">
+
+                <div class="noticia-imagen">
+
+                    <div class="noticia-placeholder">
+                        📰
+                    </div>
+
+                </div>
+
+                <div class="noticia-contenido">
+
+                    <span class="noticia-fuente">
+                        NOTICIAS LOCALES
+                    </span>
+
+                    <h3>
+                        Noticias temporalmente no disponibles
+                    </h3>
+
+                    <p class="noticia-fecha">
+                        Intenta nuevamente más tarde.
+                    </p>
+
+                </div>
+
+            </article>
+        `;
+    }
+}
+
+
+/* =========================================
+   CARGAR NOTICIAS AL ABRIR
+   ========================================= */
+
+cargarNoticias();
+
+
+/* =========================================
+   ACTUALIZAR CADA 30 MINUTOS
+   ========================================= */
+
+setInterval(
+    cargarNoticias,
+    30 * 60 * 1000
+);
