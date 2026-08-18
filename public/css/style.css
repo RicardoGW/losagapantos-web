@@ -332,7 +332,6 @@ gap:8px;
     margin-left:-20px;
     margin-top:-20px;
 }
-
 .logo h1{
 
 font-size:1.25rem;
@@ -980,10 +979,17 @@ transform:translateY(-10px);
     break-inside:avoid;
     vertical-align:top;
 }
+
+.avisos-grid .aviso-card p{
+    text-align: justify;
+    line-height: 1.6;
+}
+
 .avisos-grid .aviso-card:nth-child(7){
     break-before:column;
     break-inside:avoid;
 }
+
 @media screen and (min-width: 769px) {
     .avisos-grid .aviso-card:first-child .icono-aviso img {
         width: 85px !important;
@@ -1082,7 +1088,7 @@ transform:translateY(-10px);
     width: 285px;
     height: 72px;
     object-fit: cover;
-    object-position: center 48%;
+    object-position: center 35%
     display: block;
     margin: 0;
 }
@@ -2847,7 +2853,7 @@ transform:translateY(-10px);
 @media screen and (min-width: 769px) {
 
     #avisos {
-        margin-bottom: -120px;
+        margin-bottom: 0;
     }
 
 }

@@ -485,14 +485,37 @@ async function cargarSanto() {
 
     try {
 
-        const respuesta = await fetch("https://api.restart.cl/v1/santoral");
+        const respuesta = await fetch(
+            "https://api.boostr.cl/santorales.json"
+        );
 
         const datos = await respuesta.json();
 
+        const ahoraChile = new Date(
+            new Date().toLocaleString("en-US", {
+                timeZone: "America/Santiago"
+            })
+        );
+
+        const mes = ahoraChile.toLocaleString("es-CL", {
+            month: "long"
+        });
+
+        const dia = ahoraChile.getDate();
+
+        const nombresMes = datos.data[mes];
+
+        if (!nombresMes || !nombresMes[dia - 1]) {
+            document.getElementById("santoDia").textContent =
+                "No disponible";
+            return;
+        }
+
         document.getElementById("santoDia").textContent =
-            datos.data.attributes.nombres
-                .join(" • ")
-                .replace(/[()]/g, "");
+            nombresMes[dia - 1]
+                .replace(/[()]/g, "")
+                .split(",")[0]
+                .trim();
 
     } catch (error) {
 
@@ -502,7 +525,26 @@ async function cargarSanto() {
         console.error(error);
 
     }
-
 }
 
 cargarSanto();
+
+setInterval(() => {
+
+    const ahoraChile = new Date(
+        new Date().toLocaleString("en-US", {
+            timeZone: "America/Santiago"
+        })
+    );
+
+    if (
+        ahoraChile.getHours() === 0 &&
+        ahoraChile.getMinutes() === 0 &&
+        ahoraChile.getSeconds() === 0
+    ) {
+
+        cargarSanto();
+
+    }
+
+}, 1000);
