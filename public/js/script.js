@@ -1285,5 +1285,5 @@ cargarNoticias();
 
 setInterval(
     cargarNoticias,
-    30 * 60 * 1000
+    10 * 60 * 1000
 );

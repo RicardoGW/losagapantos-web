@@ -275,29 +275,40 @@ letter-spacing:.5px;
 
 /*======================
 HEADER
-=======================*/
+======================*/
 
 .header{
 
-position:sticky;
+    position:sticky;
 
-top:0;
+    top:0;
 
-z-index:9999;
+    z-index:9999;
 
-background:rgba(255,255,255,.82);
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.65),
+            rgba(255,255,255,.65)
+        ),
+        url("../img/fondo-agapantos.jpg");
 
-backdrop-filter:blur(15px);
+    background-size:cover;
 
-display:flex;
+    background-position:center;
 
-justify-content:space-between;
+    background-repeat:no-repeat;
 
-align-items:center;
+    backdrop-filter:blur(15px);
 
-padding:10px 4%;
+    display:flex;
 
-box-shadow:0 3px 20px rgba(0,0,0,.08);
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 4%;
+
+    box-shadow:0 3px 20px rgba(0,0,0,.08);
 
 }
 
@@ -330,7 +341,8 @@ gap:8px;
     object-position:center 40%;
     display:block;
     margin-left:-20px;
-    margin-top:-20px;
+    margin-top:0;
+    mix-blend-mode:multiply;
 }
 .logo h1{
 
@@ -3363,3 +3375,4 @@ if (botonSiguienteNoticias) {
     });
 
 }
+
