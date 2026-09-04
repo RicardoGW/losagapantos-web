@@ -206,6 +206,62 @@ Recomendaciones
 
 </section>
 
+<!-- ===================================================
+     FIESTAS PATRIAS
+     Visible automáticamente durante septiembre
+=================================================== -->
+<section id="fiestas-patrias" class="fiestas-patrias-seccion">
+
+    <div class="fiestas-guirnalda" aria-hidden="true">
+        <span class="banderin azul"></span>
+        <span class="banderin blanco"></span>
+        <span class="banderin rojo"></span>
+        <span class="banderin azul"></span>
+        <span class="banderin blanco"></span>
+        <span class="banderin rojo"></span>
+        <span class="banderin azul"></span>
+        <span class="banderin blanco"></span>
+        <span class="banderin rojo"></span>
+        <span class="banderin azul"></span>
+        <span class="banderin blanco"></span>
+        <span class="banderin rojo"></span>
+    </div>
+
+    <div class="fiestas-volantin fiestas-volantin-izq" aria-hidden="true">🪁</div>
+    <div class="fiestas-volantin fiestas-volantin-der" aria-hidden="true">🪁</div>
+
+    <div class="fiestas-contenido">
+
+        <div class="fiestas-iconos" aria-hidden="true">
+            🇨🇱 🌺 🇨🇱
+        </div>
+
+        <span class="fiestas-etiqueta">SEPTIEMBRE · FIESTAS PATRIAS</span>
+
+        <h2>🇨🇱 Aviso a la Comunidad 🇨🇱</h2>
+
+        <div class="fiestas-fechas">
+            <strong>18 y 19 de septiembre</strong>
+        </div>
+
+        <p>
+            Recordamos a nuestros vecinos que, de acuerdo con la normativa vigente,
+            <strong>es obligatorio izar la Bandera Nacional al tope</strong>
+            durante los días 18 y 19 de septiembre.
+        </p>
+
+        <div class="fiestas-saludo">
+            <span>¡Celebremos nuestras Fiestas Patrias con orgullo y alegría!</span>
+            <strong>Villa Los Agapantos</strong>
+        </div>
+
+        <div class="fiestas-decoracion" aria-hidden="true">
+            🇨🇱　🪁　🌺　🎀　🌺　🪁　🇨🇱
+        </div>
+
+    </div>
+</section>
+
 <!-- =======================================================
       INFORMACIÓN RÁPIDA
 ======================================================= -->
@@ -1157,6 +1213,20 @@ Desarrollado para la comunidad.
 <i class="fa-solid fa-arrow-up"></i>
 
 </button>
+
+
+<script>
+/* Fiestas Patrias: mostrar el aviso y decoración solamente durante septiembre */
+(function () {
+    const seccionFiestas = document.getElementById("fiestas-patrias");
+    const mesActual = new Date().getMonth();
+
+    if (seccionFiestas && mesActual === 8) {
+        seccionFiestas.classList.add("fiestas-visible");
+        document.body.classList.add("fiestas-patrias-activo");
+    }
+})();
+</script>
 
 <script src="script.js"></script>
 
