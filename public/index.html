@@ -11,7 +11,7 @@
 <meta name="description"
 content="Sitio oficial de la Villa Los Agapantos. Información comunitaria, avisos, galería, recomendaciones y actividades para todos los vecinos.">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -33,27 +33,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 <div class="topbar">
 
 <div class="top-item">
-    <i class="fa-solid fa-calendar-days"></i>
-    <span id="fechaActual"></span>
+<i class="fa-solid fa-calendar-days"></i>
+<span id="fechaActual"></span>
 </div>
 
 <div class="top-item">
-    <i class="fa-solid fa-hands-praying"></i>
-    <span id="santoDia">Cargando...</span>
+<i class="fa-solid fa-clock"></i>
+<span id="horaActual"></span>
 </div>
 
 <div class="top-item">
-    <i class="fa-solid fa-clock"></i>
-    <span id="horaActual"></span>
+<i class="fa-solid fa-temperature-half"></i>
+<span id="temperatura">
+Cargando...
+</span>
 </div>
 
 <div class="top-item">
-    <i id="iconoClima" class="fa-solid fa-cloud-sun"></i>
-
-    <span>
-        <strong id="temperaturaActual" class="temperatura-actual"></strong>
-        <span id="temperaturasDia"></span>
-    </span>
+<i class="fa-solid fa-cloud-sun"></i>
+<span id="estadoClima">
+Clima
+</span>
 </div>
 
 <div class="top-item">
@@ -90,30 +90,28 @@ Cargando
 <!-- =======================================================
       MENÚ
 ======================================================= -->
+
 <header class="header">
 
-    <div class="logo">
+<div class="logo">
 
+<img src="Logo Oficial.jpeg" alt="Villa Los Agapantos" style="width:90px;height:90px;">
 
-        <div class="titulo-web">
+<div>
 
-            <img src="img/titulo-villa.png"
-     alt="Villa Los Agapantos"
-     class="titulo-villa">
-     <div class="subtitulo-logo">
-    COMUNIDAD • SEGURIDAD • CONVIVENCIA
+<h1>Villa Los Agapantos</h1>
+
+<p>
+Comunidad • Seguridad • Convivencia
+</p>
+
 </div>
 
-
-        </div>
-
-    </div>
-
-    <button class="menu-toggle" aria-label="Abrir menú">
-        ☰
-    </button>
-
-    <nav id="menu">
+</div>
+<button class="menu-toggle" aria-label="Abrir menú">
+☰
+</button>
+<nav id="menu">
 
 <ul>
 
@@ -176,7 +174,7 @@ class="hero">
 <div class="hero-content">
 
 <h2>
-<span class="titulo-bienvenida">Bienvenidos a Nuestra Comunidad</span>
+<span>Bienvenidos a Nuestra Comunidad</span>
 </h2> 
 
 
@@ -206,6 +204,62 @@ Recomendaciones
 
 </div>
 
+</section>
+
+<!-- ===================================================
+     FIESTAS PATRIAS
+     Visible automáticamente durante septiembre
+=================================================== -->
+<section id="fiestas-patrias" class="fiestas-patrias-seccion">
+
+    <div class="fiestas-guirnalda" aria-hidden="true">
+        <span class="banderin azul"></span>
+        <span class="banderin blanco"></span>
+        <span class="banderin rojo"></span>
+        <span class="banderin azul"></span>
+        <span class="banderin blanco"></span>
+        <span class="banderin rojo"></span>
+        <span class="banderin azul"></span>
+        <span class="banderin blanco"></span>
+        <span class="banderin rojo"></span>
+        <span class="banderin azul"></span>
+        <span class="banderin blanco"></span>
+        <span class="banderin rojo"></span>
+    </div>
+
+    <div class="fiestas-volantin fiestas-volantin-izq" aria-hidden="true">🪁</div>
+    <div class="fiestas-volantin fiestas-volantin-der" aria-hidden="true">🪁</div>
+
+    <div class="fiestas-contenido">
+
+        <div class="fiestas-iconos" aria-hidden="true">
+            🇨🇱 🌺 🇨🇱
+        </div>
+
+        <span class="fiestas-etiqueta">SEPTIEMBRE · FIESTAS PATRIAS</span>
+
+        <h2>🇨🇱 Aviso a la Comunidad 🇨🇱</h2>
+
+        <div class="fiestas-fechas">
+            <strong>18 y 19 de septiembre</strong>
+        </div>
+
+        <p>
+            Recordamos a nuestros vecinos que, de acuerdo con la normativa vigente,
+            <strong>es obligatorio izar la Bandera Nacional al tope</strong>
+            durante los días 18 y 19 de septiembre.
+        </p>
+
+        <div class="fiestas-saludo">
+            <span>¡Celebremos nuestras Fiestas Patrias con orgullo y alegría!</span>
+            <strong>Villa Los Agapantos</strong>
+        </div>
+
+        <div class="fiestas-decoracion" aria-hidden="true">
+            🇨🇱　🪁　🌺　🎀　🌺　🪁　🇨🇱
+        </div>
+
+    </div>
 </section>
 
 <!-- =======================================================
@@ -305,7 +359,7 @@ Nuestra Villa
 <div class="villa-imagen">
 
 <img
-src="img/Los Agapantos.jpeg"
+src="Los Agapantos.jpeg"
 alt="Villa Los Agapantos">
 
 </div>
@@ -331,72 +385,23 @@ comunidad, compartir avisos importantes y fortalecer la participación
 de los vecinos.
 </p>
 
+<div class="villa-botones">
 
+<a href="#galeria" class="btn">
+Ver Galería
+</a>
+
+<a href="#avisos" class="btn-outline">
+Ir a Recomendaciones
+</a>
+
+</div>
 
 </div>
 
 </div>
 
 </section>
-
-<!-- ===================================================
-     NOTICIAS DE NUESTRA ZONA
-=================================================== -->
-
-<section id="noticias" class="contenedor noticias-seccion">
-
-    <h2 class="titulo-seccion">
-        📰 Noticias de nuestra zona
-    </h2>
-
-    <p class="subtitulo">
-        Información de Colina y sus alrededores
-    </p>
-
-    <div class="noticias-contenedor">
-
-        <button class="noticias-flecha noticias-anterior" aria-label="Noticias anteriores">
-            ‹
-        </button>
-
-        <div id="noticiasLista" class="noticias-lista">
-
-            <article class="noticia-card">
-                <div class="noticia-imagen">
-                    <div class="noticia-placeholder">
-                        📰
-                    </div>
-                </div>
-
-                <div class="noticia-contenido">
-                    <span class="noticia-fuente">
-                        NOTICIAS LOCALES
-                    </span>
-
-                    <h3>
-                        Cargando noticias de nuestra zona...
-                    </h3>
-
-                    <p class="noticia-fecha">
-                        Actualizando información
-                    </p>
-                </div>
-            </article>
-
-        </div>
-
-        <button class="noticias-flecha noticias-siguiente" aria-label="Noticias siguientes">
-            ›
-        </button>
-
-    </div>
-
-    <p class="noticias-pie">
-        Información proveniente de medios y fuentes locales.
-        Al seleccionar una noticia, serás dirigido a su publicación original.
-    </p>
-
-            
 
 <!-- ===================================================
 GALERÍA
@@ -422,8 +427,8 @@ Algunos de los lugares más representativos de nuestra comunidad.
 
 <div class="card-foto">
 
-<img src="img/Los Agapantos.jpeg" alt="Letrero Villa Los Agapantos">
-
+<img src="Los Agapantos.jpeg"
+alt="Letrero Villa Los Agapantos">
 
 <div class="overlay">
 
@@ -439,7 +444,7 @@ Bienvenida a la Villa.
 
 <div class="card-foto">
 
-<img src="img/Porton entrada.jpeg"
+<img src="Porton entrada.jpeg"
 alt="Portón Entrada">
 
 <div class="overlay">
@@ -458,7 +463,7 @@ Acceso principal.
 
 <div class="card-foto">
 
-<img src="img/Porton Salida.jpeg"
+<img src="Porton Salida.jpeg"
 alt="Portón Salida">
 
 <div class="overlay">
@@ -477,7 +482,7 @@ Salida de la Villa.
 
 <div class="card-foto">
 
-<img src="img/sector juegos.jpeg"
+<img src="sector juegos.jpeg"
 alt="Sector Juegos">
 
 <div class="overlay">
@@ -500,7 +505,7 @@ Espacio para compartir.
 
 <div class="card-foto">
 
-<img src="img/sector juegos 2.jpeg"
+<img src="sector juegos 2.jpeg"
 alt="Sector Juegos">
 
 <div class="overlay">
@@ -530,94 +535,48 @@ Vista nocturna.
 
 <section id="clima" class="informacion-util">
 
-<style>
-@media screen and (min-width: 769px) {
-
-    #clima .info-grid {
-        display: block !important;
-        margin-top: 28px !important;
-    }
-
-    #clima .info-util {
-        background: #ffffff !important;
-        border: 1px solid rgba(36,59,100,0.10) !important;
-        border-top: 5px solid #2f9675 !important;
-        border-radius: 22px !important;
-        padding: 28px 35px 30px !important;
-        box-shadow: 0 10px 25px rgba(36,59,100,0.10) !important;
-        text-align: center !important;
-    }
-
-    #clima .info-util h3 {
-        color: #243b64 !important;
-        margin: 0 0 14px !important;
-        font-size: 1.3rem !important;
-    }
-
-    #clima .info-util p {
-    color: #4d5b68 !important;
-    line-height: 1.55 !important;
-    margin: 0 auto 22px !important;
-    max-width: 850px !important;
-}
-
-    #clima .info-util .btn {
-        display: inline-block !important;
-        background: linear-gradient(135deg, #2f6aa8, #2f9675) !important;
-        color: #ffffff !important;
-        padding: 10px 22px !important;
-        border-radius: 22px !important;
-        text-decoration: none !important;
-        font-weight: 600 !important;
-        box-shadow: 0 5px 12px rgba(36,59,100,0.16) !important;
-    }
-
-    #clima .boton-informe {
-        margin: 0 !important;
-        text-align: center !important;
-    }
-
-}
-</style>
-
 <div class="contenedor">
 
-    <h2 class="titulo-seccion">
-        🌦️ Informe Climatológico
-    </h2>
+<h2 class="titulo-seccion">
+🌦️ Informe Climatológico
+</h2>
 
-    <p class="subtitulo">
-        Información meteorológica oficial para la comuna de Colina y la Región Metropolitana.
-    </p>
+<p class="subtitulo">
+Información meteorológica oficial para la comuna de Colina y la Región Metropolitana.
+</p>
 
-    <div class="info-grid">
+<div class="info-grid">
 
-        <div class="info-util">
+<div class="info-util">
+<h3>🌡️ Temperatura</h3>
+<p id="temperatura">Próximamente</p>
+</div>
 
-            <h3>
-                🌧️ Precipitación
-            </h3>
+<div class="info-util">
+<h3>💧 Humedad</h3>
+<p id="humedad">Próximamente</p>
+</div>
 
-            <p>
-                Consulta el informe oficial de precipitaciones
-                y registros meteorológicos de la Región Metropolitana.
-            </p>
+<div class="info-util">
+<h3>🌧️ Precipitación</h3>
+<p>
+Ver informe oficial de MeteoChile.
+</p>
+</div>
 
-            <p class="boton-informe">
+</div>
 
-                <a class="btn"
-                   target="_blank"
-                   href="https://climatologia.meteochile.gob.cl/application/diariob/visorEmaPrecipitacion/330020">
+<p style="text-align:center;margin-top:35px;">
 
-                    📄 Ver Informe Oficial
+<a class="btn"
+target="_blank"
+href="https://climatologia.meteochile.gob.cl/application/diariob/visorEmaPrecipitacion/330020">
 
-                </a>
+📄 Ver Informe Oficial
 
-            </p>
+</a>
 
-        </div>
-
-    </div>
+</p>
 
 </div>
 
@@ -763,39 +722,13 @@ Un espacio para fortalecer la buena convivencia, el respeto y el compromiso entr
 </p>
 
 <div class="avisos-grid">
+<!-- ======================= TARJETA 1 ======================= -->
 
 <div class="aviso-card">
 
 <div class="icono-aviso">
-<img src="img/auto-no-entrar.png" alt="Circulación y acceso">
+🚛
 </div>
-
-<h3>Circulación y acceso por los portones</h3>
-
-<p>
-Se solicita respetar el sentido de circulación al ingresar y salir de la villa.
-<strong>Mientras los portones estén operativos, respetar el sentido de circulación
-y no ingresar ni salir en sentido contrario al tránsito.</strong>
-</p>
-
-
-<p style="text-align: justify;">
-Si el control remoto o el llamado telefónico no funcionan,
-<strong>avisar previamente en el grupo de WhatsApp</strong> antes de realizar la maniobra,
-para que los demás vecinos estén informados.
-</p>
-
-
-<p>
-<strong>La colaboración de todos permite mantener una circulación
-segura dentro de la villa.</strong>
-</p>
-
-</div>
-
-<div class="aviso-card">
-
-<div class="icono-aviso">🚛</div>
 
 <h3>Camión de la basura</h3>
 
@@ -807,9 +740,13 @@ daños a los autos de otros residentes.
 
 </div>
 
+<!-- ======================= TARJETA 2 ======================= -->
+
 <div class="aviso-card">
 
-<div class="icono-aviso">🚸</div>
+<div class="icono-aviso">
+🚸
+</div>
 
 <h3>Velocidad y tránsito dentro de la villa</h3>
 
@@ -821,65 +758,67 @@ frecuentemente hay niños jugando.
 
 </div>
 
+<!-- ======================= TARJETA 3 ======================= -->
+
 <div class="aviso-card">
 
- <div class="icono-aviso">
-    <span style="
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        width:50px;
-        height:50px;
-        border:3px solid #d71920;
-        border-radius:50%;
-        color:#111;
-        font-size:32px;
-        font-weight:800;
-        font-family:Arial,sans-serif;
-        position:relative;
-        box-sizing:border-box;
-    ">
-        E
-        <span style="
-    position:absolute;
-    width:48px;
-    height:4px;
-    background:#d71920;
-    transform:rotate(-45deg);
-    border-radius:3px;
-"></span>
-    </span>
+<div class="icono-aviso">
+🚗
 </div>
-<h3>Vehículos estacionados frente a otras viviendas</h3>
+
+<h3>Vehículos que bloquean entradas y salidas</h3>
 
 <p>
-<strong>Por ley, está prohibido estacionar frente a entradas y salidas de vehículos.</strong>
-
-Si necesitas estacionar momentáneamente <strong>frente al domicilio de otro vecino</strong>,
-recuerda que, al tratarse de una vía pública, puedes hacerlo siempre que no exista una
-prohibición y no obstruyas entradas o salidas. Como gesto de buena convivencia, se
-recomienda avisar previamente al vecino.
+Se pide evitar detenerse o bloquear la entrada y salida de vehículos de otros
+vecinos. Cuando un auto queda estorbando el acceso, se generan molestias,
+retrasos y situaciones de riesgo.
 </p>
 
 </div>
 
+<!-- ======================= TARJETA 4 ======================= -->
+
 <div class="aviso-card">
 
-<div class="icono-aviso">🚭</div>
+<div class="icono-aviso">
+🅿️
+</div>
+
+<h3>Vehículos estacionados frente a otras viviendas</h3>
+
+<p>
+Si bien la vía es pública, no cuesta nada avisar por cortesía cuando se deja un
+vehículo frente a la casa de otro vecino. Un pequeño gesto evita malos
+entendidos y mejora la convivencia.
+</p>
+
+</div>
+
+<!-- ======================= TARJETA 5 ======================= -->
+
+<div class="aviso-card">
+
+<div class="icono-aviso">
+🚭
+</div>
 
 <h3>Sustancias y humo en espacios comunes</h3>
 
 <p>
-Por ley no está permitido fumar sustancias sicotrópicas en la plaza ni en la via pública.
-Si el consumo se realiza en un domicilio, hacerlo en un lugar cerrado para evitar molestias a
+No está permitido fumar sustancias sicotrópicas en la plaza ni en áreas comunes.
+Si se consume en el hogar, hacerlo en un lugar cerrado para evitar molestias a
 otros residentes.
 </p>
 
 </div>
 
+<!-- ======================= TARJETA 6 ======================= -->
+
 <div class="aviso-card">
 
-<div class="icono-aviso">🍔</div>
+<div class="icono-aviso">
+🍔
+</div>
 
 <h3>Basura y alimentos en la plaza</h3>
 
@@ -891,9 +830,13 @@ malos olores.
 
 </div>
 
+<!-- ======================= TARJETA 7 ======================= -->
+
 <div class="aviso-card">
 
-<div class="icono-aviso">🎉</div>
+<div class="icono-aviso">
+🎉
+</div>
 
 <h3>Eventos, cumpleaños y música</h3>
 
@@ -905,9 +848,13 @@ reclamos.
 
 </div>
 
+<!-- ======================= TARJETA 8 ======================= -->
+
 <div class="aviso-card">
 
-<div class="icono-aviso">🏍️</div>
+<div class="icono-aviso">
+🏍️
+</div>
 
 <h3>Motos y delivery</h3>
 
@@ -919,9 +866,13 @@ convivencia tranquila.
 
 </div>
 
+<!-- ======================= TARJETA 9 ======================= -->
+
 <div class="aviso-card">
 
-<div class="icono-aviso">👀</div>
+<div class="icono-aviso">
+👀
+</div>
 
 <h3>Personas desconocidas o merodeando la villa</h3>
 
@@ -933,91 +884,42 @@ situaciones de riesgo.
 
 </div>
 
+<!-- ======================= TARJETA 10 ======================= -->
+
 <div class="aviso-card">
 
-<div class="icono-aviso">🤝</div>
+<div class="icono-aviso">
+</div>
 
-<h3>Buena vecindad</h3>
+<h3>🤝 Buena vecindad</h3>
 
 <p>
 Una comunidad se fortalece con el respeto, la empatía y el diálogo. Antes de sacar conclusiones, conversemos. Una buena comunicación evita malentendidos y nos ayuda a construir una vecindad más unida, respetuosa y donde el diálogo siempre sea el primer paso para resolver cualquier situación.
-</p>
+</p> 
 
 </div>
 
-<div class="aviso-card">
-
-<div class="icono-aviso">🏡</div>
-
-<h3>Gastos Comunes</h3>
-
-
-<p>
-    Si eres nuevo propietario o arrendatario, te invitamos a contactar a la directiva para conocer el funcionamiento de la comunidad y la forma de realizar el pago de los gastos comunes.
-    <br><br>
-
-    Estos aportes permiten financiar la <strong>mantención del portón de acceso y su sistema automático</strong>, el consumo eléctrico, las <strong>cámaras de seguridad e internet para su monitoreo</strong>, además de la mantención de los equipos y los materiales necesarios para la administración de la comunidad.
-    <br><br>
-
-    El pago oportuno de los gastos comunes permite mantener estos servicios funcionando correctamente y contribuye a la <strong>seguridad, organización y bienestar de todos los vecinos</strong>.
-
-</p>
-
 </div>
-<!-- ======================= TENENCIA RESPONSABLE ======================= -->
-
-<div class="aviso-card">
-
-    <div class="icono-aviso">
-        🐶🐱
-    </div>
-
-    <h3>Tenencia responsable de mascotas</h3>
-
-    <p>
-        <strong>🐶 Perros:</strong> Al salir con tu mascota por el interior de la villa,
-        recuerda llevar siempre una bolsa para recoger sus fecas y mantener limpios
-        nuestros espacios comunes.
-    </p>
-
-    <p>
-        <strong>🐱 Gatos:</strong> Tener un gato también implica responsabilidad.
-        Es importante contar con un arenero adecuado dentro del hogar y enseñarles
-        a utilizarlo, evitando que hagan sus necesidades en maceteros, jardines,
-        techos u otros espacios de los vecinos.
-    </p>
-
-    <p>
-        <strong>Ser responsable de una mascota también es respetar a nuestros vecinos.</strong>
-        🐾
-    </p>
-
-</div>
-<!-- ======================= TARJETA FINAL ======================= -->
-
 <div class="aviso-card">
 
     <div class="icono-aviso">
         🏡
     </div>
 
-    <h3>Valoremos nuestro entorno</h3>
+    <h3>Gastos Comunes</h3>
 
     <p>
-        Vecin@s, vivimos en un entorno tranquilo, con áreas verdes y servicios básicos
-        cercanos. Valoremos y cuidemos esta tranquilidad, evitando situaciones que puedan
-        afectar la seguridad y la buena convivencia de nuestra comunidad.
-    </p>
+        Si eres un nuevo propietario o arrendatario, te invitamos cordialmente a contactar a la directiva para informarte sobre el funcionamiento de la comunidad y el pago de los gastos comunes.
+        <br><br>
 
-    <p>
-        Entre todos podemos mantener este lugar tranquilo, seguro y agradable para vivir.
-    </p>
+        Este aporte mensual permite financiar la mantención, reparación y funcionamiento del portón de acceso, el consumo de energía eléctrica del portón automático y del sistema de cámaras de seguridad, el servicio de internet para el monitoreo y grabación de las cámaras, la mantención de estos equipos, la compra de insumos administrativos, libros de actas, formularios y otros materiales necesarios para la gestión de la comunidad.
+        <br><br>
 
-</div>
+        El pago oportuno de los gastos comunes permite mantener estos servicios funcionando correctamente y contribuye a la seguridad, organización y bienestar de todos los vecinos.
+    </p>
 
 </div>
 </section>
-
 <!-- ===================================================
 SUGERENCIAS
 =================================================== -->
@@ -1036,284 +938,173 @@ Tu opinión es importante para seguir mejorando nuestra comunidad.
 
 </p>
 
-<style>
-@media screen and (min-width: 769px) {
-
-    .sugerencias-box {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 28px !important;
-    align-items: start !important;
-}
-
-    .sugerencias-info {
-        background: #ffffff !important;
-        border: 1px solid rgba(36,59,100,0.10) !important;
-        border-top: 5px solid #2f6aa8 !important;
-        border-radius: 22px !important;
-        padding: 28px 32px !important;
-        box-shadow: 0 10px 25px rgba(36,59,100,0.10) !important;
-    }
-
-    .sugerencias-info h3 {
-        color: #243b64 !important;
-        margin-bottom: 14px !important;
-    }
-
-    .sugerencias-info ul {
-        list-style: none !important;
-        padding-left: 0 !important;
-        margin-top: 18px !important;
-    }
-
-    .sugerencias-info li {
-        margin-bottom: 9px !important;
-    }
-
-    .sugerencias-form {
-        display: flex !important;
-        width: 100% !important;
-    }
-
-    .sugerencias-proximamente {
-        width: 100% !important;
-        box-sizing: border-box !important;
-        background: #ffffff !important;
-        border: 1px solid rgba(31,127,104,0.15) !important;
-        border-top: 5px solid #2f9675 !important;
-        border-radius: 22px !important;
-        padding: 28px 32px !important;
-        box-shadow: 0 10px 25px rgba(36,59,100,0.10) !important;
-        text-align: center !important;
-    }
-
-    .icono-proximamente {
-        font-size: 38px !important;
-        margin-bottom: 8px !important;
-    }
-
-    .sugerencias-proximamente h3 {
-        color: #243b64 !important;
-        font-size: 1.35rem !important;
-        margin-bottom: 15px !important;
-    }
-
-    .sugerencias-proximamente p {
-        color: #4d5b68 !important;
-        line-height: 1.55 !important;
-        margin-bottom: 8px !important;
-    }
-
-    .proximamente-badge {
-        display: inline-block !important;
-        background: linear-gradient(135deg, #2f6aa8, #2f9675) !important;
-        color: white !important;
-        padding: 9px 18px !important;
-        border-radius: 20px !important;
-        font-size: 0.9rem !important;
-        font-weight: 600 !important;
-        box-shadow: 0 5px 12px rgba(36,59,100,0.16) !important;
-    }
-
-}
-</style>
-
-
 <div class="sugerencias-box">
 
-    <div class="sugerencias-info">
+<div class="sugerencias-info">
 
-        <h3>
-            💡 ¿Qué podemos mejorar?
-        </h3>
+<h3>
 
-        <p>
-            Queremos conocer las ideas de nuestros vecinos para seguir
-            construyendo una Villa Los Agapantos más segura, limpia,
-            agradable y acogedora para todos.
-        </p>
+💬 Envíanos tu sugerencia
 
-        <ul>
-            <li>✔ Áreas verdes y espacios comunes.</li>
-            <li>✔ Seguridad y prevención.</li>
-            <li>✔ Iluminación.</li>
-            <li>✔ Aseo y mantención.</li>
-            <li>✔ Actividades comunitarias.</li>
-            <li>✔ Otras ideas para nuestra comunidad.</li>
-        </ul>
+</h3>
 
-    </div>
+<p>
 
+Si tienes alguna idea para mejorar la Villa Los Agapantos,
+puedes escribirnos utilizando el siguiente formulario.
 
-    <div class="sugerencias-form">
+Toda sugerencia será revisada por la administración antes
+de ser publicada.
 
-        <div class="sugerencias-proximamente">
+</p>
 
-            <div class="icono-proximamente">
-                💬
-            </div>
+<ul>
 
-            <h3>
-                Tu opinión cuenta
-            </h3>
+<li>✔ Mejoras en áreas verdes.</li>
 
-            <p>
-                Estamos preparando este espacio para que puedas
-                enviar tus ideas y sugerencias directamente a la
-                administración de la Villa.
-            </p>
+<li>✔ Seguridad.</li>
 
-            <span class="proximamente-badge">
-                🚧 Próximamente disponible
-            </span>
+<li>✔ Iluminación.</li>
 
-        </div>
+<li>✔ Aseo.</li>
 
-    </div>
+<li>✔ Actividades comunitarias.</li>
+
+<li>✔ Cualquier otra idea.</li>
+
+</ul>
 
 </div>
+
+<div class="sugerencias-form">
+
+<form id="formSugerencias">
+
+<input
+type="text"
+placeholder="Nombre (opcional)">
+
+<input
+type="email"
+placeholder="Correo electrónico (opcional)">
+
+<textarea
+
+placeholder="Escribe aquí tu sugerencia..."
+
+rows="8"
+
+></textarea>
+
+<button
+type="submit"
+class="btn">
+
+Enviar sugerencia
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- ===================================================
 INFORMACIÓN ÚTIL
 =================================================== -->
 
-<div class="telefonos-card">
+<section class="informacion-util">
 
-    <h3 class="titulo-telefonos">
-        📞 Teléfonos de interés
-    </h3>
+<div class="contenedor">
 
-    <div class="telefonos-contenido">
+<h2 class="titulo-seccion">
 
-        <div class="info-util">
+Información útil
 
-            <i class="fa-solid fa-bolt"></i>
+</h2>
 
-            <h3>
-                Electricidad
-            </h3>
+<div class="info-grid">
 
-            <p>
-                Enel Colina<br>
-                Fono: 600 690 2200<br>
-                Emergencias: 800 800 692
-            </p>
+<div class="info-util">
 
-        </div>
+<i class="fa-solid fa-phone-volume"></i>
 
+<h3>
 
-        <div class="info-util">
+Emergencias
 
-            <i class="fa-solid fa-droplet"></i>
+</h3>
 
-            <h3>
-                Agua
-            </h3>
+<p>
 
-            <p>
-                Aguas Metropolitana<br>
-                Fono: 600 300 2600
-            </p>
+133 Carabineros<br>
 
-        </div>
+132 Bomberos<br>
 
-    </div>
+131 SAMU
 
-</div>
-
-</div>
-
-</div>
-
-</section>
-<section class="contenedor">
-
-    <h2 class="titulo-seccion">
-        🎵 Radios Recomendadas
-    </h2>
-
-    <p class="subtitulo">
-        Una excelente compañía para disfrutar mientras compartes con la familia,
-        trabajas en casa o pasas un buen fin de semana.
-    </p>
-
-    <div class="contador-visitas">
-
-        <div class="contador-icono">
-            <i class="fa-solid fa-radio"></i>
-        </div>
-
-        <h3>FM Plus</h3>
-
-        <p>
-            <strong>"Sin Clásicos... ¡Imposible!"</strong><br><br>
-            Música de los años 80, 90 y grandes éxitos para acompañar tu día.
-        </p>
-
-        
-
-        <a href="https://www.fmplus.cl/"
-           target="_blank"
-           class="btn">
-            🎧 Escuchar en vivo
-        </a>
-
-    </div>
-    <div class="contador-visitas">
-
-    <div class="contador-icono">
-        <i class="fa-solid fa-radio"></i>
-    </div>
-
-    <h3>Radio Cumbre 90.9 FM</h3>
-
-    <p>
-    <strong>Radio local de Colina</strong><br>
-    Música, noticias e información de nuestra comuna.
 </p>
 
+</div>
 
+<div class="info-util">
 
-    <a href="https://radiocumbre.cl/"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="btn">
-        🎧 Escuchar Radio Cumbre
-    </a>
+<i class="fa-solid fa-building"></i>
+
+<h3>
+
+Municipalidad
+
+</h3>
+
+<p>
+
+Ilustre Municipalidad de Colina
+
+</p>
 
 </div>
 
-</section>
+<div class="info-util">
 
-<section class="contenedor">
+<i class="fa-solid fa-bolt"></i>
 
+<h3>
 
-<div class="contador-visitas">
+Electricidad
 
-    <div class="contador-icono">
-        <i class="fa-solid fa-users"></i>
-    </div>
+</h3>
 
-    <h3>Visitantes del sitio</h3>
+<p>
 
-    <div id="contadorVisitas" class="numero-visitas">
-    <span>0</span>
-    <span>0</span>
-    <span>0</span>
-    <span>0</span>
-    <span>0</span>
-    <span>0</span>
+Enel Distribución
+
+</p>
+
 </div>
 
-    <div class="contador-texto">
-        Visitas registradas
-    </div>
+<div class="info-util">
 
-    <p>
-        Gracias por visitar la página oficial de
-        <strong>Villa Los Agapantos</strong>.
-    </p>
+<i class="fa-solid fa-droplet"></i>
+
+<h3>
+
+Agua
+
+</h3>
+
+<p>
+
+Aguas Andinas
+
+</p>
+
+</div>
+
+</div>
 
 </div>
 
@@ -1404,9 +1195,6 @@ Colina - Región Metropolitana
 </div>
 
 </div>
-</div>
-
-
 
 <div class="copyright">
 
@@ -1420,114 +1208,28 @@ Desarrollado para la comunidad.
 
 </footer>
 
-
-
-
-<!-- =======================================================
-     ACCESO AL CHAT DE VECINOS
-======================================================= -->
-
-<a
-    href="https://durable-chat-template.ricardogarcesw.workers.dev/GNtbiEvBMc2Nb8Kv9ACJJ"
-    class="acceso-chat-flotante"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Abrir Chat de Vecinos"
->
-    <span class="acceso-chat-icono">💬</span>
-    <span class="acceso-chat-texto">
-        <strong>Chat de Vecinos</strong>
-        <small>Conversemos entre todos</small>
-    </span>
-</a>
-
-<style>
-.acceso-chat-flotante {
-    position: fixed;
-    right: 24px;
-    bottom: 24px;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    padding: 11px 17px 11px 12px;
-    background: linear-gradient(135deg, #ffffff, #eef8f0);
-    color: #315c3d;
-    border: 1px solid rgba(72, 132, 82, 0.22);
-    border-radius: 999px;
-    box-shadow: 0 8px 24px rgba(42, 82, 49, 0.20), 0 0 0 4px rgba(255, 255, 255, 0.65);
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.acceso-chat-flotante:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(42, 82, 49, 0.26), 0 0 0 4px rgba(255, 255, 255, 0.72);
-}
-
-.acceso-chat-icono {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #4f8758;
-    color: #ffffff;
-    border-radius: 50%;
-    font-size: 21px;
-}
-
-.acceso-chat-texto {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.15;
-}
-
-.acceso-chat-texto strong {
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.acceso-chat-texto small {
-    margin-top: 3px;
-    font-size: 10px;
-    color: #718078;
-}
-
-@media screen and (max-width: 700px) {
-    .acceso-chat-flotante {
-        right: 13px;
-        bottom: 14px;
-        padding: 9px 13px 9px 9px;
-        gap: 8px;
-    }
-
-    .acceso-chat-icono {
-        width: 38px;
-        height: 38px;
-        font-size: 19px;
-    }
-
-    .acceso-chat-texto strong {
-        font-size: 12px;
-    }
-
-    .acceso-chat-texto small {
-        font-size: 9px;
-    }
-}
-</style>
-
-
 <button id="btnArriba">
 
 <i class="fa-solid fa-arrow-up"></i>
 
 </button>
 
-<script src="js/script.js"></script>
+
+<script>
+/* Fiestas Patrias: mostrar el aviso y decoración solamente durante septiembre */
+(function () {
+    const seccionFiestas = document.getElementById("fiestas-patrias");
+    const mesActual = new Date().getMonth();
+
+    if (seccionFiestas && mesActual === 8) {
+        seccionFiestas.classList.add("fiestas-visible");
+        document.body.classList.add("fiestas-patrias-activo");
+    }
+})();
+</script>
+
+<script src="script.js"></script>
 
 </body>
 
 </html>
-
