@@ -1,1235 +1,1182 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Villa Los Agapantos | Comunidad de Vecinos</title>
-
-<meta name="description"
-content="Sitio oficial de la Villa Los Agapantos. Información comunitaria, avisos, galería, recomendaciones y actividades para todos los vecinos.">
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-</head>
-
-<body>
-
-<!-- =======================================================
-     BARRA SUPERIOR
-======================================================= -->
-
-<div class="topbar">
-
-<div class="top-item">
-<i class="fa-solid fa-calendar-days"></i>
-<span id="fechaActual"></span>
-</div>
-
-<div class="top-item">
-<i class="fa-solid fa-clock"></i>
-<span id="horaActual"></span>
-</div>
-
-<div class="top-item">
-<i class="fa-solid fa-temperature-half"></i>
-<span id="temperatura">
-Cargando...
-</span>
-</div>
-
-<div class="top-item">
-<i class="fa-solid fa-cloud-sun"></i>
-<span id="estadoClima">
-Clima
-</span>
-</div>
-
-<div class="top-item">
-<i class="fa-solid fa-money-bill-trend-up"></i>
-
-<span>
-
-UF:
-<strong id="uf">
-Cargando
-</strong>
-
-</span>
-
-</div>
-
-<div class="top-item">
-
-<i class="fa-solid fa-coins"></i>
-
-<span>
-
-UTM:
-<strong id="utm">
-Cargando
-</strong>
-
-</span>
-
-</div>
-
-</div>
-
-<!-- =======================================================
-      MENÚ
-======================================================= -->
-
-<header class="header">
-
-<div class="logo">
-
-<img src="Logo Oficial.jpeg" alt="Villa Los Agapantos" style="width:90px;height:90px;">
-
-<div>
-
-<h1>Villa Los Agapantos</h1>
-
-<p>
-Comunidad • Seguridad • Convivencia
-</p>
-
-</div>
-
-</div>
-<button class="menu-toggle" aria-label="Abrir menú">
-☰
-</button>
-<nav id="menu">
-
-<ul>
-
-<li>
-<a href="#inicio">
-Inicio
-</a>
-</li>
-
-<li>
-<a href="#nuestra-villa">
-Nuestra Villa
-</a>
-</li>
-
-<li>
-<a href="#galeria">
-Galería
-</a>
-</li>
-<li>
-<a href="#clima">
-Clima
-</a>
-</li>
-<li>
-<a href="#calendario">
-Calendario
-</a>
-</li>
-
-<li>
-<a href="#avisos">
-Recomendaciones
-</a>
-</li>
-
-<li>
-<a href="#contacto">
-Contacto
-</a>
-</li>
-
-</ul>
-
-</nav>
-
-</header>
-
-<!-- =======================================================
-      HERO
-======================================================= -->
-
-<section
-id="inicio"
-class="hero">
-
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
-<h2>
-<span>Bienvenidos a Nuestra Comunidad</span>
-</h2> 
-
-
-<p>
-
-Un espacio pensado para fortalecer la convivencia,
-mantener informados a todos los vecinos y cuidar
-nuestra comunidad.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#nuestra-villa" class="btn">
-
-Conocer la Villa
-
-</a>
-
-<a href="#avisos" class="btn-outline">
-
-Recomendaciones
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================================================
-     FIESTAS PATRIAS
-     Visible automáticamente durante septiembre
-=================================================== -->
-<section id="fiestas-patrias" class="fiestas-patrias-seccion">
-
-    <div class="fiestas-guirnalda" aria-hidden="true">
-        <span class="banderin azul"></span>
-        <span class="banderin blanco"></span>
-        <span class="banderin rojo"></span>
-        <span class="banderin azul"></span>
-        <span class="banderin blanco"></span>
-        <span class="banderin rojo"></span>
-        <span class="banderin azul"></span>
-        <span class="banderin blanco"></span>
-        <span class="banderin rojo"></span>
-        <span class="banderin azul"></span>
-        <span class="banderin blanco"></span>
-        <span class="banderin rojo"></span>
-    </div>
-
-    <div class="fiestas-volantin fiestas-volantin-izq" aria-hidden="true">🪁</div>
-    <div class="fiestas-volantin fiestas-volantin-der" aria-hidden="true">🪁</div>
-
-    <div class="fiestas-contenido">
-
-        <div class="fiestas-iconos" aria-hidden="true">
-            🇨🇱 🌺 🇨🇱
-        </div>
-
-        <span class="fiestas-etiqueta">SEPTIEMBRE · FIESTAS PATRIAS</span>
-
-        <h2>🇨🇱 Aviso a la Comunidad 🇨🇱</h2>
-
-        <div class="fiestas-fechas">
-            <strong>18 y 19 de septiembre</strong>
-        </div>
-
-        <p>
-            Recordamos a nuestros vecinos que, de acuerdo con la normativa vigente,
-            <strong>es obligatorio izar la Bandera Nacional al tope</strong>
-            durante los días 18 y 19 de septiembre.
-        </p>
-
-        <div class="fiestas-saludo">
-            <span>¡Celebremos nuestras Fiestas Patrias con orgullo y alegría!</span>
-            <strong>Villa Los Agapantos</strong>
-        </div>
-
-        <div class="fiestas-decoracion" aria-hidden="true">
-            🇨🇱　🪁　🌺　🎀　🌺　🪁　🇨🇱
-        </div>
-
-    </div>
-</section>
-
-<!-- =======================================================
-      INFORMACIÓN RÁPIDA
-======================================================= -->
-
-<section class="info-panel">
-
-<div class="info-card">
-
-<i class="fa-solid fa-house"></i>
-
-<h3>
-Nuestra Villa
-</h3>
-
-<p>
-
-Comunidad organizada
-
-</p>
-
-</div>
-
-<div class="info-card">
-
-<i class="fa-solid fa-tree"></i>
-
-<h3>
-
-Áreas verdes
-
-</h3>
-
-<p>
-
-Espacios para compartir
-
-</p>
-
-</div>
-
-<div class="info-card">
-
-<i class="fa-solid fa-shield-halved"></i>
-
-<h3>
-
-Seguridad
-
-</h3>
-
-<p>
-
-Vecinos comprometidos
-
-</p>
-
-</div>
-
-<div class="info-card">
-
-<i class="fa-solid fa-users"></i>
-
-<h3>
-
-Comunidad
-
-</h3>
-
-<p>
-
-Respeto y buena convivencia
-
-</p>
-
-</div>
-
-</section>
-
-<!-- =======================================================
-      NUESTRA VILLA
-======================================================= -->
-
-<section
-id="nuestra-villa"
-class="contenedor">
-
-<h2 class="titulo-seccion">
-
-Nuestra Villa
-
-</h2>
-
-<div class="villa-grid">
-
-<div class="villa-imagen">
-
-<img
-src="Los Agapantos.jpeg"
-alt="Villa Los Agapantos">
-
-</div>
-
-<div class="villa-texto">
-<h3>Un lugar para vivir en comunidad</h3>
-
-<p>
-La Villa Los Agapantos es un conjunto residencial ubicado en Colina,
-caracterizado por su ambiente tranquilo, áreas verdes y una comunidad
-organizada que busca mantener una buena convivencia entre todos los vecinos.
-</p>
-
-<p>
-Nuestro tradicional letrero tallado en madera representa la identidad de
-la villa, reflejando el compromiso de sus residentes con el respeto,
-la seguridad y el cuidado de los espacios comunes.
-</p>
-
-<p>
-Este sitio web nace con el propósito de mantener informada a toda la
-comunidad, compartir avisos importantes y fortalecer la participación
-de los vecinos.
-</p>
-
-<div class="villa-botones">
-
-<a href="#galeria" class="btn">
-Ver Galería
-</a>
-
-<a href="#avisos" class="btn-outline">
-Ir a Recomendaciones
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================================================
-GALERÍA
-=================================================== -->
-
-<section
-id="galeria"
-class="contenedor">
-
-<h2 class="titulo-seccion">
-
-Galería de la Villa
-
-</h2>
-
-<p class="subtitulo">
-
-Algunos de los lugares más representativos de nuestra comunidad.
-
-</p>
-
-<div class="galeria">
-
-<div class="card-foto">
-
-<img src="Los Agapantos.jpeg"
-alt="Letrero Villa Los Agapantos">
-
-<div class="overlay">
-
-<h3>Letrero Principal</h3>
-
-<p>
-Bienvenida a la Villa.
-</p>
-
-</div>
-
-</div>
-
-<div class="card-foto">
-
-<img src="Porton entrada.jpeg"
-alt="Portón Entrada">
-
-<div class="overlay">
-
-<h3>Portón de Entrada</h3>
-
-<p>
-
-Acceso principal.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card-foto">
-
-<img src="Porton Salida.jpeg"
-alt="Portón Salida">
-
-<div class="overlay">
-
-<h3>Portón de Salida</h3>
-
-<p>
-
-Salida de la Villa.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card-foto">
-
-<img src="sector juegos.jpeg"
-alt="Sector Juegos">
-
-<div class="overlay">
-
-<h3>
-
-Plaza
-
-</h3>
-
-<p>
-
-Espacio para compartir.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card-foto">
-
-<img src="sector juegos 2.jpeg"
-alt="Sector Juegos">
-
-<div class="overlay">
-
-<h3>
-
-Sector de Juegos
-
-</h3>
-
-<p>
-
-Vista nocturna.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- ===================================================
-      INFORME CLIMATOLÓGICO
-=================================================== -->
-
-<section id="clima" class="informacion-util">
-
-<div class="contenedor">
-
-<h2 class="titulo-seccion">
-🌦️ Informe Climatológico
-</h2>
-
-<p class="subtitulo">
-Información meteorológica oficial para la comuna de Colina y la Región Metropolitana.
-</p>
-
-<div class="info-grid">
-
-<div class="info-util">
-<h3>🌡️ Temperatura</h3>
-<p id="temperatura">Próximamente</p>
-</div>
-
-<div class="info-util">
-<h3>💧 Humedad</h3>
-<p id="humedad">Próximamente</p>
-</div>
-
-<div class="info-util">
-<h3>🌧️ Precipitación</h3>
-<p>
-Ver informe oficial de MeteoChile.
-</p>
-</div>
-
-</div>
-
-<p style="text-align:center;margin-top:35px;">
-
-<a class="btn"
-target="_blank"
-href="https://climatologia.meteochile.gob.cl/application/diariob/visorEmaPrecipitacion/330020">
-
-📄 Ver Informe Oficial
-
-</a>
-
-</p>
-
-</div>
-
-</section>
-<!-- ===================================================
-CALENDARIO
-=================================================== -->
-
-<section
-id="calendario"
-class="calendario">
-
-<div class="contenedor">
-
-<h2 class="titulo-seccion">
-
-Calendario Comunitario
-
-</h2>
-
-<p class="subtitulo">
-
-Actividades importantes para todos los vecinos.
-
-</p>
-
-<div class="eventos-grid">
-
-<div class="evento">
-
-<div class="evento-icono">
-
-🚛
-
-</div>
-
-<h3>
-
-Camión de Basura
-
-</h3>
-
-<p>
-
-Martes<br>
-Jueves<br>
-Sábado
-
-</p>
-
-</div>
-
-<div class="evento">
-
-<div class="evento-icono">
-
-👥
-
-</div>
-
-<h3>
-
-Reuniones
-
-</h3>
-
-<p>
-
-Información próximamente.
-
-</p>
-
-</div>
-
-<div class="evento">
-
-<div class="evento-icono">
-
-🌳
-
-</div>
-
-<h3>
-
-Operativos
-
-</h3>
-
-<p>
-
-Limpieza y mantención.
-
-</p>
-
-</div>
-
-<div class="evento">
-
-<div class="evento-icono">
-
-🎉
-
-</div>
-
-<h3>
-
-Actividades
-
-</h3>
-
-<p>
-
-Celebraciones comunitarias.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================================================
-RECOMENDACIONES
-=================================================== -->
-
-<section
-id="avisos"
-class="contenedor">
-
-<h2 class="titulo-seccion">
-
-Recomendaciones
-
-</h2>
-
-<p class="subtitulo">
-
-Un espacio para fortalecer la buena convivencia, el respeto y el compromiso entre todos los vecinos.
-
-</p>
-
-<div class="avisos-grid">
-<!-- ======================= TARJETA 1 ======================= -->
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-🚛
-</div>
-
-<h3>Camión de la basura</h3>
-
-<p>
-Se recuerda a todos los vecinos estar atentos al horario del camión de la basura.
-Evitar dejar vehículos mal estacionados que impidan su paso o que puedan provocar
-daños a los autos de otros residentes.
-</p>
-
-</div>
-
-<!-- ======================= TARJETA 2 ======================= -->
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-🚸
-</div>
-
-<h3>Velocidad y tránsito dentro de la villa</h3>
-
-<p>
-La Villa Los Agapantos es un recinto público y se rige por la Ley de Tránsito.
-Respetar los límites de velocidad, especialmente en la entrada y salida donde
-frecuentemente hay niños jugando.
-</p>
-
-</div>
-
-<!-- ======================= TARJETA 3 ======================= -->
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-🚗
-</div>
-
-<h3>Vehículos que bloquean entradas y salidas</h3>
-
-<p>
-Se pide evitar detenerse o bloquear la entrada y salida de vehículos de otros
-vecinos. Cuando un auto queda estorbando el acceso, se generan molestias,
-retrasos y situaciones de riesgo.
-</p>
-
-</div>
-
-<!-- ======================= TARJETA 4 ======================= -->
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-🅿️
-</div>
-
-<h3>Vehículos estacionados frente a otras viviendas</h3>
-
-<p>
-Si bien la vía es pública, no cuesta nada avisar por cortesía cuando se deja un
-vehículo frente a la casa de otro vecino. Un pequeño gesto evita malos
-entendidos y mejora la convivencia.
-</p>
-
-</div>
-
-<!-- ======================= TARJETA 5 ======================= -->
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-🚭
-</div>
-
-<h3>Sustancias y humo en espacios comunes</h3>
-
-<p>
-No está permitido fumar sustancias sicotrópicas en la plaza ni en áreas comunes.
-Si se consume en el hogar, hacerlo en un lugar cerrado para evitar molestias a
-otros residentes.
-</p>
-
-</div>
-
-<!-- ======================= TARJETA 6 ======================= -->
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-🍔
-</div>
-
-<h3>Basura y alimentos en la plaza</h3>
-
-<p>
-Si consumen alimentos en la plaza y el basurero está lleno, no dejar los desechos
-en el suelo. Llevarlos a casa evita que los perros rompan las bolsas y generen
-malos olores.
-</p>
-
-</div>
-
-<!-- ======================= TARJETA 7 ======================= -->
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-🎉
-</div>
-
-<h3>Eventos, cumpleaños y música</h3>
-
-<p>
-Si van a realizar un cumpleaños o actividad con música a alto volumen, avisar
-previamente a los vecinos cercanos. Una simple comunicación evita molestias y
-reclamos.
-</p>
-
-</div>
-
-<!-- ======================= TARJETA 8 ======================= -->
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-🏍️
-</div>
-
-<h3>Motos y delivery</h3>
-
-<p>
-Cuando ingresen motos de delivery, el vecino debe estar atento a la entrada y
-salida del repartidor. Una buena coordinación evita confusiones y mantiene la
-convivencia tranquila.
-</p>
-
-</div>
-
-<!-- ======================= TARJETA 9 ======================= -->
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-👀
-</div>
-
-<h3>Personas desconocidas o merodeando la villa</h3>
-
-<p>
-Si se observa a alguna persona extraña merodeando la villa, avisar de inmediato
-al grupo de WhatsApp comunitario para que todos estén atentos y se prevengan
-situaciones de riesgo.
-</p>
-
-</div>
-
-<!-- ======================= TARJETA 10 ======================= -->
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-</div>
-
-<h3>🤝 Buena vecindad</h3>
-
-<p>
-Una comunidad se fortalece con el respeto, la empatía y el diálogo. Antes de sacar conclusiones, conversemos. Una buena comunicación evita malentendidos y nos ayuda a construir una vecindad más unida, respetuosa y donde el diálogo siempre sea el primer paso para resolver cualquier situación.
-</p> 
-
-</div>
-
-</div>
-<div class="aviso-card">
-
-    <div class="icono-aviso">
-        🏡
-    </div>
-
-    <h3>Gastos Comunes</h3>
-
-    <p>
-        Si eres un nuevo propietario o arrendatario, te invitamos cordialmente a contactar a la directiva para informarte sobre el funcionamiento de la comunidad y el pago de los gastos comunes.
-        <br><br>
-
-        Este aporte mensual permite financiar la mantención, reparación y funcionamiento del portón de acceso, el consumo de energía eléctrica del portón automático y del sistema de cámaras de seguridad, el servicio de internet para el monitoreo y grabación de las cámaras, la mantención de estos equipos, la compra de insumos administrativos, libros de actas, formularios y otros materiales necesarios para la gestión de la comunidad.
-        <br><br>
-
-        El pago oportuno de los gastos comunes permite mantener estos servicios funcionando correctamente y contribuye a la seguridad, organización y bienestar de todos los vecinos.
-    </p>
-
-</div>
-</section>
-<!-- ===================================================
-SUGERENCIAS
-=================================================== -->
-
-<section id="contacto" class="contenedor">
-
-<h2 class="titulo-seccion">
-
-Aportes de los Vecinos
-
-</h2>
-
-<p class="subtitulo">
-
-Tu opinión es importante para seguir mejorando nuestra comunidad.
-
-</p>
-
-<div class="sugerencias-box">
-
-<div class="sugerencias-info">
-
-<h3>
-
-💬 Envíanos tu sugerencia
-
-</h3>
-
-<p>
-
-Si tienes alguna idea para mejorar la Villa Los Agapantos,
-puedes escribirnos utilizando el siguiente formulario.
-
-Toda sugerencia será revisada por la administración antes
-de ser publicada.
-
-</p>
-
-<ul>
-
-<li>✔ Mejoras en áreas verdes.</li>
-
-<li>✔ Seguridad.</li>
-
-<li>✔ Iluminación.</li>
-
-<li>✔ Aseo.</li>
-
-<li>✔ Actividades comunitarias.</li>
-
-<li>✔ Cualquier otra idea.</li>
-
-</ul>
-
-</div>
-
-<div class="sugerencias-form">
-
-<form id="formSugerencias">
-
-<input
-type="text"
-placeholder="Nombre (opcional)">
-
-<input
-type="email"
-placeholder="Correo electrónico (opcional)">
-
-<textarea
-
-placeholder="Escribe aquí tu sugerencia..."
-
-rows="8"
-
-></textarea>
-
-<button
-type="submit"
-class="btn">
-
-Enviar sugerencia
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================================================
-INFORMACIÓN ÚTIL
-=================================================== -->
-
-<section class="informacion-util">
-
-<div class="contenedor">
-
-<h2 class="titulo-seccion">
-
-Información útil
-
-</h2>
-
-<div class="info-grid">
-
-<div class="info-util">
-
-<i class="fa-solid fa-phone-volume"></i>
-
-<h3>
-
-Emergencias
-
-</h3>
-
-<p>
-
-133 Carabineros<br>
-
-132 Bomberos<br>
-
-131 SAMU
-
-</p>
-
-</div>
-
-<div class="info-util">
-
-<i class="fa-solid fa-building"></i>
-
-<h3>
-
-Municipalidad
-
-</h3>
-
-<p>
-
-Ilustre Municipalidad de Colina
-
-</p>
-
-</div>
-
-<div class="info-util">
-
-<i class="fa-solid fa-bolt"></i>
-
-<h3>
-
-Electricidad
-
-</h3>
-
-<p>
-
-Enel Distribución
-
-</p>
-
-</div>
-
-<div class="info-util">
-
-<i class="fa-solid fa-droplet"></i>
-
-<h3>
-
-Agua
-
-</h3>
-
-<p>
-
-Aguas Andinas
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================================================
-FOOTER
-=================================================== -->
-
-<footer>
-
-<div class="footer-contenido">
-
-<div>
-
-<h3>
-
-Villa Los Agapantos
-
-</h3>
-
-<p>
-
-Comunidad organizada para una mejor convivencia.
-
-</p>
-
-</div>
-
-<div>
-
-<h4>
-
-Enlaces
-
-</h4>
-
-<ul>
-
-<li>
-<a href="#inicio">
-Inicio
-</a>
-</li>
-
-<li>
-<a href="#galeria">
-Galería
-</a>
-</li>
-
-<li>
-<a href="#calendario">
-Calendario
-</a>
-</li>
-
-<li>
-<a href="#avisos">
-Recomendaciones
-</a>
-</li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h4>
-
-Contacto
-
-</h4>
-
-<p>
-
-WhatsApp Comunitario
-
-</p>
-
-<p>
-
-Colina - Región Metropolitana
-
-</p>
-
-</div>
-
-</div>
-
-<div class="copyright">
-
-© 2026 Villa Los Agapantos
-
-<br>
-
-Desarrollado para la comunidad.
-
-</div>
-
-</footer>
-
-<button id="btnArriba">
-
-<i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
-
-<script>
-/* Fiestas Patrias: mostrar el aviso y decoración solamente durante septiembre */
-(function () {
-    const seccionFiestas = document.getElementById("fiestas-patrias");
-    const mesActual = new Date().getMonth();
-
-    if (seccionFiestas && mesActual === 8) {
-        seccionFiestas.classList.add("fiestas-visible");
-        document.body.classList.add("fiestas-patrias-activo");
-    }
-})();
-</script>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
+import { createRoot } from "react-dom/client";
+import { usePartySocket } from "partysocket/react";
+import React, { useEffect, useRef, useState } from "react";
+import {
+	BrowserRouter,
+	Routes,
+	Route,
+	Navigate,
+	useParams,
+} from "react-router";
+import { nanoid } from "nanoid";
+
+import { type ChatMessage, type Message } from "../shared";
+
+type TypingMessage = {
+	type: "typing";
+	user: string;
+	typing: boolean;
+};
+
+type OnlineUser = {
+	id: string;
+	user: string;
+};
+
+type OnlineUsersMessage = {
+	type: "online_users";
+	users: OnlineUser[];
+};
+
+type HistoryMessage = {
+	type: "history";
+	messages: ChatMessage[];
+};
+
+type ReactionMessage = {
+	type: "reaction";
+	messageId: string;
+	emoji: string;
+	user: string;
+};
+
+type ServerMessage =
+	| Message
+	| TypingMessage
+	| OnlineUsersMessage
+	| HistoryMessage
+	| ReactionMessage;
+
+type Reaction = {
+	emoji: string;
+	users: string[];
+};
+
+const EMOJIS = [
+	"😀",
+	"😂",
+	"🤣",
+	"😊",
+	"😍",
+	"🥰",
+	"😘",
+	"😉",
+	"😎",
+	"🤗",
+	"🤔",
+	"😮",
+	"😢",
+	"😭",
+	"😡",
+	"👍",
+	"👎",
+	"👏",
+	"🙏",
+	"❤️",
+	"💚",
+	"💙",
+	"🎉",
+	"🥳",
+	"🔥",
+	"⭐",
+	"🌿",
+	"🏡",
+	"☀️",
+	"🌧️",
+	"🌈",
+	"☕",
+	"🍀",
+	"🐶",
+	"🐱",
+	"🚗",
+	"📢",
+	"⚠️",
+	"✅",
+	"❌",
+];
+
+const REACTION_EMOJIS = [
+	"❤️",
+	"👍",
+	"😂",
+	"😮",
+	"😢",
+	"👏",
+];
+
+function formatTime() {
+	return new Date().toLocaleTimeString("es-CL", {
+		hour: "2-digit",
+		minute: "2-digit",
+		hour12: false,
+	});
+}
+
+function playNotificationSound(
+	audioContext: AudioContext | null,
+) {
+	if (!audioContext) {
+		return;
+	}
+
+	if (audioContext.state === "suspended") {
+		void audioContext.resume();
+	}
+
+	const now = audioContext.currentTime;
+
+	const oscillator = audioContext.createOscillator();
+	const gain = audioContext.createGain();
+
+	oscillator.type = "sine";
+
+	oscillator.frequency.setValueAtTime(880, now);
+	oscillator.frequency.setValueAtTime(1174, now + 0.09);
+
+	gain.gain.setValueAtTime(0.0001, now);
+	gain.gain.exponentialRampToValueAtTime(
+		0.08,
+		now + 0.02,
+	);
+	gain.gain.exponentialRampToValueAtTime(
+		0.0001,
+		now + 0.28,
+	);
+
+	oscillator.connect(gain);
+	gain.connect(audioContext.destination);
+
+	oscillator.start(now);
+	oscillator.stop(now + 0.3);
+}
+
+function App() {
+	const [name, setName] = useState("");
+	const [nameConfirmed, setNameConfirmed] = useState(false);
+	const [messages, setMessages] = useState<ChatMessage[]>([]);
+	const [typingUser, setTypingUser] = useState("");
+	const [messageTimes, setMessageTimes] = useState<
+		Record<string, string>
+	>({});
+	const [onlineUsers, setOnlineUsers] = useState<OnlineUser[]>([]);
+	const [onlineNotice, setOnlineNotice] = useState("");
+	const [showOnlineUsers, setShowOnlineUsers] = useState(false);
+	const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+	const [reactionPicker, setReactionPicker] = useState<string | null>(
+		null,
+	);
+	const [reactions, setReactions] = useState<
+		Record<string, Reaction[]>
+	>({});
+
+	const { room } = useParams();
+
+	const messagesAreaRef = useRef<HTMLDivElement>(null);
+	const messageInputRef = useRef<HTMLInputElement>(null);
+
+	const typingTimeout = useRef<ReturnType<typeof setTimeout> | null>(
+		null,
+	);
+
+	const onlineNoticeTimeout = useRef<
+		ReturnType<typeof setTimeout> | null
+	>(null);
+
+	const audioContextRef = useRef<AudioContext | null>(null);
+
+	const currentNameRef = useRef("");
+
+	const reactionPressTimer = useRef<
+		ReturnType<typeof setTimeout> | null
+	>(null);
+
+	const onlineUsersRef = useRef<OnlineUser[]>([]);
+
+	const onlineInitializedRef = useRef(false);
+
+	const socket = usePartySocket({
+		party: "chat",
+		room,
+
+		onMessage: (evt) => {
+			const message = JSON.parse(
+				evt.data as string,
+			) as ServerMessage;
+
+			/* HISTORIAL */
+
+			if (message.type === "history") {
+				setMessages(message.messages);
+
+				const times: Record<string, string> = {};
+
+				for (const chatMessage of message.messages) {
+					times[chatMessage.id] = formatTime();
+				}
+
+				setMessageTimes(times);
+
+				return;
+			}
+
+			/* USUARIOS EN LÍNEA */
+
+			if (message.type === "online_users") {
+				const previousUsers = onlineUsersRef.current;
+				const currentUsers = message.users;
+
+				const previousIds = new Set(
+					previousUsers.map((user) => user.id),
+				);
+
+				const currentIds = new Set(
+					currentUsers.map((user) => user.id),
+				);
+
+				const newUser = currentUsers.find(
+					(user) =>
+						!previousIds.has(user.id) &&
+						user.user !== currentNameRef.current,
+				);
+
+				const disconnectedUser = previousUsers.find(
+					(user) => !currentIds.has(user.id),
+				);
+
+				if (
+					onlineInitializedRef.current &&
+					newUser
+				) {
+					setOnlineNotice(
+						`🟢 ${newUser.user} se ha conectado`,
+					);
+
+					playNotificationSound(
+						audioContextRef.current,
+					);
+
+					if (onlineNoticeTimeout.current) {
+						clearTimeout(
+							onlineNoticeTimeout.current,
+						);
+					}
+
+					onlineNoticeTimeout.current = setTimeout(() => {
+						setOnlineNotice("");
+					}, 3500);
+				}
+
+				if (
+					onlineInitializedRef.current &&
+					disconnectedUser
+				) {
+					setOnlineNotice(
+						`⚪ ${disconnectedUser.user} se ha desconectado`,
+					);
+
+					if (onlineNoticeTimeout.current) {
+						clearTimeout(
+							onlineNoticeTimeout.current,
+						);
+					}
+
+					onlineNoticeTimeout.current = setTimeout(() => {
+						setOnlineNotice("");
+					}, 3500);
+				}
+
+				onlineUsersRef.current = currentUsers;
+
+				if (!onlineInitializedRef.current) {
+					onlineInitializedRef.current = true;
+				}
+
+				setOnlineUsers(currentUsers);
+
+				return;
+			}
+
+			/* REACCIÓN RECIBIDA */
+
+			if (message.type === "reaction") {
+				setReactions((current) => {
+					const messageReactions =
+						current[message.messageId] || [];
+
+					const existingReaction =
+						messageReactions.find(
+							(reaction) =>
+								reaction.emoji ===
+								message.emoji,
+						);
+
+					if (existingReaction) {
+						if (
+							existingReaction.users.includes(
+								message.user,
+							)
+						) {
+							return current;
+						}
+
+						return {
+							...current,
+							[message.messageId]:
+								messageReactions.map(
+									(reaction) =>
+										reaction.emoji ===
+										message.emoji
+											? {
+													...reaction,
+													users: [
+														...reaction.users,
+														message.user,
+													],
+												}
+											: reaction,
+								),
+						};
+					}
+
+					return {
+						...current,
+						[message.messageId]: [
+							...messageReactions,
+							{
+								emoji: message.emoji,
+								users: [message.user],
+							},
+						],
+					};
+				});
+
+				return;
+			}
+
+			/* ESTÁ ESCRIBIENDO */
+
+			if (message.type === "typing") {
+				if (
+					message.user !== currentNameRef.current &&
+					message.typing
+				) {
+					setTypingUser(message.user);
+
+					if (typingTimeout.current) {
+						clearTimeout(typingTimeout.current);
+					}
+
+					typingTimeout.current = setTimeout(() => {
+						setTypingUser("");
+					}, 2500);
+				}
+
+				if (
+					message.user !== currentNameRef.current &&
+					!message.typing
+				) {
+					setTypingUser("");
+				}
+
+				return;
+			}
+
+			/* NUEVO MENSAJE */
+
+			if (message.type === "add") {
+				setMessages((currentMessages) => {
+					const foundIndex =
+						currentMessages.findIndex(
+							(m) => m.id === message.id,
+						);
+
+					if (foundIndex === -1) {
+						return [
+							...currentMessages,
+							{
+								id: message.id,
+								content: message.content,
+								user: message.user,
+								role: message.role,
+							},
+						];
+					}
+
+					return currentMessages
+						.slice(0, foundIndex)
+						.concat({
+							id: message.id,
+							content: message.content,
+							user: message.user,
+							role: message.role,
+						})
+						.concat(
+							currentMessages.slice(
+								foundIndex + 1,
+							),
+						);
+				});
+
+				setMessageTimes((times) => ({
+					...times,
+					[message.id]: formatTime(),
+				}));
+
+				setTypingUser("");
+
+				return;
+			}
+
+			/* ACTUALIZACIÓN */
+
+			if (message.type === "update") {
+				setMessages((currentMessages) =>
+					currentMessages.map((m) =>
+						m.id === message.id
+							? {
+									id: message.id,
+									content:
+										message.content,
+									user: message.user,
+									role: message.role,
+								}
+							: m,
+					),
+				);
+
+				return;
+			}
+
+			if (message.type === "all") {
+				return;
+			}
+		},
+	});
+
+	/* LIMPIAR */
+
+	useEffect(() => {
+		return () => {
+			if (reactionPressTimer.current) {
+				clearTimeout(reactionPressTimer.current);
+			}
+
+			if (typingTimeout.current) {
+				clearTimeout(typingTimeout.current);
+			}
+
+			if (onlineNoticeTimeout.current) {
+				clearTimeout(onlineNoticeTimeout.current);
+			}
+
+			if (audioContextRef.current) {
+				void audioContextRef.current.close();
+			}
+		};
+	}, []);
+
+	/* SCROLL */
+
+	useEffect(() => {
+		const area = messagesAreaRef.current;
+
+		if (area) {
+			area.scrollTop = area.scrollHeight;
+		}
+	}, [messages, typingUser]);
+
+	/* ESCRITURA */
+
+	const sendTyping = (isTyping: boolean) => {
+		if (!currentNameRef.current) {
+			return;
+		}
+
+		socket.send(
+			JSON.stringify({
+				type: "typing",
+				user: currentNameRef.current,
+				typing: isTyping,
+			}),
+		);
+	};
+
+	/* INSERTAR EMOJI */
+
+	const insertEmoji = (emoji: string) => {
+		const input = messageInputRef.current;
+
+		if (!input) {
+			return;
+		}
+
+		const start =
+			input.selectionStart ?? input.value.length;
+
+		const end =
+			input.selectionEnd ?? input.value.length;
+
+		const newValue =
+			input.value.slice(0, start) +
+			emoji +
+			input.value.slice(end);
+
+		input.value = newValue;
+
+		const newCursorPosition =
+			start + emoji.length;
+
+		input.focus();
+
+		input.setSelectionRange(
+			newCursorPosition,
+			newCursorPosition,
+		);
+
+		setShowEmojiPicker(false);
+
+		sendTyping(true);
+	};
+
+	/* ENVIAR REACCIÓN */
+
+	const sendReaction = (
+		messageId: string,
+		emoji: string,
+	) => {
+		const currentMessageReactions =
+			reactions[messageId] || [];
+
+		const existingReaction =
+			currentMessageReactions.find(
+				(reaction) => reaction.emoji === emoji,
+			);
+
+		const alreadyReacted =
+			existingReaction?.users.includes(
+				currentNameRef.current,
+			);
+
+		if (alreadyReacted) {
+			setReactionPicker(null);
+			return;
+		}
+
+		setReactions((current) => {
+			const existing =
+				current[messageId] || [];
+
+			const found =
+				existing.find(
+					(reaction) =>
+						reaction.emoji === emoji,
+				);
+
+			if (found) {
+				return {
+					...current,
+					[messageId]: existing.map(
+						(reaction) =>
+							reaction.emoji === emoji
+								? {
+										...reaction,
+										users: [
+											...reaction.users,
+											currentNameRef.current,
+										],
+									}
+								: reaction,
+					),
+				};
+			}
+
+			return {
+				...current,
+				[messageId]: [
+					...existing,
+					{
+						emoji,
+						users: [
+							currentNameRef.current,
+						],
+					},
+				],
+			};
+		});
+
+		socket.send(
+			JSON.stringify({
+				type: "reaction",
+				messageId,
+				emoji,
+				user: currentNameRef.current,
+			}),
+		);
+
+		setReactionPicker(null);
+	};
+
+	/* REACCIÓN AL MENSAJE */
+
+	const clearReactionPressTimer = () => {
+		if (reactionPressTimer.current) {
+			clearTimeout(reactionPressTimer.current);
+			reactionPressTimer.current = null;
+		}
+	};
+
+	const openReactionPicker = (messageId: string) => {
+		setReactionPicker((current) =>
+			current === messageId ? null : messageId,
+		);
+	};
+
+	const handleMessagePointerDown = (
+		messageId: string,
+		pointerType: string,
+	) => {
+		clearReactionPressTimer();
+
+		if (pointerType === "touch" || pointerType === "pen") {
+			reactionPressTimer.current = setTimeout(() => {
+				setReactionPicker(messageId);
+				reactionPressTimer.current = null;
+			}, 450);
+		}
+	};
+
+	const handleMessagePointerUp = (
+		messageId: string,
+		pointerType: string,
+	) => {
+		if (pointerType === "mouse") {
+			clearReactionPressTimer();
+			openReactionPicker(messageId);
+			return;
+		}
+
+		clearReactionPressTimer();
+	};
+
+	/* INGRESO */
+
+	if (!nameConfirmed) {
+		return (
+			<div className="name-screen">
+				<div className="name-box">
+					<div className="name-icon">
+						🌿
+					</div>
+
+					<div className="name-welcome">
+						Villa Los Agapantos
+					</div>
+
+					<h2>Bienvenido al chat</h2>
+
+					<p>
+						Para participar en el chat de
+						Villa Los Agapantos, indica el
+						nombre con el que quieres
+						aparecer.
+					</p>
+
+					<form
+						onSubmit={(e) => {
+							e.preventDefault();
+
+							const cleanName =
+								name.trim();
+
+							if (
+								cleanName.length >= 2
+							) {
+								const AudioContextClass =
+									window.AudioContext ||
+									(
+										window as typeof window & {
+											webkitAudioContext?: typeof AudioContext;
+										}
+									)
+										.webkitAudioContext;
+
+								if (
+									AudioContextClass
+								) {
+									audioContextRef.current =
+										new AudioContextClass();
+
+									if (
+										audioContextRef
+											.current
+											.state ===
+										"suspended"
+									) {
+										void audioContextRef.current.resume();
+									}
+								}
+
+								currentNameRef.current =
+									cleanName;
+
+								setMessages([]);
+								setMessageTimes({});
+								setOnlineUsers([]);
+								onlineUsersRef.current = [];
+								onlineInitializedRef.current =
+									false;
+								setReactions({});
+
+								setName(cleanName);
+								setNameConfirmed(true);
+
+								socket.send(
+									JSON.stringify({
+										type: "join",
+										user: cleanName,
+									}),
+								);
+							}
+						}}
+					>
+						<input
+							type="text"
+							value={name}
+							onChange={(e) =>
+								setName(
+									e.target.value,
+								)
+							}
+							placeholder="Escribe tu nombre"
+							autoComplete="name"
+							autoFocus
+							maxLength={30}
+						/>
+
+						<button type="submit">
+							Entrar al chat
+						</button>
+					</form>
+				</div>
+			</div>
+		);
+	}
+
+	return (
+		<div className="chat container">
+
+			{/* ENCABEZADO */}
+
+			<div className="chat-welcome-bar">
+				<div className="fiestas-patrias-overlay" aria-hidden="true"></div>
+				<div className="chat-welcome-text">
+					<strong>
+						💬 Conversación de vecinos
+					</strong>
+
+					<span>
+						Comparte información y
+						mantente conectado.
+					</span>
+				</div>
+
+				<div className="chat-live">
+					<button
+						type="button"
+						className="online-users-button"
+						onClick={() =>
+							setShowOnlineUsers(
+								(current) => !current,
+							)
+						}
+					>
+						<span className="online-dot"></span>
+
+						<strong>
+							{onlineUsers.length}{" "}
+							{onlineUsers.length === 1
+								? "vecino"
+								: "vecinos"}{" "}
+							en línea
+						</strong>
+
+						<span className="online-arrow">
+							{showOnlineUsers
+								? "▲"
+								: "▼"}
+						</span>
+					</button>
+
+					{showOnlineUsers && (
+						<div className="online-users-list">
+							<div className="online-users-title">
+								👥 Vecinos conectados
+							</div>
+
+							{onlineUsers.length ===
+								0 && (
+								<div className="online-user-empty">
+									No hay vecinos
+									conectados.
+								</div>
+							)}
+
+							{onlineUsers.map(
+								(onlineUser) => (
+									<div
+										key={
+											onlineUser.id
+										}
+										className="online-user"
+									>
+										<span className="online-user-dot"></span>
+
+										<span>
+											{
+												onlineUser.user
+											}
+										</span>
+									</div>
+								),
+							)}
+						</div>
+					)}
+				</div>
+			</div>
+
+			{/* AVISO */}
+
+			{onlineNotice && (
+				<div className="online-notice">
+					{onlineNotice}
+				</div>
+			)}
+
+			{/* MENSAJES */}
+
+			<div
+				className="messages-area"
+				ref={messagesAreaRef}
+			>
+				{messages.map((message) => {
+					const isMine =
+						message.user ===
+						currentNameRef.current;
+
+					const messageReactions =
+						reactions[message.id] || [];
+
+					return (
+						<div
+							key={message.id}
+							className={`message ${
+								isMine
+									? "my-message"
+									: "other-message"
+							}`}
+						>
+							<div className="message-meta">
+								<span className="message-user">
+									{isMine
+										? "YO"
+										: message.user}
+								</span>
+
+								<span className="message-time">
+									{messageTimes[
+										message.id
+									] ||
+										formatTime()}
+								</span>
+							</div>
+
+							<div className="message-bubble-wrapper">
+								<div
+									className="message-bubble"
+									role="button"
+									tabIndex={0}
+									aria-label="Mantén presionado el mensaje para reaccionar"
+									onPointerDown={(e) =>
+										handleMessagePointerDown(
+											message.id,
+											e.pointerType,
+										)
+									}
+									onPointerUp={(e) =>
+										handleMessagePointerUp(
+											message.id,
+											e.pointerType,
+										)
+									}
+									onPointerCancel={clearReactionPressTimer}
+									onContextMenu={(e) => {
+										e.preventDefault();
+										openReactionPicker(message.id);
+									}}
+									onKeyDown={(e) => {
+										if (
+											e.key === "Enter" ||
+											e.key === " "
+										) {
+											e.preventDefault();
+											openReactionPicker(message.id);
+										}
+									}}
+								>
+									{message.content}
+								</div>
+
+								{reactionPicker === message.id && (
+									<div className="reaction-picker">
+										{REACTION_EMOJIS.map((emoji) => (
+											<button
+												key={emoji}
+												type="button"
+												className="reaction-option"
+												onClick={(e) => {
+													e.stopPropagation();
+
+													sendReaction(
+														message.id,
+														emoji,
+													);
+												}}
+											>
+												{emoji}
+											</button>
+										))}
+									</div>
+								)}
+							</div>
+
+							{messageReactions.length >
+								0 && (
+								<div className="message-reactions">
+									{messageReactions.map(
+										(reaction) => (
+											<button
+												key={
+													reaction.emoji
+												}
+												type="button"
+												className={`message-reaction ${
+													reaction.users.includes(
+														currentNameRef.current,
+													)
+														? "my-reaction"
+														: ""
+												}`}
+												title={reaction.users.join(
+													", ",
+												)}
+												onClick={() =>
+													sendReaction(
+														message.id,
+														reaction.emoji,
+													)
+												}
+											>
+												<span>
+													{
+														reaction.emoji
+													}
+												</span>
+
+												<span>
+													{
+														reaction
+															.users
+															.length
+													}
+												</span>
+											</button>
+										),
+									)}
+								</div>
+							)}
+
+							{isMine && (
+								<div className="message-status">
+									✓✓
+								</div>
+							)}
+						</div>
+					);
+				})}
+
+				{/* ESCRIBIENDO */}
+
+				{typingUser && (
+					<div className="typing-indicator">
+						<span className="typing-icon">
+							✍️
+						</span>
+
+						<span className="typing-name">
+							{typingUser}
+						</span>
+
+						<span>
+							está escribiendo
+						</span>
+
+						<span className="typing-dots">
+							<span>•</span>
+							<span>•</span>
+							<span>•</span>
+						</span>
+					</div>
+				)}
+			</div>
+
+			{/* ESCRITURA */}
+
+			<form
+				className="chat-form"
+				onSubmit={(e) => {
+					e.preventDefault();
+
+					const content =
+						messageInputRef.current;
+
+					if (!content) {
+						return;
+					}
+
+					const text =
+						content.value.trim();
+
+					if (!text) {
+						return;
+					}
+
+					const chatMessage: ChatMessage = {
+						id: nanoid(8),
+						content: text,
+						user:
+							currentNameRef.current,
+						role: "user",
+					};
+
+					setMessages(
+						(currentMessages) => [
+							...currentMessages,
+							chatMessage,
+						],
+					);
+
+					setMessageTimes((times) => ({
+						...times,
+						[chatMessage.id]:
+							formatTime(),
+					}));
+
+					socket.send(
+						JSON.stringify({
+							type: "add",
+							...chatMessage,
+						} satisfies Message),
+					);
+
+					sendTyping(false);
+
+					content.value = "";
+
+					setShowEmojiPicker(false);
+				}}
+			>
+				<div className="chat-input-wrapper">
+					<button
+						type="button"
+						className="emoji-button"
+						aria-label="Elegir emoji"
+						onClick={() =>
+							setShowEmojiPicker(
+								(current) => !current,
+							)
+						}
+					>
+						😀
+					</button>
+
+					<input
+						ref={messageInputRef}
+						type="text"
+						name="content"
+						className="my-input-text"
+						placeholder={`Hola ${currentNameRef.current}, escribe un mensaje...`}
+						autoComplete="off"
+						onInput={() =>
+							sendTyping(true)
+						}
+					/>
+
+					{showEmojiPicker && (
+						<div className="emoji-picker">
+							<div className="emoji-picker-title">
+								Emojis
+							</div>
+
+							<div className="emoji-grid">
+								{EMOJIS.map(
+									(emoji, index) => (
+										<button
+											key={`${emoji}-${index}`}
+											type="button"
+											className="emoji-item"
+											onClick={() =>
+												insertEmoji(
+													emoji,
+												)
+											}
+										>
+											{emoji}
+										</button>
+									),
+								)}
+							</div>
+						</div>
+					)}
+				</div>
+
+				<button
+					type="submit"
+					className="send-message"
+				>
+					Enviar
+				</button>
+			</form>
+
+			<div className="chat-security">
+				🌿 Comunidad • Seguridad • Convivencia
+			</div>
+		</div>
+	);
+}
+
+createRoot(
+	document.getElementById("root")!,
+).render(
+	<BrowserRouter>
+		<Routes>
+			<Route
+				path="/"
+				element={
+					<Navigate to="/villa-los-agapantos" />
+				}
+			/>
+
+			<Route
+				path="/:room"
+				element={<App />}
+			/>
+
+			<Route
+				path="*"
+				element={
+					<Navigate to="/villa-los-agapantos" />
+				}
+			/>
+		</Routes>
+	</BrowserRouter>,
+);
