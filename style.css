@@ -1756,3 +1756,51 @@ body {
 		opacity: 0.30;
 	}
 }
+/* =========================================================
+   DECORACIÓN FIESTAS PATRIAS
+   SOLO EN LA PARTE SUPERIOR DEL ENCABEZADO
+   ========================================================= */
+
+.header {
+    position: relative;
+    overflow: visible;
+}
+
+/* Decoración dieciochera */
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95px;
+
+    background-image: url("../img/Fiestas Patrias.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+
+    opacity: 0.38;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* El logo y menú permanecen por encima */
+.header .logo,
+.header nav,
+.header .menu-toggle {
+    position: relative;
+    z-index: 3;
+}
+
+/* ---------- CELULAR ---------- */
+@media screen and (max-width: 768px) {
+
+    .header::before {
+        height: 65px;
+        background-size: auto 65px;
+        background-position: center top;
+        opacity: 0.38;
+    }
+
+}
