@@ -1,367 +1,3289 @@
-<!DOCTYPE html>
-<html lang="es">
+/*====================================================
+VILLA LOS AGAPANTOS
+STYLE.CSS
+====================================================*/
 
-<head>
+/*======================
+FUENTE
+=======================*/
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-<title>Villa Los Agapantos | Comunidad de Vecinos</title>
+/*======================
+VARIABLES
+=======================*/
 
-<meta name="description"
-content="Sitio oficial de la Villa Los Agapantos. Información comunitaria, avisos, galería, recomendaciones y actividades para todos los vecinos.">
+:root{
 
-<link rel="stylesheet" href="css/style.css">
+--verde:#2E8B57;
+--verde2:#4CAF50;
+--azul:#2C5AA0;
+--azul2:#4A6FA5;
+--gris:#F5F7FA;
+--gris2:#E8EDF2;
+--oscuro:#1E293B;
+--texto:#374151;
+--blanco:#FFFFFF;
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+--radio:18px;
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+--sombra:
+0 15px 40px rgba(0,0,0,.12);
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+}
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+/*======================
+RESET
+=======================*/
 
-</head>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-<body>
+body{
 
-<!-- =======================================================
-     BARRA SUPERIOR
-======================================================= -->
+font-family:'Poppins',sans-serif;
 
-<div class="topbar">
+background:#f4f7fb;
 
-<div class="top-item">
-    <i class="fa-solid fa-calendar-days"></i>
-    <span id="fechaActual"></span>
-</div>
+color:var(--texto);
 
-<div class="top-item">
-    <i class="fa-solid fa-hands-praying"></i>
-    <span id="santoDia">Cargando...</span>
-</div>
+overflow-x:hidden;
 
-<div class="top-item">
-    <i class="fa-solid fa-clock"></i>
-    <span id="horaActual"></span>
-</div>
+line-height:1.6;
 
-<div class="top-item">
-    <i id="iconoClima" class="fa-solid fa-cloud-sun"></i>
+}
 
-    <span>
-        <strong id="temperaturaActual" class="temperatura-actual"></strong>
-        <span id="temperaturasDia"></span>
-    </span>
-</div>
+/*======================
+SCROLL
+=======================*/
 
-<div class="top-item">
-<i class="fa-solid fa-money-bill-trend-up"></i>
+::-webkit-scrollbar{
 
-<span>
+width:10px;
 
-UF:
-<strong id="uf">
-Cargando
-</strong>
+}
 
-</span>
+::-webkit-scrollbar-thumb{
 
-</div>
+background:var(--azul);
 
-<div class="top-item">
+border-radius:20px;
 
-<i class="fa-solid fa-coins"></i>
+}
 
-<span>
+::-webkit-scrollbar-track{
 
-UTM:
-<strong id="utm">
-Cargando
-</strong>
+background:#ddd;
 
-</span>
+}
 
-</div>
+/*======================
+ENLACES
+=======================*/
 
-</div>
+a{
 
-<!-- =======================================================
-      MENÚ
-======================================================= -->
-<header class="header">
+text-decoration:none;
 
-    <div class="logo">
+color:inherit;
 
+}
 
-        <div class="titulo-web">
+/*======================
+IMÁGENES
+=======================*/
 
-            <img src="img/titulo-villa.png"
-     alt="Villa Los Agapantos"
-     class="titulo-villa">
-     <div class="subtitulo-logo">
-    COMUNIDAD • SEGURIDAD • CONVIVENCIA
-</div>
+img{
 
+max-width:100%;
 
-        </div>
+display:block;
 
-    </div>
+}
 
-    <button class="menu-toggle" aria-label="Abrir menú">
-        ☰
-    </button>
+/*======================
+CONTENEDOR
+=======================*/
 
-    <nav id="menu">
+.contenedor{
 
-<ul>
+width:min(1200px,92%);
 
-<li>
-<a href="#inicio">
-Inicio
-</a>
-</li>
+margin:auto;
 
-<li>
-<a href="#nuestra-villa">
-Nuestra Villa
-</a>
-</li>
+padding:80px 0;
 
-<li>
-<a href="#galeria">
-Galería
-</a>
-</li>
-<li>
-<a href="#clima">
-Clima
-</a>
-</li>
-<li>
-<a href="#calendario">
-Calendario
-</a>
-</li>
+}
 
-<li>
-<a href="#avisos">
-Recomendaciones
-</a>
-</li>
+/*======================*
+*TÍTULOS*
+*=======================*/
+.titulo-seccion{
+    display:table;
+    padding:12px 30px;
+    background:linear-gradient(135deg,var(--azul),var(--verde));
+    color:white;
+    border-radius:40px;
+    font-size:1.45rem;
+    font-weight:600;
+    text-align:center;
+    margin:0 auto 15px;
+}
 
-<li>
-<a href="#contacto">
-Contacto
-</a>
-</li>
+.subtitulo{
 
-</ul>
+text-align:center;
 
-</nav>
+color:#666;
 
-</header>
+margin-bottom:60px;
 
-<!-- =======================================================
-      HERO
-======================================================= -->
+font-size:1.1rem;
 
-<section
-id="inicio"
-class="hero">
+}
 
-<div class="hero-overlay"></div>
+/*======================
+BOTONES
+=======================*/
 
-<div class="hero-content">
+.btn{
 
-<h2>
-<span class="titulo-bienvenida">Bienvenidos a Nuestra Comunidad</span>
-</h2> 
+display:inline-block;
 
+padding:15px 35px;
 
-<p>
+background:linear-gradient(
+135deg,
+var(--azul),
+var(--verde)
+);
 
-Un espacio pensado para fortalecer la convivencia,
-mantener informados a todos los vecinos y cuidar
-nuestra comunidad.
+color:white;
 
-</p>
+border-radius:40px;
 
-<div class="hero-buttons">
+font-weight:600;
 
-<a href="#nuestra-villa" class="btn">
+transition:.35s;
 
-Conocer la Villa
+box-shadow:var(--sombra);
 
-</a>
+}
 
-<a href="#avisos" class="btn-outline">
+.btn:hover{
 
-Recomendaciones
+transform:translateY(-5px);
 
-</a>
+}
 
-</div>
+ .btn-outline{
 
-</div>
+display:inline-block;
 
-</section>
+padding:15px 35px;
 
-<!-- =======================================================
-      INFORMACIÓN RÁPIDA
-======================================================= -->
+background:linear-gradient(
+135deg,
+var(--azul),
+var(--verde)
+);
 
-<section class="info-panel">
+color:white;
 
-<div class="info-card">
+border-radius:40px;
 
-<i class="fa-solid fa-house"></i>
+font-weight:600;
 
-<h3>
-Nuestra Villa
-</h3>
+transition:.35s;
 
-<p>
+box-shadow:var(--sombra);
 
-Comunidad organizada
+}
 
-</p>
+.btn-outline:hover{
 
-</div>
+transform:translateY(-5px);
 
-<div class="info-card">
+}
 
-<i class="fa-solid fa-tree"></i>
 
-<h3>
+/*======================
+TOPBAR
+=======================*/
 
-Áreas verdes
+.topbar{
 
-</h3>
+background:#183153;
 
-<p>
+color:white;
 
-Espacios para compartir
+padding:12px;
 
-</p>
+display:flex;
 
-</div>
+justify-content:center;
 
-<div class="info-card">
+gap:35px;
 
-<i class="fa-solid fa-shield-halved"></i>
+flex-wrap:wrap;
 
-<h3>
+font-size:.92rem;
 
-Seguridad
+}
 
-</h3>
+.top-item{
 
-<p>
+display:flex;
 
-Vecinos comprometidos
+align-items:center;
 
-</p>
+gap:10px;
 
-</div>
+padding:6px 12px;
 
-<div class="info-card">
+border-radius:12px;
 
-<i class="fa-solid fa-users"></i>
+background:rgba(255,255,255,.18);
 
-<h3>
+backdrop-filter:blur(10px);
 
-Comunidad
+font-weight:600;
 
-</h3>
+transition:.3s;
 
-<p>
+}
+.top-item i{
 
-Respeto y buena convivencia
+color:#4CAF50;
 
-</p>
+font-size:1rem;
 
-</div>
+}
+#horaActual{
 
-</section>
+font-size:1rem;
 
-<!-- =======================================================
-      NUESTRA VILLA
-======================================================= -->
+font-weight:700;
 
-<section
-id="nuestra-villa"
-class="contenedor">
+letter-spacing:.5px;
 
-<h2 class="titulo-seccion">
+}
 
-Nuestra Villa
+/*======================
+HEADER
+======================*/
 
-</h2>
+.header{
 
-<div class="villa-grid">
+    position:sticky;
 
-<div class="villa-imagen">
+    top:0;
 
-<img
-src="img/Los Agapantos.jpeg"
-alt="Villa Los Agapantos">
+    z-index:9999;
 
-</div>
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.65),
+            rgba(255,255,255,.65)
+        ),
+        url("../img/fondo-agapantos.jpg");
 
-<div class="villa-texto">
-<h3>Un lugar para vivir en comunidad</h3>
+    background-size:cover;
 
-<p>
-La Villa Los Agapantos es un conjunto residencial ubicado en Colina,
-caracterizado por su ambiente tranquilo, áreas verdes y una comunidad
-organizada que busca mantener una buena convivencia entre todos los vecinos.
-</p>
+    background-position:center;
 
-<p>
-Nuestro tradicional letrero tallado en madera representa la identidad de
-la villa, reflejando el compromiso de sus residentes con el respeto,
-la seguridad y el cuidado de los espacios comunes.
-</p>
+    background-repeat:no-repeat;
 
-<p>
-Este sitio web nace con el propósito de mantener informada a toda la
-comunidad, compartir avisos importantes y fortalecer la participación
-de los vecinos.
-</p>
+    backdrop-filter:blur(15px);
 
+    display:flex;
 
+    justify-content:space-between;
 
-</div>
+    align-items:center;
 
-</div>
+    padding:10px 4%;
 
-</section>
+    box-shadow:0 3px 20px rgba(0,0,0,.08);
 
-<!-- ===================================================
-     NOTICIAS DE NUESTRA ZONA
-=================================================== -->
+}
 
-<section id="noticias" class="contenedor noticias-seccion">
+.logo{
 
-    <h2 class="titulo-seccion">
-        📰 Noticias de nuestra zona
-    </h2>
+display:flex;
 
-    <p class="subtitulo">
-        Información de Colina y sus alrededores
-    </p>
+align-items:center;
 
-    <div class="noticias-contenedor">
+gap:8px;
 
-        <button class="noticias-flecha noticias-anterior" aria-label="Noticias anteriores">
-            ‹
-        </button>
+}
 
-        <div id="noticiasLista" class="noticias-lista">
+.logo > img{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+}
 
+.titulo-web{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.titulo-villa{
+    width:560px;
+    height:80px;
+    object-fit:cover;
+    object-position:center 40%;
+    display:block;
+    margin-left:-20px;
+    margin-top:0;
+    mix-blend-mode:multiply;
+}
+.logo h1{
+
+font-size:1.25rem;
+
+color:var(--azul);
+
+}
+
+.logo p{
+
+font-size:.85rem;
+
+color:#666;
+
+}
+
+.header ul{
+
+display:flex;
+
+gap:30px;
+
+list-style:none;
+
+}
+
+.header li{
+    font-weight:600;
+    color:#183153;
+    transition:.3s;
+    position:relative;
+}
+
+.header li::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:3px;
+    background:var(--verde);
+    border-radius:5px;
+    transition:.3s;
+}
+
+.header li:hover::after{
+    width:100%;
+}
+
+.header li:hover{
+
+color:var(--verde);
+
+transform:translateY(-2px);
+
+}
+/*====================================================
+HERO
+====================================================*/
+
+.hero{
+
+position:relative;
+
+height:100vh;
+
+background-image:
+linear-gradient(
+rgba(0,0,0,.45),
+rgba(0,0,0,.55)
+),
+url("img/Fondo.jpeg");
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+overflow:hidden;
+
+}
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,.10),
+rgba(0,0,0,.45)
+);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:900px;
+
+padding:30px;
+
+animation:fadeHero 1.3s ease;
+
+}
+
+.hero h2{
+
+font-size:4rem;
+
+color:white;
+
+font-weight:800;
+
+margin-bottom:25px;
+
+line-height:1.1;
+
+}
+
+.hero h2 span{
+
+display:block;
+
+background:linear-gradient(90deg,#2d7dd2,#4CAF50);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+color:transparent;
+
+}
+
+.hero p{
+
+font-size:1.3rem;
+
+color:white;
+
+margin-bottom:45px;
+
+opacity:.95;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+/*====================================================
+PAINEL DE INFORMACIÓN
+====================================================*/
+
+.info-panel{
+
+width:min(1250px,92%);
+
+margin:-70px auto 80px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+
+gap:25px;
+
+position:relative;
+
+z-index:20;
+
+}
+
+.info-card{
+
+background:white;
+
+border-radius:20px;
+
+padding:35px;
+
+text-align:center;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.08);
+
+transition:.35s;
+
+border:1px solid rgba(0,0,0,.05);
+
+}
+
+.info-card:hover{
+
+transform:
+translateY(-12px);
+
+box-shadow:
+0 30px 50px rgba(0,0,0,.15);
+
+}
+
+.info-card i{
+
+font-size:3rem;
+
+margin-bottom:20px;
+
+color:var(--verde);
+
+}
+
+.info-card h3{
+
+font-size:1.35rem;
+
+margin-bottom:3px;
+
+color:var(--oscuro);
+
+}
+
+
+.info-card p{
+
+color:#666;
+
+}
+
+/*====================================================
+NUESTRA VILLA
+====================================================*/
+
+.villa-grid{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.villa-imagen{
+
+overflow:hidden;
+
+border-radius:25px;
+
+box-shadow:
+0 25px 50px rgba(0,0,0,.15);
+
+}
+
+.villa-imagen img{
+
+transition:.6s;
+
+}
+
+.villa-imagen:hover img{
+
+transform:scale(1.08);
+
+}
+
+.villa-texto h3{
+
+font-size:2rem;
+
+margin-bottom:25px;
+
+color:var(--azul);
+
+}
+
+.villa-texto p{
+
+margin-bottom:20px;
+
+font-size:1.08rem;
+
+text-align:justify;
+
+}
+
+.villa-botones{
+
+margin-top:40px;
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+/*====================================================
+GALERÍA
+====================================================*/
+
+.galeria{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.card-foto{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:22px;
+
+cursor:pointer;
+
+box-shadow:
+0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.card-foto img{
+
+height:320px;
+
+width:100%;
+
+object-fit:cover;
+
+transition:.6s;
+
+}
+
+.card-foto:hover img{
+
+transform:scale(1.12);
+
+}
+
+.overlay{
+
+position:absolute;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+padding:25px;
+
+background:
+linear-gradient(
+transparent,
+rgba(0,0,0,.90)
+);
+
+color:white;
+
+transform:translateY(100%);
+
+transition:.45s;
+
+}
+
+.card-foto:hover .overlay{
+
+transform:translateY(0);
+
+}
+
+.overlay h3{
+
+margin-bottom:8px;
+
+font-size:1.3rem;
+
+}
+
+/*====================================================
+ANIMACIONES
+====================================================*/
+
+@keyframes fadeHero{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+.fade{
+
+opacity:0;
+
+transform:
+translateY(50px);
+
+transition:1s;
+
+}
+
+
+.fade.visible{
+
+
+opacity:1;
+
+
+transform:
+translateY(0);
+
+
+}
+
+
+@keyframes contadorBrillo {
+
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+
+}
+
+
+.titulo-telefonos {
+    text-align: center;
+    margin: 0 auto 15px;
+}
+/* ====================================================
+   TARJETA - TELÉFONOS DE INTERÉS
+   ==================================================== */
+
+.telefonos-card {
+    width: min(700px, 90%);
+    margin: 35px auto;
+    padding: 25px 30px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
+    text-align: center;
+    transition: .4s ease;
+}
+
+.telefonos-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 45px rgba(0,0,0,.18);
+}
+
+.telefonos-card .titulo-telefonos {
+    margin: 0 0 22px;
+    color: var(--azul);
+    font-size: 1.5rem;
+}
+
+.telefonos-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.telefonos-card .info-util {
+    padding: 18px 15px;
+    border-radius: 16px;
+    background: #f5f8fc;
+    text-align: center;
+    transition: .35s ease;
+}
+
+.telefonos-card .info-util:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.10);
+}
+
+.telefonos-card .info-util i {
+    font-size: 2rem;
+    color: var(--verde);
+    margin-bottom: 8px;
+    transition: .35s ease;
+}
+
+.telefonos-card .info-util:hover i {
+    transform: scale(1.15);
+}
+
+.telefonos-card .info-util h3 {
+    margin: 5px 0 8px;
+    color: var(--azul);
+    font-size: 1.25rem;
+}
+
+.telefonos-card .info-util p {
+    line-height: 1.55;
+    margin: 0;
+    font-size: .98rem;
+}
+/*====================================================
+INFORME CLIMATOLÓGICO
+====================================================*/
+
+#clima{
+    background:#eef7ff;
+}
+
+#clima .info-util{
+    transition:.3s;
+}
+
+#clima .info-util:hover{
+    transform:translateY(-8px);
+}
+
+#clima .btn{
+    margin-top:20px;
+}
+/*====================================================
+CALENDARIO
+====================================================*/
+
+.calendario{
+
+background:linear-gradient(
+135deg,
+#edf7ff,
+#ffffff);
+
+padding:100px 0;
+
+}
+
+.eventos-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+.evento{
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.evento:hover{
+
+transform:translateY(-10px);
+
+}
+
+.evento-icono {
+    font-size: 55px;
+    margin-bottom: 20px;
+    transform: translateY(-10px);
+}
+.icono-aviso {
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.evento h3 {
+    margin-top: -8px;
+    margin-bottom: 15px;
+    color: var(--azul);
+    font-size: 1.4rem;
+}
+
+/* ====================================================
+   DISTRIBUCIÓN DE RECOMENDACIONES
+   ==================================================== */
+
+.avisos-grid{
+    column-count:3;
+    column-gap:16px;
+}
+
+.avisos-grid .aviso-card{
+    display:inline-block;
+    width:100%;
+    margin:0 0 5px;
+    break-inside:avoid;
+    vertical-align:top;
+}
+
+.avisos-grid .aviso-card p{
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.avisos-grid .aviso-card:nth-child(7){
+    break-before:column;
+    break-inside:avoid;
+}
+
+@media screen and (min-width: 769px) {
+    .avisos-grid .aviso-card:first-child .icono-aviso img {
+        width: 85px !important;
+        height: 85px !important;
+        object-fit: contain !important;
+    }
+}
+
+
+.menu-toggle {
+    display: none;
+}
+
+/* ====================================================
+   DISEÑO RESPONSIVO - MÓVIL
+   ==================================================== */
+
+.menu-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* ---------- BARRA SUPERIOR ---------- */
+
+    .topbar {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 5px;
+        padding: 6px;
+        font-size: .70rem;
+        box-sizing: border-box;
+    }
+
+    .top-item {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 6px 3px;
+        border-radius: 8px;
+        white-space: normal;
+        overflow: visible;
+        text-align: center;
+        line-height: 1.15;
+    }
+
+    .top-item i {
+        font-size: .75rem;
+        flex: 0 0 auto;
+    }
+
+    #horaActual {
+        font-size: .75rem;
+        white-space: nowrap;
+    }
+
+
+    /* ---------- ENCABEZADO ---------- */
+
+    .header {
+        position: sticky;
+        top: 0;
+        min-height: 72px;
+        height: 72px;
+        padding: 4px 58px 4px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        background: rgba(255,255,255,.94);
+        z-index: 9999;
+    }
+
+    .logo {
+        width: 100%;
+        max-width: calc(100% - 55px);
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: transparent;
+    }
+
+    .titulo-web {
+        width: auto;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .titulo-villa {
+    width: 285px;
+    height: 72px;
+    object-fit: cover;
+    object-position: center 35%
+    display: block;
+    margin: 0;
+}
+
+
+    /* ---------- BOTÓN HAMBURGUESA ---------- */
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: 0;
+        font-size: 30px;
+        line-height: 1;
+        color: #183153;
+        cursor: pointer;
+        z-index: 10001;
+    }
+
+
+   /* ---------- MENÚ MÓVIL ---------- */
+
+.header #menu {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    padding: 8px;
+    background: rgba(255,255,255,.98);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+    z-index: 10000;
+}
+
+.header #menu.activo {
+    display: block !important;
+}
+
+    .header #menu.active {
+        display: block;
+    }
+
+    .header #menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header #menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .header #menu li::after {
+        display: none;
+    }
+
+    .header #menu a {
+        display: block;
+        width: 100%;
+        padding: 10px 8px;
+        border-radius: 9px;
+    }
+
+    .header #menu a:hover {
+        background: #f0f5f2;
+        transform: none;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+.hero {
+    min-height: 42vh;
+    height: auto;
+    background-attachment: scroll;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px 20px;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 16px;
+    margin-top: 0;
+}
+.hero h2 {
+    font-size: 2.15rem;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn,
+.btn-outline {
+    padding: 12px 20px;
+    font-size: .9rem;
+}
+
+
+    /* ---------- PANEL DE INFORMACIÓN ---------- */
+
+    .info-panel {
+    width: 92%;
+    margin: 15px auto 45px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+    .info-card {
+        padding: 20px 12px;
+    }
+
+    .info-card i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .info-card h3 {
+        font-size: 1rem;
+    }
+
+    .info-card p {
+        font-size: .82rem;
+    }
+
+
+    /* ---------- CONTENEDORES Y TÍTULOS ---------- */
+
+    .contenedor {
+    width: 92%;
+    padding: 25px 0;
+}
+    .info-panel + .contenedor {
+    padding-top: 15px;
+}
+#galeria {
+    padding-top: 0;
+}
+#galeria {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#clima {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#nuestra-villa {
+    padding-bottom: 15px;
+}
+
+    .titulo-seccion {
+    max-width: 100%;
+    padding: 10px 18px;
+    font-size: 1.15rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+    .subtitulo {
+        font-size: .95rem;
+        line-height: 1.5;
+        margin-bottom: 05px;
+    }
+
+
+    /* ---------- NUESTRA VILLA ---------- */
+
+    .villa-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .villa-texto h3 {
+        font-size: 1.55rem;
+        margin-bottom: 18px;
+    }
+
+    .villa-texto p {
+        font-size: .95rem;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+
+    /* ---------- GALERÍA ---------- */
+
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card-foto img {
+        height: 250px;
+    }
+
+
+    /* ---------- CALENDARIO ---------- */
+
+    #clima.contenedor {
+    padding-bottom: 10px !important;
+}
+
+.calendario {
+    padding: 10px 0 30px !important;
+    margin: 0 !important;
+}
+
+.calendario .contenedor {
+    padding-top: 10px !important;
+    padding-bottom: 20px !important;
+}
+
+    .eventos-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 15px;
+}
+
+    .evento {
+        padding: 25px 18px;
+    }
+
+
+    /* ---------- RECOMENDACIONES ---------- */
+
+    .avisos-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        column-count: auto !important;
+        columns: auto !important;
+        column-gap: 0 !important;
+    }
+
+    .avisos-grid .aviso-card {
+    display: block !important;
+    width: 100% !important;
+    flex: 0 0 auto !important;
+    margin: 0 0 16px 0 !important;
+    padding: 22px 18px !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(0,0,0,.08) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,.12) !important;
+    break-inside: auto !important;
+    transition: transform .3s ease, box-shadow .3s ease !important;
+}
+
+.avisos-grid .aviso-card p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.icono-aviso img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 0 0 10px 0;
+}
+
+
+    
+    /* ---------- INFORMACIÓN ÚTIL - MÓVIL ---------- */
+
+.info-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 25px !important;
+}
+
+.info-util {
+    display: block !important;
+    width: 100% !important;
+    padding: 22px 18px !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,.10) !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+.info-util i {
+    display: block !important;
+    margin-bottom: 10px !important;
+    font-size: 30px !important;
+    color: var(--azul) !important;
+}
+
+.info-util h3 {
+    margin: 0 0 8px 0 !important;
+    color: var(--azul) !important;
+    font-size: 1.15rem !important;
+}
+
+.info-util p {
+    margin: 0 !important;
+    font-size: .95rem !important;
+    line-height: 1.5 !important;
+}
+
+
+
+    /* ---------- RADIOS Y CONTADOR ---------- */
+
+.contador-visitas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 92%;
+    max-width: 340px;
+
+    margin: 12px auto !important;
+    padding: 18px 15px;
+
+    box-sizing: border-box;
+
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(15px);
+
+    border: 2px solid var(--verde);
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.12),
+        inset 0 0 10px rgba(76,175,80,.06);
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.contador-visitas::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--verde),
+        var(--azul),
+        transparent
+    );
+
+    animation: contadorBrillo 3s linear infinite;
+}
+
+.contador-visitas:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,.16);
+}
+
+.contador-visitas .contador-icono {
+    margin-bottom: 8px;
+}
+
+.contador-visitas .contador-icono i {
+    font-size: 30px;
+}
+
+.contador-visitas h3 {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    line-height: 1.25;
+}
+
+.contador-visitas p {
+    font-size: .85rem;
+    line-height: 1.45;
+}
+
+.contador-visitas .btn {
+    margin-top: 8px;
+    padding: 10px 18px;
+    font-size: .8rem;
+}
+
+.contenedor:has(.contador-visitas) {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* NÚMERO DEL CONTADOR DE VISITAS */
+
+#contadorVisitas {
+    color: #29935b !important;
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    display: block;
+    margin: 5px 0 8px !important;
+}
+
+
+    /* ---------- FOOTER MÓVIL ---------- */
+
+    footer {
+        padding: 35px 20px 25px;
+        text-align: center;
+    }
+
+    .footer-contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .footer-contenido > div {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .footer-contenido h3,
+    .footer-contenido h4 {
+        margin-bottom: 10px;
+    }
+
+    .footer-contenido p {
+        margin-bottom: 8px;
+    }
+
+    .footer-contenido ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-contenido li {
+        margin-bottom: 6px;
+    }
+
+    .copyright {
+        text-align: center;
+        padding: 20px 15px;
+        line-height: 1.5;
+    }
+    .no-estacionar {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 21px !important;
+}
+
+}
+
+/* ====================================================
+   AJUSTE FINAL - ESPACIO ENTRE INFORME Y CALENDARIO
+   ==================================================== */
+
+@media screen and (max-width: 768px) {
+
+    #clima .contenedor {
+        padding-bottom: 30px !important;
+    }
+
+    .calendario {
+        padding-top: 30px !important;
+    }
+
+}
+@media screen and (max-width: 768px) {
+
+    .evento-icono {
+        position: relative;
+        top: -12px;
+        margin-bottom: 8px !important;
+    }
+
+}
+@media screen and (max-width: 768px) {
+
+    .evento h3,
+    .evento p {
+        position: relative;
+        top: -17px !important;
+    }
+
+}
+@media screen and (max-width: 768px) {
+
+    .contenedor:has(.avisos-grid) {
+        padding-top: 15px !important;
+    }
+
+}
+@media screen and (max-width: 768px) {
+
+    .avisos-grid .aviso-card {
+        transform: translateY(-22px);
+    }
+
+}
+/* =========================================
+   AJUSTE MÓVIL - APORTES DE LOS VECINOS
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    #contacto {
+        margin-top: -45px !important;
+        padding-top: 0 !important;
+        padding-bottom: 35px !important;
+    }
+
+    #contacto .titulo-seccion {
+        margin-top: 0 !important;
+    }
+
+}
+/* ---------- AJUSTE ENTRE NUESTRA VILLA Y APORTES ---------- */
+
+@media screen and (max-width: 768px) {
+
+    #nuestra-villa {
+        padding-bottom: 15px !important;
+    }
+
+    #contacto {
+        padding-top: 15px !important;
+    }
+
+}
+/* ====================================================
+   AJUSTE FINAL - ESPACIO ENTRE NUESTRA VILLA Y APORTES
+   ==================================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* Quita el espacio inferior de Nuestra Villa */
+    section:has(.villa-grid) .contenedor {
+        padding-bottom: 5px !important;
+    }
+
+    /* Quita el espacio superior antes de Aportes de los Vecinos */
+    .contenedor:has(#formSugerencias) {
+        padding-top: 5px !important;
+    }
+
+}
+/* ====================================================
+   AJUSTE FOTOS SOLO PC
+   NO AFECTA CELULAR
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    /* Nuestra Villa */
+    .villa-imagen img {
+        width: 100%;
+        max-height: 420px;
+        object-fit: cover;
+    }
+
+    /* Galería */
+    .card-foto img {
+        height: 260px;
+    }
+
+}
+/* ====================================================
+   ICONOS RECOMENDACIONES - SOLO PC
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    .icono-aviso {
+        font-size: 50px;
+        line-height: 1;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .icono-aviso img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        display: block;
+        margin: 0 0 10px 0;
+    }
+
+}
+
+    @media screen and (min-width: 769px) {
+
+    .avisos-grid .aviso-card .icono-aviso {
+        font-size: 40px !important;
+        line-height: 1 !important;
+    }
+
+}
+
+/* ====================================================
+   RADIOS + CONTADOR - PC
+   DISEÑO FINAL
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    /* ================================================
+       SECCIÓN RADIOS
+       ================================================ */
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        align-items: stretch;
+    }
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .titulo-seccion,
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .subtitulo {
+        grid-column: 1 / -1;
+    }
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .subtitulo {
+        margin-bottom: 15px;
+    }
+
+
+    /* ================================================
+       TARJETAS FM PLUS + RADIO CUMBRE
+       ================================================ */
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas {
+
+        width: 100% !important;
+        max-width: 560px !important;
+
+        min-height: 390px;
+
+        margin: 0 auto !important;
+        padding: 28px 28px 25px !important;
+
+        box-sizing: border-box;
+
+        position: relative;
+        overflow: hidden;
+
+        background: #ffffff !important;
+
+        border: 2px solid transparent !important;
+        border-radius: 20px !important;
+
+        box-shadow:
+            0 12px 30px rgba(0, 0, 0, .10);
+
+        text-align: center;
+
+        transition:
+            transform .35s ease,
+            box-shadow .35s ease;
+    }
+
+
+    /* ================================================
+       BORDE LUMINOSO - RADIOS
+       ================================================ */
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas::before {
+
+        content: "";
+
+        position: absolute;
+
+        inset: -2px;
+
+        border-radius: 22px;
+
+        padding: 2px;
+
+        background:
+            conic-gradient(
+                from 0deg,
+                #168cff,
+                #168cff 8%,
+                transparent 12%,
+                transparent 35%,
+                #ffffff 42%,
+                #168cff 47%,
+                #2fd35b 53%,
+                transparent 60%,
+                transparent 82%,
+                #2fd35b 90%,
+                #168cff
+            );
+
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+
+        animation: bordeRadioAgapantos 4s linear infinite;
+
+        pointer-events: none;
+
+        z-index: 1;
+    }
+
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas > * {
+        position: relative;
+        z-index: 2;
+    }
+
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas:hover {
+
+        transform: translateY(-6px);
+
+        box-shadow:
+            0 20px 42px rgba(0, 0, 0, .17);
+    }
+
+
+    /* ================================================
+       CONTENIDO RADIOS
+       ================================================ */
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas .contador-icono i {
+
+        font-size: 30px;
+    }
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas h3 {
+
+        font-size: 1.45rem !important;
+
+        line-height: 1.3;
+
+        margin: 8px 0 10px;
+    }
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas p {
+
+        max-width: 380px;
+
+        margin: 0 auto 22px;
+
+        font-size: .98rem !important;
+
+        line-height: 1.55;
+    }
+
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas .btn {
+
+        display: inline-block;
+
+        padding: 11px 28px !important;
+
+        font-size: .95rem !important;
+
+        border-radius: 30px;
+
+        transition:
+            transform .3s ease,
+            box-shadow .3s ease;
+    }
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas .btn:hover {
+
+        transform: scale(1.05);
+
+        box-shadow:
+            0 10px 25px rgba(0, 0, 0, .18);
+    }
+
+
+    /* ================================================
+       CONTADOR DE VISITAS
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas {
+
+        width: 820px !important;
+        max-width: 90% !important;
+
+        min-height: 300px;
+
+        margin: 35px auto !important;
+
+        padding: 28px 35px !important;
+
+        box-sizing: border-box;
+
+        position: relative;
+        overflow: hidden;
+
+        background: #ffffff !important;
+
+        border: 2px solid transparent !important;
+        border-radius: 22px !important;
+
+        box-shadow:
+            0 14px 35px rgba(0, 0, 0, .12);
+
+        text-align: center;
+
+        transition:
+            transform .35s ease,
+            box-shadow .35s ease;
+    }
+
+
+    /* ================================================
+       BORDE MULTICOLOR DEL CONTADOR
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas::before {
+
+        content: "";
+
+        position: absolute;
+
+        inset: -2px;
+
+        border-radius: 24px;
+
+        padding: 2px;
+
+        background:
+            conic-gradient(
+                from 0deg,
+                #8e2cff,
+                #006eff,
+                #00bcd4,
+                #20c968,
+                #8e2cff
+            );
+
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+
+        animation: bordeContadorAgapantos 4s linear infinite;
+
+        pointer-events: none;
+
+        z-index: 1;
+    }
+
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas > * {
+        position: relative;
+        z-index: 2;
+    }
+
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas:hover {
+
+        transform: translateY(-6px);
+
+        box-shadow:
+            0 22px 45px rgba(0, 0, 0, .17);
+    }
+
+
+    /* ================================================
+       ICONO CONTADOR
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas .contador-icono i {
+
+        font-size: 32px;
+    }
+
+
+    /* ================================================
+       TÍTULO CONTADOR
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas h3 {
+
+        font-size: 1.35rem !important;
+
+        margin: 8px 0 8px;
+    }
+
+
+    /* ================================================
+       NÚMEROS DEL CONTADOR
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas #contadorVisitas {
+
+        font-size: 2.8rem !important;
+
+        font-weight: 800 !important;
+
+        letter-spacing: 4px;
+
+        background:
+            linear-gradient(
+                90deg,
+                #155cff,
+                #168cff,
+                #00a9d6,
+                #20b95b,
+                #21c45c
+            );
+
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+
+        margin: 8px 0 !important;
+    }
+
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas .contador-texto {
+
+        font-size: .95rem;
+        font-weight: 600;
+    }
+
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas p {
+
+        font-size: .90rem !important;
+
+        margin-top: 8px;
+    }
+
+}
+
+
+/* ====================================================
+   ANIMACIONES
+   ==================================================== */
+
+@keyframes bordeRadioAgapantos {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes bordeContadorAgapantos {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+/* ====================================================
+   RADIOS + CONTADOR PC - AJUSTE FINAL
+   TARJETAS PEQUEÑAS + RAYO EN EL BORDE
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    /* ===============================
+       DOS RADIOS PEQUEÑAS
+       =============================== */
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas) {
+        display: grid;
+        grid-template-columns: 290px 290px;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .titulo-seccion,
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .subtitulo {
+        grid-column: 1 / -1;
+    }
+
+    /* ===============================
+       TARJETAS
+       =============================== */
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas {
+
+        width: 290px !important;
+        max-width: 290px !important;
+        min-height: 0 !important;
+
+        margin: 0 auto 10px !important;
+        padding: 18px 14px !important;
+
+        box-sizing: border-box;
+
+        background: #ffffff !important;
+
+        border: 2px solid #2E8B57 !important;
+        border-radius: 18px !important;
+
+        position: relative;
+        overflow: hidden;
+
+        text-align: center;
+
+        box-shadow:
+            0 7px 18px rgba(0,0,0,.10);
+    }
+
+    /* ===============================
+       RAYO DEL BORDE
+       =============================== */
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 34px;
+        height: 3px;
+
+        border-radius: 10px;
+
+        background: linear-gradient(
+            90deg,
+            transparent,
+            #ffffff,
+            #168cff,
+            #2E8B57,
+            transparent
+        );
+
+        box-shadow:
+            0 0 6px #168cff,
+            0 0 10px #2E8B57;
+
+        z-index: 5;
+
+        pointer-events: none;
+
+        animation: rayoBordeRadio 4s linear infinite;
+    }
+
+    /* ===============================
+       CONTENIDO DE LAS RADIOS
+       =============================== */
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas h3 {
+
+        font-size: 1rem !important;
+        line-height: 1.25;
+
+        margin: 4px 0 6px !important;
+    }
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas p {
+
+        font-size: .74rem !important;
+        line-height: 1.4;
+
+        max-width: 250px;
+
+        margin: 0 auto 11px;
+    }
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas .contador-icono i {
+        font-size: 25px;
+    }
+
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas)
+    > .contador-visitas .btn {
+
+        padding: 8px 16px !important;
+        font-size: .72rem !important;
+    }
+
+
+    /* ===============================
+       CONTADOR MÁS CERCA
+       =============================== */
+
+    /* ==========================================
+   CONTADOR DE VISITANTES - PC
+   PEQUEÑO, ARRIBA Y CON RAYO DIFUSO
+   ========================================== */
+
+}
+
+/* ====================================================
+   CONTADOR DE VISITANTES PC
+   TARJETA COMPACTA + EFECTOS INTERNOS
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas {
+
+        width: 390px !important;
+        max-width: 390px !important;
+
+        min-height: 0 !important;
+
+        margin: -25px auto 20px !important;
+
+        padding: 18px 20px !important;
+
+        box-sizing: border-box;
+
+        position: relative;
+        overflow: hidden;
+
+        background:
+            linear-gradient(
+                145deg,
+                #ffffff 0%,
+                #f5f9ff 50%,
+                #f1fff7 100%
+            ) !important;
+
+        border: 2px solid #2C5AA0 !important;
+
+        border-radius: 18px !important;
+
+        text-align: center;
+
+        box-shadow:
+            0 8px 20px rgba(0,0,0,.10),
+            0 0 12px rgba(44,90,160,.18);
+    }
+
+
+    /* ================================================
+       BRILLO SUAVE INTERIOR
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas::before {
+
+        content: "";
+
+        position: absolute;
+
+        inset: 5px;
+
+        border-radius: 14px;
+
+        border: 1px solid rgba(46,139,87,.18);
+
+        box-shadow:
+            inset 0 0 12px rgba(44,90,160,.10),
+            inset 0 0 20px rgba(46,139,87,.08);
+
+        pointer-events: none;
+
+        z-index: 1;
+    }
+
+
+    /* ================================================
+       ICONO
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas .contador-icono {
+
+        margin-bottom: 3px;
+    }
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas .contador-icono i {
+
+        font-size: 28px !important;
+
+        color: #2C5AA0;
+    }
+
+
+    /* ================================================
+       TITULO
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas h3 {
+
+        font-size: 1.15rem !important;
+
+        margin: 3px 0 8px !important;
+
+        color: #2C5AA0;
+    }
+
+
+    /* ================================================
+       NÚMEROS
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas #contadorVisitas {
+
+        display: inline-block;
+
+        padding: 8px 16px;
+
+        min-width: 150px;
+
+        margin: 2px auto 8px !important;
+
+        border-radius: 10px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #eaf2ff,
+                #f2edff,
+                #eafff2
+            );
+
+        border: 1px solid rgba(44,90,160,.20);
+
+        box-shadow:
+            inset 0 0 10px rgba(44,90,160,.10),
+            0 4px 10px rgba(0,0,0,.06);
+
+        color: #168cff !important;
+
+        font-size: 2rem !important;
+
+        font-weight: 800 !important;
+
+        letter-spacing: 4px;
+
+        line-height: 1;
+    }
+
+
+    /* ================================================
+       VISITAS REGISTRADAS
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas .contador-texto {
+
+        display: inline-block;
+
+        padding: 4px 12px;
+
+        margin-bottom: 5px;
+
+        border-radius: 15px;
+
+        background:
+            linear-gradient(
+                90deg,
+                #edf4ff,
+                #effff4
+            );
+
+        color: #2E8B57;
+
+        font-size: .74rem;
+
+        font-weight: 600;
+    }
+
+
+    /* ================================================
+       MENSAJE
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas p {
+
+        font-size: .76rem !important;
+
+        line-height: 1.35;
+
+        margin: 4px auto 0 !important;
+
+        color: #555;
+    }
+
+
+    /* ================================================
+       EFECTO AL PASAR EL MOUSE
+       ================================================ */
+
+    section.contenedor:not(:has(> .titulo-seccion))
+    > .contador-visitas:hover {
+
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 14px 28px rgba(0,0,0,.13),
+            0 0 18px rgba(44,90,160,.22);
+    }
+
+}
+
+/* ====================================================
+   RAYO DE LAS RADIOS
+   ==================================================== */
+
+@keyframes rayoBordeRadio {
+
+    0% {
+        top: -2px;
+        left: 0;
+        transform: rotate(0deg);
+    }
+
+    24% {
+        top: -2px;
+        left: calc(100% - 34px);
+        transform: rotate(0deg);
+    }
+
+    25% {
+        top: 0;
+        left: calc(100% - 1px);
+        transform: rotate(90deg);
+    }
+
+    49% {
+        top: calc(100% - 34px);
+        left: calc(100% - 1px);
+        transform: rotate(90deg);
+    }
+
+    50% {
+        top: calc(100% - 1px);
+        left: calc(100% - 34px);
+        transform: rotate(180deg);
+    }
+
+    74% {
+        top: calc(100% - 1px);
+        left: 0;
+        transform: rotate(180deg);
+    }
+
+    75% {
+        top: calc(100% - 34px);
+        left: -2px;
+        transform: rotate(270deg);
+    }
+
+    99% {
+        top: 0;
+        left: -2px;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        top: -2px;
+        left: 0;
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ====================================================
+   RAYO DEL CONTADOR
+   ==================================================== */
+
+@keyframes rayoBordeContador {
+
+    0% {
+        top: -2px;
+        left: 0;
+        transform: rotate(0deg);
+    }
+
+    24% {
+        top: -2px;
+        left: calc(100% - 36px);
+        transform: rotate(0deg);
+    }
+
+    25% {
+        top: 0;
+        left: calc(100% - 1px);
+        transform: rotate(90deg);
+    }
+
+    49% {
+        top: calc(100% - 36px);
+        left: calc(100% - 1px);
+        transform: rotate(90deg);
+    }
+
+    50% {
+        top: calc(100% - 1px);
+        left: calc(100% - 36px);
+        transform: rotate(180deg);
+    }
+
+    74% {
+        top: calc(100% - 1px);
+        left: 0;
+        transform: rotate(180deg);
+    }
+
+    75% {
+        top: calc(100% - 36px);
+        left: -2px;
+        transform: rotate(270deg);
+    }
+
+    99% {
+        top: 0;
+        left: -2px;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        top: -2px;
+        left: 0;
+        transform: rotate(360deg);
+    }
+
+}
+/* =====================================================
+   CONTADOR DE VISITANTES - SOLO PC
+   ===================================================== */
+
+@media screen and (min-width: 769px) {
+
+    /* SUBIR Y ACHICAR SOLO LA TARJETA */
+
+    section.contenedor:has(#contadorVisitas) {
+        padding-top: 10px !important;
+        padding-bottom: 20px !important;
+    }
+
+    section.contenedor:has(#contadorVisitas)
+    > .contador-visitas {
+
+        width: 390px !important;
+        max-width: 390px !important;
+
+        margin: -25px auto 15px !important;
+
+        padding: 18px 20px !important;
+
+        box-sizing: border-box;
+
+        background: linear-gradient(
+            145deg,
+            #ffffff,
+            #f5f9ff,
+            #f4fff8
+        ) !important;
+
+        border: 2px solid #2C5AA0 !important;
+
+        border-radius: 18px !important;
+
+        position: relative;
+
+        overflow: hidden;
+
+        text-align: center;
+
+        box-shadow:
+            0 8px 20px rgba(0,0,0,.10),
+            0 0 14px rgba(44,90,160,.12);
+    }
+
+
+    /* QUITAR CUALQUIER RAYO DEL CONTADOR */
+
+    section.contenedor:has(#contadorVisitas)
+    > .contador-visitas::before,
+    section.contenedor:has(#contadorVisitas)
+    > .contador-visitas::after {
+
+        display: none !important;
+        content: none !important;
+        animation: none !important;
+    }
+
+
+    /* ICONO */
+
+    section.contenedor:has(#contadorVisitas)
+    > .contador-visitas .contador-icono i {
+
+        font-size: 28px !important;
+
+        color: #2C5AA0 !important;
+    }
+
+
+    /* TITULO */
+
+    section.contenedor:has(#contadorVisitas)
+    > .contador-visitas h3 {
+
+        font-size: 1.15rem !important;
+
+        margin: 3px 0 10px !important;
+
+        color: #2C5AA0 !important;
+    }
+
+
+    /* =================================================
+       NÚMEROS EN CUADROS
+       ================================================= */
+
+    #contadorVisitas.numero-visitas {
+
+        display: flex !important;
+
+        justify-content: center !important;
+
+        align-items: center !important;
+
+        gap: 6px !important;
+
+        width: 100% !important;
+
+        margin: 8px 0 10px !important;
+
+        padding: 0 !important;
+
+        background: transparent !important;
+
+        border: 0 !important;
+
+        box-shadow: none !important;
+
+        font-size: 0 !important;
+    }
+    #contadorVisitas.numero-visitas span {
+
+    display: flex !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+
+    width: 38px !important;
+
+    height: 46px !important;
+
+    border-radius: 8px !important;
+
+    color: white !important;
+
+    -webkit-text-fill-color: white !important;
+
+    background-clip: border-box !important;
+
+    -webkit-background-clip: border-box !important;
+
+    font-size: 1.55rem !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1 !important;
+
+    box-sizing: border-box !important;
+
+    border: 1px solid rgba(255,255,255,.65) !important;
+
+    box-shadow:
+        inset 0 0 8px rgba(255,255,255,.25),
+        0 4px 9px rgba(0,0,0,.12) !important;
+
+    text-shadow: none !important;
+
+    filter: none !important;
+
+    opacity: 1 !important;
+
+    transform: none !important;
+}
+
+
+/* COLORES */
+
+#contadorVisitas.numero-visitas span:nth-child(1) {
+    background: #2563eb !important;
+}
+
+#contadorVisitas.numero-visitas span:nth-child(2) {
+    background: #168cff !important;
+}
+
+#contadorVisitas.numero-visitas span:nth-child(3) {
+    background: #1597c5 !important;
+}
+
+#contadorVisitas.numero-visitas span:nth-child(4) {
+    background: #159f8a !important;
+}
+
+#contadorVisitas.numero-visitas span:nth-child(5) {
+    background: #2E8B57 !important;
+}
+
+#contadorVisitas.numero-visitas span:nth-child(6) {
+    background: #4CAF50 !important;
+}
+
+
+   
+
+
+    /* VISITAS REGISTRADAS */
+
+    section.contenedor:has(#contadorVisitas)
+    > .contador-visitas .contador-texto {
+
+        display: inline-block !important;
+
+        margin: 2px 0 5px !important;
+
+        padding: 3px 12px !important;
+
+        border-radius: 14px !important;
+
+        background: #edf8f1 !important;
+
+        color: #2E8B57 !important;
+
+        font-size: .72rem !important;
+
+        font-weight: 700 !important;
+    }
+
+
+    /* TEXTO FINAL */
+
+    section.contenedor:has(#contadorVisitas)
+    > .contador-visitas p {
+
+        font-size: .74rem !important;
+
+        line-height: 1.3 !important;
+
+        margin: 4px auto 0 !important;
+    }
+
+}
+/* ====================================================
+   TACHa NO ESTACIONAR - SOLO PC
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    .avisos-grid .aviso-card:nth-child(4) .icono-aviso > span {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 32px !important;
+    }
+
+    .avisos-grid .aviso-card:nth-child(4) .icono-aviso > span > span {
+        width: 43px !important;
+        height: 4px !important;
+    }
+
+}
+/* ====================================================
+   PRIMER AVISO - SUBIR TITULO Y TEXTO SOLO PC
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    .avisos-grid .aviso-card:first-child h3 {
+        margin-top: -30px;
+    }
+
+}
+/* ====================================================
+   ESPACIO DESPUÉS DE RECOMENDACIONES - SOLO PC
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    #avisos {
+        margin-bottom: 0;
+    }
+
+}
+/* ====================================================
+   AJUSTE ESPACIO ANTES DE RADIOS - SOLO PC
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    /* Reduce el espacio inferior de Teléfonos */
+    section.contenedor:has(.telefonos-card) {
+        padding-bottom: 20px !important;
+    }
+
+    /* Reduce el espacio superior de Radios */
+    section.contenedor:has(> .titulo-seccion):has(> .contador-visitas) {
+        padding-top: 20px !important;
+    }
+
+}
+/* ====================================================
+   AJUSTE ESPACIO ANTES DE TELÉFONOS - PC
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    #contacto {
+        padding-bottom: 10px !important;
+    }
+
+}
+/* ====================================================
+   FOOTER PC - DISEÑO ANTERIOR + COLOR
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    footer {
+        padding: 30px 60px 15px !important;
+        background: linear-gradient(135deg, #243b64, #1f7f68) !important;
+        color: white !important;
+        text-align: center !important;
+    }
+
+    .footer-contenido {
+        max-width: 850px;
+        margin: 0 auto;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px;
+    }
+
+    /* Ocultar la columna izquierda */
+    .footer-contenido > div:first-child {
+        display: none !important;
+    }
+
+    .footer-contenido > div {
+        width: 100% !important;
+        max-width: 600px !important;
+        text-align: center !important;
+    }
+
+    .footer-contenido h4 {
+        margin: 0 0 10px !important;
+        color: white !important;
+        font-size: 1.15rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footer-contenido ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .footer-contenido li {
+        list-style: none !important;
+        margin: 4px 0 !important;
+    }
+
+    .footer-contenido a {
+        color: white !important;
+        text-decoration: none;
+    }
+
+    .footer-contenido p {
+        color: rgba(255,255,255,.9) !important;
+        margin: 4px 0 !important;
+    }
+
+    .copyright {
+        max-width: 850px;
+        margin: 0 auto !important;
+        padding: 12px 15px 0 !important;
+        border-top: 1px solid rgba(255,255,255,.25);
+        color: rgba(255,255,255,.8) !important;
+        text-align: center !important;
+    }
+
+}
+/* ====================================================
+   RECUPERAR ESPACIADO CORRECTO - SOLO PC
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    .contenedor {
+        padding-top: 25px !important;
+        padding-bottom: 45px !important;
+    }
+
+    .subtitulo {
+        margin-bottom: 20px !important;
+    }
+
+    .calendario {
+        padding: 25px 0 30px !important;
+    }
+
+    #contacto {
+        padding-top: 45px !important;
+    }
+
+}
+/* ====================================================
+   EFECTO MODERNO - BIENVENIDOS
+   ==================================================== */
+
+.titulo-bienvenida {
+    display: inline-block !important;
+    position: relative !important;
+
+    animation:
+        bienvenidaEntradaModerna 1.2s cubic-bezier(.22, 1, .36, 1) both,
+        bienvenidaBrilloModerno 2s ease-out 1.1s both !important;
+}
+
+
+/* Entrada suave y elegante */
+@keyframes bienvenidaEntradaModerna {
+
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(.96);
+        filter: blur(7px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-2px) scale(1.02);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+
+/* Brillo verde */
+@keyframes bienvenidaBrilloModerno {
+
+    0% {
+        text-shadow: 0 0 0 transparent;
+    }
+
+    45% {
+        text-shadow:
+            0 0 10px rgba(76,175,80,.65),
+            0 0 22px rgba(76,175,80,.30);
+    }
+
+    100% {
+        text-shadow:
+            0 0 3px rgba(76,175,80,.18);
+    }
+}
+
+
+/* Destello */
+.titulo-bienvenida::after {
+
+    content: "";
+    position: absolute;
+
+    top: -40%;
+    left: -70%;
+
+    width: 25%;
+    height: 180%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.9),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    animation:
+        bienvenidaDestelloModerno
+        1.1s ease-out 1.35s forwards;
+
+    pointer-events: none;
+}
+
+
+@keyframes bienvenidaDestelloModerno {
+
+    0% {
+        left: -70%;
+    }
+
+    100% {
+        left: 150%;
+    }
+
+}
+/* ====================================================
+   CENTRAR SUBTÍTULO DEL LOGO - SOLO PC
+   ==================================================== */
+
+@media screen and (min-width: 769px) {
+
+    .subtitulo-logo {
+        width: 100% !important;
+        text-align: center !important;
+        transform: translateX(32px);
+    }
+
+}
+/* ====================================================
+   SUBTÍTULO EXTRA - OCULTAR EN CELULAR
+   ==================================================== */
+
+@media screen and (max-width: 768px) {
+
+    .subtitulo-logo {
+        display: none !important;
+    }
+/* =========================================
+   NOTICIAS DE NUESTRA ZONA
+   ========================================= */
+
+async function cargarNoticias() {
+
+    const lista = document.getElementById("noticiasLista");
+
+    if (!lista) return;
+
+    try {
+
+        const respuesta = await fetch(
+            "https://www.colina.cl/wp-json/wp/v2/posts?per_page=6&_embed"
+        );
+
+        if (!respuesta.ok) {
+            throw new Error("No se pudieron obtener las noticias");
+        }
+
+        const noticias = await respuesta.json();
+
+        lista.innerHTML = "";
+
+        noticias.forEach(noticia => {
+
+            const titulo = noticia.title.rendered;
+            const enlace = noticia.link;
+
+            const fecha = new Date(noticia.date).toLocaleDateString(
+                "es-CL",
+                {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric"
+                }
+            );
+
+            let imagen = "";
+
+            if (
+                noticia._embedded &&
+                noticia._embedded["wp:featuredmedia"] &&
+                noticia._embedded["wp:featuredmedia"][0]
+            ) {
+                imagen =
+                    noticia._embedded["wp:featuredmedia"][0].source_url;
+            }
+
+            const tarjeta = document.createElement("article");
+
+            tarjeta.className = "noticia-card";
+
+            /* ==============================
+               TAMAÑO DE LA TARJETA
+               ============================== */
+
+            if (window.innerWidth <= 768) {
+
+                tarjeta.style.width = "88%";
+                tarjeta.style.minWidth = "88%";
+                tarjeta.style.maxWidth = "88%";
+                tarjeta.style.height = "305px";
+
+            } else {
+
+                tarjeta.style.width = "300px";
+                tarjeta.style.minWidth = "300px";
+                tarjeta.style.maxWidth = "300px";
+                tarjeta.style.height = "320px";
+            }
+
+            tarjeta.style.flexShrink = "0";
+            tarjeta.style.overflow = "hidden";
+            tarjeta.style.boxSizing = "border-box";
+
+            tarjeta.innerHTML = `
+                <a
+                    href="${enlace}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="noticia-enlace"
+                >
+
+                    <div class="noticia-imagen">
+
+                        ${
+                            imagen
+                            ? `<img
+                                src="${imagen}"
+                                alt="${titulo}"
+                                class="noticia-foto"
+                                loading="lazy"
+                              >`
+                            : `<div class="noticia-placeholder">📰</div>`
+                        }
+
+                    </div>
+
+                    <div class="noticia-contenido">
+
+                        <span class="noticia-fuente">
+                            MUNICIPALIDAD DE COLINA
+                        </span>
+
+                        <h3>${titulo}</h3>
+
+                        <p class="noticia-fecha">
+                            ${fecha}
+                        </p>
+
+                    </div>
+
+                </a>
+            `;
+
+            /* ==============================
+               TAMAÑO DE LA IMAGEN
+               ============================== */
+
+            const contenedorImagen =
+                tarjeta.querySelector(".noticia-imagen");
+
+            const foto =
+                tarjeta.querySelector(".noticia-foto");
+
+            if (window.innerWidth <= 768) {
+
+                contenedorImagen.style.height = "120px";
+                contenedorImagen.style.minHeight = "120px";
+                contenedorImagen.style.maxHeight = "120px";
+                contenedorImagen.style.overflow = "hidden";
+
+                if (foto) {
+
+                    foto.style.width = "100%";
+                    foto.style.height = "120px";
+                    foto.style.minHeight = "120px";
+                    foto.style.maxHeight = "120px";
+                    foto.style.objectFit = "cover";
+                    foto.style.display = "block";
+                }
+
+            } else {
+
+                contenedorImagen.style.height = "125px";
+                contenedorImagen.style.minHeight = "125px";
+                contenedorImagen.style.maxHeight = "125px";
+                contenedorImagen.style.overflow = "hidden";
+
+                if (foto) {
+
+                    foto.style.width = "100%";
+                    foto.style.height = "125px";
+                    foto.style.minHeight = "125px";
+                    foto.style.maxHeight = "125px";
+                    foto.style.objectFit = "cover";
+                    foto.style.display = "block";
+                }
+            }
+
+            lista.appendChild(tarjeta);
+
+        });
+
+    } catch (error) {
+
+        console.error("Error al cargar noticias:", error);
+
+        lista.innerHTML = `
             <article class="noticia-card">
+
                 <div class="noticia-imagen">
                     <div class="noticia-placeholder">
                         📰
@@ -369,1165 +3291,88 @@ de los vecinos.
                 </div>
 
                 <div class="noticia-contenido">
+
                     <span class="noticia-fuente">
                         NOTICIAS LOCALES
                     </span>
 
                     <h3>
-                        Cargando noticias de nuestra zona...
+                        Noticias temporalmente no disponibles
                     </h3>
 
                     <p class="noticia-fecha">
-                        Actualizando información
+                        Intenta nuevamente más tarde.
                     </p>
+
                 </div>
+
             </article>
-
-        </div>
-
-        <button class="noticias-flecha noticias-siguiente" aria-label="Noticias siguientes">
-            ›
-        </button>
-
-    </div>
-
-    <p class="noticias-pie">
-        Información proveniente de medios y fuentes locales.
-        Al seleccionar una noticia, serás dirigido a su publicación original.
-    </p>
-
-            
-
-<!-- ===================================================
-GALERÍA
-=================================================== -->
-
-<section
-id="galeria"
-class="contenedor">
-
-<h2 class="titulo-seccion">
-
-Galería de la Villa
-
-</h2>
-
-<p class="subtitulo">
-
-Algunos de los lugares más representativos de nuestra comunidad.
-
-</p>
-
-<div class="galeria">
-
-<div class="card-foto">
-
-<img src="img/Los Agapantos.jpeg" alt="Letrero Villa Los Agapantos">
-
-
-<div class="overlay">
-
-<h3>Letrero Principal</h3>
-
-<p>
-Bienvenida a la Villa.
-</p>
-
-</div>
-
-</div>
-
-<div class="card-foto">
-
-<img src="img/Porton entrada.jpeg"
-alt="Portón Entrada">
-
-<div class="overlay">
-
-<h3>Portón de Entrada</h3>
-
-<p>
-
-Acceso principal.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card-foto">
-
-<img src="img/Porton Salida.jpeg"
-alt="Portón Salida">
-
-<div class="overlay">
-
-<h3>Portón de Salida</h3>
-
-<p>
-
-Salida de la Villa.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card-foto">
-
-<img src="img/sector juegos.jpeg"
-alt="Sector Juegos">
-
-<div class="overlay">
-
-<h3>
-
-Plaza
-
-</h3>
-
-<p>
-
-Espacio para compartir.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card-foto">
-
-<img src="img/sector juegos 2.jpeg"
-alt="Sector Juegos">
-
-<div class="overlay">
-
-<h3>
-
-Sector de Juegos
-
-</h3>
-
-<p>
-
-Vista nocturna.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- ===================================================
-      INFORME CLIMATOLÓGICO
-=================================================== -->
-
-<section id="clima" class="informacion-util">
-
-<style>
-@media screen and (min-width: 769px) {
-
-    #clima .info-grid {
-        display: block !important;
-        margin-top: 28px !important;
-    }
-
-    #clima .info-util {
-        background: #ffffff !important;
-        border: 1px solid rgba(36,59,100,0.10) !important;
-        border-top: 5px solid #2f9675 !important;
-        border-radius: 22px !important;
-        padding: 28px 35px 30px !important;
-        box-shadow: 0 10px 25px rgba(36,59,100,0.10) !important;
-        text-align: center !important;
-    }
-
-    #clima .info-util h3 {
-        color: #243b64 !important;
-        margin: 0 0 14px !important;
-        font-size: 1.3rem !important;
-    }
-
-    #clima .info-util p {
-    color: #4d5b68 !important;
-    line-height: 1.55 !important;
-    margin: 0 auto 22px !important;
-    max-width: 850px !important;
-}
-
-    #clima .info-util .btn {
-        display: inline-block !important;
-        background: linear-gradient(135deg, #2f6aa8, #2f9675) !important;
-        color: #ffffff !important;
-        padding: 10px 22px !important;
-        border-radius: 22px !important;
-        text-decoration: none !important;
-        font-weight: 600 !important;
-        box-shadow: 0 5px 12px rgba(36,59,100,0.16) !important;
-    }
-
-    #clima .boton-informe {
-        margin: 0 !important;
-        text-align: center !important;
-    }
-
-}
-</style>
-
-<div class="contenedor">
-
-    <h2 class="titulo-seccion">
-        🌦️ Informe Climatológico
-    </h2>
-
-    <p class="subtitulo">
-        Información meteorológica oficial para la comuna de Colina y la Región Metropolitana.
-    </p>
-
-    <div class="info-grid">
-
-        <div class="info-util">
-
-            <h3>
-                🌧️ Precipitación
-            </h3>
-
-            <p>
-                Consulta el informe oficial de precipitaciones
-                y registros meteorológicos de la Región Metropolitana.
-            </p>
-
-            <p class="boton-informe">
-
-                <a class="btn"
-                   target="_blank"
-                   href="https://climatologia.meteochile.gob.cl/application/diariob/visorEmaPrecipitacion/330020">
-
-                    📄 Ver Informe Oficial
-
-                </a>
-
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-<!-- ===================================================
-CALENDARIO
-=================================================== -->
-
-<section
-id="calendario"
-class="calendario">
-
-<div class="contenedor">
-
-<h2 class="titulo-seccion">
-
-Calendario Comunitario
-
-</h2>
-
-<p class="subtitulo">
-
-Actividades importantes para todos los vecinos.
-
-</p>
-
-<div class="eventos-grid">
-
-<div class="evento">
-
-<div class="evento-icono">
-
-🚛
-
-</div>
-
-<h3>
-
-Camión de Basura
-
-</h3>
-
-<p>
-
-Martes<br>
-Jueves<br>
-Sábado
-
-</p>
-
-</div>
-
-<div class="evento">
-
-<div class="evento-icono">
-
-👥
-
-</div>
-
-<h3>
-
-Reuniones
-
-</h3>
-
-<p>
-
-Información próximamente.
-
-</p>
-
-</div>
-
-<div class="evento">
-
-<div class="evento-icono">
-
-🌳
-
-</div>
-
-<h3>
-
-Operativos
-
-</h3>
-
-<p>
-
-Limpieza y mantención.
-
-</p>
-
-</div>
-
-<div class="evento">
-
-<div class="evento-icono">
-
-🎉
-
-</div>
-
-<h3>
-
-Actividades
-
-</h3>
-
-<p>
-
-Celebraciones comunitarias.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================================================
-RECOMENDACIONES
-=================================================== -->
-
-<section
-id="avisos"
-class="contenedor">
-
-<h2 class="titulo-seccion">
-
-Recomendaciones
-
-</h2>
-
-<p class="subtitulo">
-
-Un espacio para fortalecer la buena convivencia, el respeto y el compromiso entre todos los vecinos.
-
-</p>
-
-<div class="avisos-grid">
-
-<div class="aviso-card">
-
-<div class="icono-aviso">
-<img src="img/auto-no-entrar.png" alt="Circulación y acceso">
-</div>
-
-<h3>Circulación y acceso por los portones</h3>
-
-<p>
-Se solicita respetar el sentido de circulación al ingresar y salir de la villa.
-<strong>Mientras los portones estén operativos, respetar el sentido de circulación
-y no ingresar ni salir en sentido contrario al tránsito.</strong>
-</p>
-
-
-<p style="text-align: justify;">
-Si el control remoto o el llamado telefónico no funcionan,
-<strong>avisar previamente en el grupo de WhatsApp</strong> antes de realizar la maniobra,
-para que los demás vecinos estén informados.
-</p>
-
-
-<p>
-<strong>La colaboración de todos permite mantener una circulación
-segura dentro de la villa.</strong>
-</p>
-
-</div>
-
-<div class="aviso-card">
-
-<div class="icono-aviso">🚛</div>
-
-<h3>Camión de la basura</h3>
-
-<p>
-Se recuerda a todos los vecinos estar atentos al horario del camión de la basura.
-Evitar dejar vehículos mal estacionados que impidan su paso o que puedan provocar
-daños a los autos de otros residentes.
-</p>
-
-</div>
-
-<div class="aviso-card">
-
-<div class="icono-aviso">🚸</div>
-
-<h3>Velocidad y tránsito dentro de la villa</h3>
-
-<p>
-La Villa Los Agapantos es un recinto público y se rige por la Ley de Tránsito.
-Respetar los límites de velocidad, especialmente en la entrada y salida donde
-frecuentemente hay niños jugando.
-</p>
-
-</div>
-
-<div class="aviso-card">
-
- <div class="icono-aviso">
-    <span style="
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        width:50px;
-        height:50px;
-        border:3px solid #d71920;
-        border-radius:50%;
-        color:#111;
-        font-size:32px;
-        font-weight:800;
-        font-family:Arial,sans-serif;
-        position:relative;
-        box-sizing:border-box;
-    ">
-        E
-        <span style="
-    position:absolute;
-    width:48px;
-    height:4px;
-    background:#d71920;
-    transform:rotate(-45deg);
-    border-radius:3px;
-"></span>
-    </span>
-</div>
-<h3>Vehículos estacionados frente a otras viviendas</h3>
-
-<p>
-<strong>Por ley, está prohibido estacionar frente a entradas y salidas de vehículos.</strong>
-
-Si necesitas estacionar momentáneamente <strong>frente al domicilio de otro vecino</strong>,
-recuerda que, al tratarse de una vía pública, puedes hacerlo siempre que no exista una
-prohibición y no obstruyas entradas o salidas. Como gesto de buena convivencia, se
-recomienda avisar previamente al vecino.
-</p>
-
-</div>
-
-<div class="aviso-card">
-
-<div class="icono-aviso">🚭</div>
-
-<h3>Sustancias y humo en espacios comunes</h3>
-
-<p>
-Por ley no está permitido fumar sustancias sicotrópicas en la plaza ni en la via pública.
-Si el consumo se realiza en un domicilio, hacerlo en un lugar cerrado para evitar molestias a
-otros residentes.
-</p>
-
-</div>
-
-<div class="aviso-card">
-
-<div class="icono-aviso">🍔</div>
-
-<h3>Basura y alimentos en la plaza</h3>
-
-<p>
-Si consumen alimentos en la plaza y el basurero está lleno, no dejar los desechos
-en el suelo. Llevarlos a casa evita que los perros rompan las bolsas y generen
-malos olores.
-</p>
-
-</div>
-
-<div class="aviso-card">
-
-<div class="icono-aviso">🎉</div>
-
-<h3>Eventos, cumpleaños y música</h3>
-
-<p>
-Si van a realizar un cumpleaños o actividad con música a alto volumen, avisar
-previamente a los vecinos cercanos. Una simple comunicación evita molestias y
-reclamos.
-</p>
-
-</div>
-
-<div class="aviso-card">
-
-<div class="icono-aviso">🏍️</div>
-
-<h3>Motos y delivery</h3>
-
-<p>
-Cuando ingresen motos de delivery, el vecino debe estar atento a la entrada y
-salida del repartidor. Una buena coordinación evita confusiones y mantiene la
-convivencia tranquila.
-</p>
-
-</div>
-
-<div class="aviso-card">
-
-<div class="icono-aviso">👀</div>
-
-<h3>Personas desconocidas o merodeando la villa</h3>
-
-<p>
-Si se observa a alguna persona extraña merodeando la villa, avisar de inmediato
-al grupo de WhatsApp comunitario para que todos estén atentos y se prevengan
-situaciones de riesgo.
-</p>
-
-</div>
-
-<div class="aviso-card">
-
-<div class="icono-aviso">🤝</div>
-
-<h3>Buena vecindad</h3>
-
-<p>
-Una comunidad se fortalece con el respeto, la empatía y el diálogo. Antes de sacar conclusiones, conversemos. Una buena comunicación evita malentendidos y nos ayuda a construir una vecindad más unida, respetuosa y donde el diálogo siempre sea el primer paso para resolver cualquier situación.
-</p>
-
-</div>
-
-<div class="aviso-card">
-
-<div class="icono-aviso">🏡</div>
-
-<h3>Gastos Comunes</h3>
-
-
-<p>
-    Si eres nuevo propietario o arrendatario, te invitamos a contactar a la directiva para conocer el funcionamiento de la comunidad y la forma de realizar el pago de los gastos comunes.
-    <br><br>
-
-    Estos aportes permiten financiar la <strong>mantención del portón de acceso y su sistema automático</strong>, el consumo eléctrico, las <strong>cámaras de seguridad e internet para su monitoreo</strong>, además de la mantención de los equipos y los materiales necesarios para la administración de la comunidad.
-    <br><br>
-
-    El pago oportuno de los gastos comunes permite mantener estos servicios funcionando correctamente y contribuye a la <strong>seguridad, organización y bienestar de todos los vecinos</strong>.
-
-</p>
-
-</div>
-<!-- ======================= TENENCIA RESPONSABLE ======================= -->
-
-<div class="aviso-card">
-
-    <div class="icono-aviso">
-        🐶🐱
-    </div>
-
-    <h3>Tenencia responsable de mascotas</h3>
-
-    <p>
-        <strong>🐶 Perros:</strong> Al salir con tu mascota por el interior de la villa,
-        recuerda llevar siempre una bolsa para recoger sus fecas y mantener limpios
-        nuestros espacios comunes.
-    </p>
-
-    <p>
-        <strong>🐱 Gatos:</strong> Tener un gato también implica responsabilidad.
-        Es importante contar con un arenero adecuado dentro del hogar y enseñarles
-        a utilizarlo, evitando que hagan sus necesidades en maceteros, jardines,
-        techos u otros espacios de los vecinos.
-    </p>
-
-    <p>
-        <strong>Ser responsable de una mascota también es respetar a nuestros vecinos.</strong>
-        🐾
-    </p>
-
-</div>
-<!-- ======================= TARJETA FINAL ======================= -->
-
-<div class="aviso-card">
-
-    <div class="icono-aviso">
-        🏡
-    </div>
-
-    <h3>Valoremos nuestro entorno</h3>
-
-    <p>
-        Vecin@s, vivimos en un entorno tranquilo, con áreas verdes y servicios básicos
-        cercanos. Valoremos y cuidemos esta tranquilidad, evitando situaciones que puedan
-        afectar la seguridad y la buena convivencia de nuestra comunidad.
-    </p>
-
-    <p>
-        Entre todos podemos mantener este lugar tranquilo, seguro y agradable para vivir.
-    </p>
-
-</div>
-
-</div>
-</section>
-
-<!-- ===================================================
-SUGERENCIAS
-=================================================== -->
-
-<section id="contacto" class="contenedor">
-
-<h2 class="titulo-seccion">
-
-Aportes de los Vecinos
-
-</h2>
-
-<p class="subtitulo">
-
-Tu opinión es importante para seguir mejorando nuestra comunidad.
-
-</p>
-
-<style>
-@media screen and (min-width: 769px) {
-
-    .sugerencias-box {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 28px !important;
-    align-items: start !important;
-}
-
-    .sugerencias-info {
-        background: #ffffff !important;
-        border: 1px solid rgba(36,59,100,0.10) !important;
-        border-top: 5px solid #2f6aa8 !important;
-        border-radius: 22px !important;
-        padding: 28px 32px !important;
-        box-shadow: 0 10px 25px rgba(36,59,100,0.10) !important;
-    }
-
-    .sugerencias-info h3 {
-        color: #243b64 !important;
-        margin-bottom: 14px !important;
-    }
-
-    .sugerencias-info ul {
-        list-style: none !important;
-        padding-left: 0 !important;
-        margin-top: 18px !important;
-    }
-
-    .sugerencias-info li {
-        margin-bottom: 9px !important;
-    }
-
-    .sugerencias-form {
-        display: flex !important;
-        width: 100% !important;
-    }
-
-    .sugerencias-proximamente {
-        width: 100% !important;
-        box-sizing: border-box !important;
-        background: #ffffff !important;
-        border: 1px solid rgba(31,127,104,0.15) !important;
-        border-top: 5px solid #2f9675 !important;
-        border-radius: 22px !important;
-        padding: 28px 32px !important;
-        box-shadow: 0 10px 25px rgba(36,59,100,0.10) !important;
-        text-align: center !important;
-    }
-
-    .icono-proximamente {
-        font-size: 38px !important;
-        margin-bottom: 8px !important;
-    }
-
-    .sugerencias-proximamente h3 {
-        color: #243b64 !important;
-        font-size: 1.35rem !important;
-        margin-bottom: 15px !important;
-    }
-
-    .sugerencias-proximamente p {
-        color: #4d5b68 !important;
-        line-height: 1.55 !important;
-        margin-bottom: 8px !important;
-    }
-
-    .proximamente-badge {
-        display: inline-block !important;
-        background: linear-gradient(135deg, #2f6aa8, #2f9675) !important;
-        color: white !important;
-        padding: 9px 18px !important;
-        border-radius: 20px !important;
-        font-size: 0.9rem !important;
-        font-weight: 600 !important;
-        box-shadow: 0 5px 12px rgba(36,59,100,0.16) !important;
-    }
-
-}
-</style>
-
-
-<div class="sugerencias-box">
-
-    <div class="sugerencias-info">
-
-        <h3>
-            💡 ¿Qué podemos mejorar?
-        </h3>
-
-        <p>
-            Queremos conocer las ideas de nuestros vecinos para seguir
-            construyendo una Villa Los Agapantos más segura, limpia,
-            agradable y acogedora para todos.
-        </p>
-
-        <ul>
-            <li>✔ Áreas verdes y espacios comunes.</li>
-            <li>✔ Seguridad y prevención.</li>
-            <li>✔ Iluminación.</li>
-            <li>✔ Aseo y mantención.</li>
-            <li>✔ Actividades comunitarias.</li>
-            <li>✔ Otras ideas para nuestra comunidad.</li>
-        </ul>
-
-    </div>
-
-
-    <div class="sugerencias-form">
-
-        <div class="sugerencias-proximamente">
-
-            <div class="icono-proximamente">
-                💬
-            </div>
-
-            <h3>
-                Tu opinión cuenta
-            </h3>
-
-            <p>
-                Estamos preparando este espacio para que puedas
-                enviar tus ideas y sugerencias directamente a la
-                administración de la Villa.
-            </p>
-
-            <span class="proximamente-badge">
-                🚧 Próximamente disponible
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-<!-- ===================================================
-INFORMACIÓN ÚTIL
-=================================================== -->
-
-<div class="telefonos-card">
-
-    <h3 class="titulo-telefonos">
-        📞 Teléfonos de interés
-    </h3>
-
-    <div class="telefonos-contenido">
-
-        <div class="info-util">
-
-            <i class="fa-solid fa-bolt"></i>
-
-            <h3>
-                Electricidad
-            </h3>
-
-            <p>
-                Enel Colina<br>
-                Fono: 600 690 2200<br>
-                Emergencias: 800 800 692
-            </p>
-
-        </div>
-
-
-        <div class="info-util">
-
-            <i class="fa-solid fa-droplet"></i>
-
-            <h3>
-                Agua
-            </h3>
-
-            <p>
-                Aguas Metropolitana<br>
-                Fono: 600 300 2600
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<section class="contenedor">
-
-    <h2 class="titulo-seccion">
-        🎵 Radios Recomendadas
-    </h2>
-
-    <p class="subtitulo">
-        Una excelente compañía para disfrutar mientras compartes con la familia,
-        trabajas en casa o pasas un buen fin de semana.
-    </p>
-
-    <div class="contador-visitas">
-
-        <div class="contador-icono">
-            <i class="fa-solid fa-radio"></i>
-        </div>
-
-        <h3>FM Plus</h3>
-
-        <p>
-            <strong>"Sin Clásicos... ¡Imposible!"</strong><br><br>
-            Música de los años 80, 90 y grandes éxitos para acompañar tu día.
-        </p>
-
-        
-
-        <a href="https://www.fmplus.cl/"
-           target="_blank"
-           class="btn">
-            🎧 Escuchar en vivo
-        </a>
-
-    </div>
-    <div class="contador-visitas">
-
-    <div class="contador-icono">
-        <i class="fa-solid fa-radio"></i>
-    </div>
-
-    <h3>Radio Cumbre 90.9 FM</h3>
-
-    <p>
-    <strong>Radio local de Colina</strong><br>
-    Música, noticias e información de nuestra comuna.
-</p>
-
-
-
-    <a href="https://radiocumbre.cl/"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="btn">
-        🎧 Escuchar Radio Cumbre
-    </a>
-
-</div>
-
-</section>
-
-<section class="contenedor">
-
-
-<div class="contador-visitas">
-
-    <div class="contador-icono">
-        <i class="fa-solid fa-users"></i>
-    </div>
-
-    <h3>Visitantes del sitio</h3>
-
-    <div id="contadorVisitas" class="numero-visitas">
-    <span>0</span>
-    <span>0</span>
-    <span>0</span>
-    <span>0</span>
-    <span>0</span>
-    <span>0</span>
-</div>
-
-    <div class="contador-texto">
-        Visitas registradas
-    </div>
-
-    <p>
-        Gracias por visitar la página oficial de
-        <strong>Villa Los Agapantos</strong>.
-    </p>
-
-</div>
-
-</section>
-
-<!-- ===================================================
-FOOTER
-=================================================== -->
-
-<footer>
-
-<div class="footer-contenido">
-
-<div>
-
-<h3>
-
-Villa Los Agapantos
-
-</h3>
-
-<p>
-
-Comunidad organizada para una mejor convivencia.
-
-</p>
-
-</div>
-
-<div>
-
-<h4>
-
-Enlaces
-
-</h4>
-
-<ul>
-
-<li>
-<a href="#inicio">
-Inicio
-</a>
-</li>
-
-<li>
-<a href="#galeria">
-Galería
-</a>
-</li>
-
-<li>
-<a href="#calendario">
-Calendario
-</a>
-</li>
-
-<li>
-<a href="#avisos">
-Recomendaciones
-</a>
-</li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h4>
-
-Contacto
-
-</h4>
-
-<p>
-
-WhatsApp Comunitario
-
-</p>
-
-<p>
-
-Colina - Región Metropolitana
-
-</p>
-
-</div>
-
-</div>
-</div>
-
-
-
-<div class="copyright">
-
-© 2026 Villa Los Agapantos
-
-<br>
-
-Desarrollado para la comunidad.
-
-</div>
-
-</footer>
-
-
-
-
-<!-- =======================================================
-     ACCESO AL CHAT DE VECINOS
-======================================================= -->
-
-<a
-    href="https://durable-chat-template.ricardogarcesw.workers.dev/GNtbiEvBMc2Nb8Kv9ACJJ"
-    class="acceso-chat-flotante"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Abrir Chat de Vecinos"
->
-    <span class="acceso-chat-icono">💬</span>
-    <span class="acceso-chat-texto">
-        <strong>Chat de Vecinos</strong>
-        <small>Conversemos entre todos</small>
-    </span>
-</a>
-
-<style>
-.acceso-chat-flotante {
-    position: fixed;
-    right: 24px;
-    bottom: 24px;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    padding: 11px 17px 11px 12px;
-    background: linear-gradient(135deg, #ffffff, #eef8f0);
-    color: #315c3d;
-    border: 1px solid rgba(72, 132, 82, 0.22);
-    border-radius: 999px;
-    box-shadow: 0 8px 24px rgba(42, 82, 49, 0.20), 0 0 0 4px rgba(255, 255, 255, 0.65);
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.acceso-chat-flotante:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(42, 82, 49, 0.26), 0 0 0 4px rgba(255, 255, 255, 0.72);
-}
-
-.acceso-chat-icono {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #4f8758;
-    color: #ffffff;
-    border-radius: 50%;
-    font-size: 21px;
-}
-
-.acceso-chat-texto {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.15;
-}
-
-.acceso-chat-texto strong {
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.acceso-chat-texto small {
-    margin-top: 3px;
-    font-size: 10px;
-    color: #718078;
-}
-
-@media screen and (max-width: 700px) {
-    .acceso-chat-flotante {
-        right: 13px;
-        bottom: 14px;
-        padding: 9px 13px 9px 9px;
-        gap: 8px;
-    }
-
-    .acceso-chat-icono {
-        width: 38px;
-        height: 38px;
-        font-size: 19px;
-    }
-
-    .acceso-chat-texto strong {
-        font-size: 12px;
-    }
-
-    .acceso-chat-texto small {
-        font-size: 9px;
+        `;
     }
 }
-</style>
 
 
-<button id="btnArriba">
+/* =========================================
+   CARGAR NOTICIAS
+   ========================================= */
 
-<i class="fa-solid fa-arrow-up"></i>
+cargarNoticias();
 
-</button>
 
-<script src="js/script.js"></script>
+/* Actualizar cada 30 minutos */
 
-</body>
+setInterval(cargarNoticias, 30 * 60 * 1000);
 
-</html>
+
+/* =========================================
+   FLECHAS DE NOTICIAS
+   ========================================= */
+
+const botonAnteriorNoticias =
+    document.querySelector(".noticias-anterior");
+
+const botonSiguienteNoticias =
+    document.querySelector(".noticias-siguiente");
+
+
+function moverNoticias(direccion) {
+
+    const lista =
+        document.getElementById("noticiasLista");
+
+    if (!lista) return;
+
+    const tarjeta =
+        lista.querySelector(".noticia-card");
+
+    if (!tarjeta) return;
+
+    const ancho =
+        tarjeta.getBoundingClientRect().width;
+
+    const espacio = 18;
+
+    lista.scrollBy({
+        left: direccion * (ancho + espacio),
+        behavior: "smooth"
+    });
+}
+
+
+if (botonAnteriorNoticias) {
+
+    botonAnteriorNoticias.addEventListener("click", () => {
+        moverNoticias(-1);
+    });
+
+}
+
+
+if (botonSiguienteNoticias) {
+
+    botonSiguienteNoticias.addEventListener("click", () => {
+        moverNoticias(1);
+    });
+
+}
 
